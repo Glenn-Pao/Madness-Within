@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{79391AC5-8752-B4CC-F33F-BB9EB1094377}</ProjectGuid>
+    <ProjectGuid>{0CA46778-FECD-7442-A84D-A4134D96D7CE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -277,6 +277,7 @@
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\GrayscaleTexture.shader" />
      <None Include="Assets\Materials&amp;Shader\Shader\ImageEffects\AnimatedDisplacement.shader" />
      <None Include="Assets\Plugins\VRSampleScenes\Shaders\SeparableAlpha.shader" />
+     <None Include="Assets\Materials&amp;Shader\Shader\ImageEffects\MirrorReflection.shader" />
      <None Include="Assets\Plugins\VRSampleScenes\Fonts\LICENSE.txt" />
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\GrayscaleWithColor.shader" />
      <None Include="Assets\Plugins\SteamVR\Resources\SteamVR_SphericalProjection.shader" />

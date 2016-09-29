@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A0590241-EC89-9436-F11D-51760213F2B6}</ProjectGuid>
+    <ProjectGuid>{C0940FA1-4A26-6A36-0B79-9C0CB9B6427A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
@@ -79,6 +79,7 @@
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\GrayscaleTexture.shader" />
      <None Include="Assets\Materials&amp;Shader\Shader\ImageEffects\AnimatedDisplacement.shader" />
      <None Include="Assets\Plugins\VRSampleScenes\Shaders\SeparableAlpha.shader" />
+     <None Include="Assets\Materials&amp;Shader\Shader\ImageEffects\MirrorReflection.shader" />
      <None Include="Assets\Plugins\VRSampleScenes\Fonts\LICENSE.txt" />
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\GrayscaleWithColor.shader" />
      <None Include="Assets\Plugins\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
@@ -126,7 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{79391AC5-8752-B4CC-F33F-BB9EB1094377}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{0CA46778-FECD-7442-A84D-A4134D96D7CE}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
