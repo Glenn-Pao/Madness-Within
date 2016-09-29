@@ -1,4 +1,4 @@
 sceneSetups:
-- path: C:/Users/vivetest/Desktop/VR-Mirrors-master/VR-Mirrors-master/Assets/Scenes/Mirror.unity
+- path: Assets/Scenes/TestScene_NightMode.unity
   isLoaded: 1
   isActive: 1

@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C0940FA1-4A26-6A36-0B79-9C0CB9B6427A}</ProjectGuid>
+    <ProjectGuid>{0D554A65-C625-BB9C-6E93-5599CAA18DD7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
@@ -73,6 +73,7 @@
      <None Include="Assets\Materials&amp;Shader\Shader\ImageEffects\ImageEffect.shader" />
      <None Include="Assets\Extras\SimpleShaderTint.shader" />
      <None Include="Assets\Plugins\VRSampleScenes\Shaders\PriorityParticleAlpha.shader" />
+     <None Include="Assets\Mirror\Mirror.shader" />
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\TilingShader.shader" />
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\TilingWithTinting.shader" />
      <None Include="Assets\Plugins\VRSampleScenes\Shaders\SlidingUV.shader" />
@@ -127,7 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{0CA46778-FECD-7442-A84D-A4134D96D7CE}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{8843CB4D-40EC-039C-FEF3-198EBC3138DD}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
