@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8843CB4D-40EC-039C-FEF3-198EBC3138DD}</ProjectGuid>
+    <ProjectGuid>{49C3570F-0585-ACDD-91AB-578055452F51}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -252,6 +252,25 @@
      <Compile Include="Assets\Plugins\VRTK\Scripts\VRTK_TeleportDisableOnHeadsetCollision.cs" />
      <Compile Include="Assets\Plugins\VRTK\Scripts\VRTK_TouchpadWalking.cs" />
      <Compile Include="Assets\Plugins\VRTK\Scripts\VRTK_UIPointer.cs" />
+     <Compile Include="Assets\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
+     <Compile Include="Assets\Standard Assets\Cameras\Scripts\AutoCam.cs" />
+     <Compile Include="Assets\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
+     <Compile Include="Assets\Standard Assets\Cameras\Scripts\HandHeldCam.cs" />
+     <Compile Include="Assets\Standard Assets\Cameras\Scripts\LookatTarget.cs" />
+     <Compile Include="Assets\Standard Assets\Cameras\Scripts\PivotBasedCameraRig.cs" />
+     <Compile Include="Assets\Standard Assets\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
+     <Compile Include="Assets\Standard Assets\Cameras\Scripts\TargetFieldOfView.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
      <None Include="Assets\Plugins\VRTK\Version.txt" />
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\BlendOneOneMode.shader" />
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\TheWhiteShader_Simple.shader" />
@@ -274,6 +293,7 @@
      <None Include="Assets\Mirror\Mirror.shader" />
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\TilingShader.shader" />
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\TilingWithTinting.shader" />
+     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Plugins\VRSampleScenes\Shaders\SlidingUV.shader" />
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\GrayscaleTexture.shader" />
      <None Include="Assets\Materials&amp;Shader\Shader\ImageEffects\AnimatedDisplacement.shader" />
@@ -283,6 +303,7 @@
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\GrayscaleWithColor.shader" />
      <None Include="Assets\Plugins\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
      <None Include="Assets\Plugins\SteamVR\Resources\SteamVR_AlphaOut.shader" />
+     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
      <None Include="Assets\Plugins\VRTK\Scripts\Shaders\TransparentFresnelBehind.shader" />
      <None Include="Assets\Plugins\SteamVR\readme.txt" />
      <None Include="Assets\Materials&amp;Shader\Shader\BasicShaders\TintedTextureEffect.shader" />
