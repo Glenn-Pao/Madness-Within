@@ -3,14 +3,11 @@ using System.Collections;
 
 public class Raycast : MonoBehaviour
 {
-    public TitleScene ts;
-    public OptionsScene os;
+    public GameObject lookingObject;
 
     // Use this for initialization
     void Start()
     {
-        ts = GameObject.Find("Level").GetComponent<TitleScene>();
-        os = GameObject.Find("Level").GetComponent<OptionsScene>();
     }
 
     // Update is called once per frame
@@ -22,17 +19,15 @@ public class Raycast : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                if (ts)
+                if (lookingObject = hit.collider.gameObject)
                 {
-                    ts.selectingItem = hit.collider.GetComponent<TextMesh>().text;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Debug.Log("Push");
+                        if (lookingObject.tag == "Button")
+                            lookingObject.GetComponent<Button>().pushedButton();
+                    }
                 }
-                if (os)
-                {
-
-                }
-
-                if (hit.collider.GetComponent<Button>())
-                    hit.collider.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
 
             }
         }

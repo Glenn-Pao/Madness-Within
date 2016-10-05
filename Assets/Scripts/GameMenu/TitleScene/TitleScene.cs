@@ -4,30 +4,30 @@ using UnityEngine.SceneManagement;
 
 public class TitleScene : MonoBehaviour
 {
-
-    public string selectingItem = null;
-    public GameObject txtTitle, txtPlay, txtOptions, txtExit;
-    public Vector3 txtScale;
-
+    public GameObject audioManager;
+    public GameObject fadeManager;
+    public GameObject timeManager;
     // Use this for initialization
-    public void Start()
+    public void Awake()
     {
-        txtScale = txtTitle.transform.localScale;
+        if(!GameObject.Find("AudioManager"))
+        {
+            Instantiate(audioManager);
+        }
+        if (!GameObject.Find("FadeManager"))
+        {
+            Instantiate(fadeManager);
+        }
+        if (!GameObject.Find("TimeManager"))
+        {
+            Instantiate(timeManager);
+        }
     }
+
+    public void Start() { }
 
     // Update is called once per frame
     void Update()
     {
-        txtTitle.GetComponent<Renderer>().material.EnableKeyword("_Emission");
-        txtTitle.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(1, 0, 0));
-        //Debug.Log(txtTitle.GetComponent<Renderer>().material.GetColor("_EmissionColor"));
-        Debug.Log(selectingItem);
-
-        txtTitle.transform.localScale = txtScale;
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene(selectingItem + "Scene");
-        }
     }
 }
