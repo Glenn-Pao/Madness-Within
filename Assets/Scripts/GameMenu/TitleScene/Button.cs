@@ -9,14 +9,22 @@ public class Button : MonoBehaviour {
         NONE,
         CHANGE_SCENE,
         USE_SLIDER,
-
+    }
+    public enum Scenes
+    {
+        UNKNOWN,
+        Logo,
+        Title,
+        Play,
+        Options,
+        Exit,
     }
 
     #region [ PUBLIC_VARIABLE ]
-    public Vector3 originSize= new Vector3(0.04f, 0.04f, 0.04f);
-    public Vector3 lookingSize = new Vector3(0.05f, 0.05f, 0.05f);
+    public Vector3 originSize;
+    public float magnificationRate;
     public ButtonType type = ButtonType.NONE;
-    public string nextScene = "Empty";
+    public Scenes nextScene = Scenes.UNKNOWN;
     #endregion
 
     #region [ PRIVATE_VARIABLE ]
@@ -27,6 +35,15 @@ public class Button : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        if (this.gameObject.tag != "Button")
+            this.gameObject.tag = "Button";
+
+        if (this.gameObject.GetComponent<BoxCollider>() == null)
+            this.gameObject.AddComponent<BoxCollider>();
+
+        originSize = this.transform.localScale;
+        magnificationRate = 1.5f;
+        nextScene = GetComponent<Button>().nextScene;
     }
 
     // Update is called once per frame
@@ -34,18 +51,23 @@ public class Button : MonoBehaviour {
     {
 
         if (_isLooking)
-            this.transform.localScale = lookingSize;
+            this.transform.localScale = originSize * magnificationRate;
         else
             this.transform.localScale = originSize;
     }
-    void pushedButton()
+    public void pushedButton()
     {
+        Debug.Log("Pushed");
         switch (type)
         {
             case ButtonType.NONE:
                 break;
             case ButtonType.CHANGE_SCENE:
-                SceneManager.LoadScene(nextScene);
+                // Unuse fade.
+                //SceneManager.LoadScene(nextScene.ToString() + "Scene");
+
+                // Use fade.
+                FadeManager.instance.LoadLevel(nextScene.ToString() + "Scene");
                 break;
             case ButtonType.USE_SLIDER:
                 TransformToSlider();

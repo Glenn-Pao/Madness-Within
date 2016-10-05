@@ -60,7 +60,7 @@ using System.Collections;
             // First, I get to Player position.
             _player = GameObject.FindWithTag("Player").transform;
             _renderer = gameObject.GetComponent<MeshRenderer>();
-            deathEffect = GameObject.Find("Explosion").GetComponent<ParticleSystem>();
+            //deathEffect = GameObject.Find("Explosion").GetComponent<ParticleSystem>();
 
             life = maxLife;
 
@@ -238,8 +238,6 @@ using System.Collections;
 
             public override void Execute()
             {
-                Debug.Log("PURSUIT_EXECUTE");
-
                 // If the distance to Player is close, Transition to attack state.
                 float sqrDistanceToPlayer = Vector3.SqrMagnitude(_owner.transform.position - _owner._player.position);
                 if (sqrDistanceToPlayer < _owner.attackSqrDistance - _owner.margin)
@@ -278,8 +276,6 @@ using System.Collections;
 
             public override void Execute()
             {
-                Debug.Log("ATTACK_EXECUTE");
-
                 // If the distance to Player, transition to pursuit state.
                 float sqrDistanceToPlayer = Vector3.SqrMagnitude(_owner.transform.position - _owner._player.position);
                 if (sqrDistanceToPlayer > _owner.attackSqrDistance + _owner.margin)
@@ -315,8 +311,6 @@ using System.Collections;
             public override void Execute()
             {
                 _owner.fadeOut();
-
-                Debug.Log(_owner._renderer.material.color.a);
 
                 // If the distance to Player is close, Transition to attack state.
                 float sqrDistanceToPlayer = Vector3.SqrMagnitude(_owner.transform.position - _owner._player.position);
