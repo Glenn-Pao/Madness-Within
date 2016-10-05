@@ -3973,7 +3973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &299879850
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4994,6 +4994,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 474576429}
+    - target: {fileID: 1000013702389314, guid: 1d7bd28a5d9cac94aa775d088a12784c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d7bd28a5d9cac94aa775d088a12784c, type: 2}
   m_IsPrefabParent: 0
@@ -23140,6 +23144,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1759182902}
   - 108: {fileID: 1759182903}
+  - 114: {fileID: 1759182904}
   m_Layer: 0
   m_Name: Spotlight (1)
   m_TagString: Untagged
@@ -23194,6 +23199,25 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1759182904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1759182901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c82378a13355624b8baeb720b6bb2f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minLightMS: 500
+  maxLightMS: 5000
+  minDarkMS: 25
+  maxDarkMS: 50
+  minFlickerMS: 25
+  maxFlickerMS: 50
+  minFlickers: 1
+  maxFlickers: 3
 --- !u!1 &1762494195
 GameObject:
   m_ObjectHideFlags: 0
@@ -25448,6 +25472,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1944160822}
   - 108: {fileID: 1944160823}
+  - 114: {fileID: 1944160824}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -25502,6 +25527,25 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1944160824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1944160821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c82378a13355624b8baeb720b6bb2f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minLightMS: 500
+  maxLightMS: 5000
+  minDarkMS: 25
+  maxDarkMS: 50
+  minFlickerMS: 25
+  maxFlickerMS: 50
+  minFlickers: 1
+  maxFlickers: 3
 --- !u!1 &1946906938
 GameObject:
   m_ObjectHideFlags: 0
