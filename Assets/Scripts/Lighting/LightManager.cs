@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//Flickering lights
-public class FlickeringLight : MonoBehaviour
-{
+public class LightManager : MonoBehaviour {
+
     //this light component
-    private Light thisLight;
+    public Light[] lightSources;
 
     //steady light phase, the length of steady light active in miliseconds
     public float minLightMS = 500f;
@@ -27,29 +26,32 @@ public class FlickeringLight : MonoBehaviour
     void Start()
     {
         //find the original light source
-        thisLight = this.GetComponent<Light>();
+        //thisLight = this.GetComponent<Light>();
 
         //start a coroutine order
         StartCoroutine("Flicker");
     }
 
-    
-
     IEnumerator Flicker()
     {
         while (true)
         {
-            thisLight.enabled = true;
+
+            lightSources[0].enabled = true;
+            lightSources[1].enabled = true;
             yield return new WaitForSeconds(Random.Range(minLightMS, maxLightMS) / 1000f);
 
             //flickering light period
             for (int i = 0; i < Random.Range(minFlickers, maxFlickers); i++)
             {
-                thisLight.enabled = false;
+                lightSources[0].enabled = false;
+                lightSources[1].enabled = false;
                 yield return new WaitForSeconds(Random.Range(minDarkMS, maxDarkMS) / 1000f);
-                thisLight.enabled = true;
+                lightSources[0].enabled = true;
+                lightSources[1].enabled = true;
                 yield return new WaitForSeconds(Random.Range(minFlickerMS, maxFlickerMS) / 1000f);
             }
+
         }
     }
 }
