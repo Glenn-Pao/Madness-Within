@@ -99,8 +99,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 24738895}
   - 114: {fileID: 24738896}
+  - 114: {fileID: 24738897}
   m_Layer: 0
-  m_Name: Level
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,12 +133,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6469fe975e07bfd4089b805e54d6981b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 1000010329993814, guid: 7bc3324a07cd96e4a94b946f028247a4,
-    type: 2}
-  fadeManager: {fileID: 1000013125013344, guid: 0a86e97be3d194b4dbe3d90ad3b7525c,
-    type: 2}
-  timeManager: {fileID: 1000013550772980, guid: 3e8dc530c309e424baa70742d2c07dcd,
-    type: 2}
+  bgm: {fileID: 8300000, guid: 47d514add841442448eabeac747d8823, type: 3}
+--- !u!114 &24738897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 24738894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0a787ce8a06c0b4ba8b71870fd2ecf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &92776402
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class FadeManager : SingletonMonoBehavior<FadeManager> {
     private bool _isFading = false;
 
     public Color fadeColor = Color.black;
-    public float defInterval = 0f;
+    public float defInterval = 0.5f;
 
     public void Awake()
     {
