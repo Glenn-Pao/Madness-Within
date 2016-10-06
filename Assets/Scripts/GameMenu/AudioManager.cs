@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class AudioManager : SingletonMonoBehavior<AudioManager>
 {
     #region [ VARIABLES ]
+    private GameObject _currentlyScene;
+
     //The path of audio files
     private const string BGM_PATH = "Audio/BGM";
     private const string SE_PATH = "Audio/SE";
@@ -93,6 +95,11 @@ public class AudioManager : SingletonMonoBehavior<AudioManager>
 
         foreach (AudioClip se in seList)
             _seDic[se.name] = se;
+
+        if(_currentlyScene = GameObject.Find("LevelManager"))
+        {
+            //currentlyScene.GetComponent<
+        }
     }
 
     private void Update()

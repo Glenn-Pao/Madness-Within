@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(SceneBase))]
-public class OptionsScene : MonoBehaviour {
+public class PlayScene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

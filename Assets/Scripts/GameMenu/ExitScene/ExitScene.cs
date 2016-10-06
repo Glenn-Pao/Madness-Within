@@ -3,7 +3,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class ExitSceneLoad : MonoBehaviour
+[RequireComponent(typeof(SceneBase))]
+public class ExitScene : MonoBehaviour
 {
 
     public int timerSecs = 5;

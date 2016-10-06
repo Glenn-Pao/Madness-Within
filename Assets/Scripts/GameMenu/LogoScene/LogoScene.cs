@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class LogoSceneLoad : MonoBehaviour {
+[RequireComponent(typeof(SceneBase))]
+public class LogoScene : MonoBehaviour {
 
     private void Start()
     {
