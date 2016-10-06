@@ -98,7 +98,7 @@ public class AudioManager : SingletonMonoBehavior<AudioManager>
 
         if(_currentlyScene = GameObject.Find("LevelManager"))
         {
-            _//currentlyScene.GetComponent<
+            //currentlyScene.GetComponent<
         }
     }
 
