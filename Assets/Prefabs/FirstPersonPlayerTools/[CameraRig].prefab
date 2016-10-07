@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftController: 1
-  rightController: 1
+  rightController: 0
   maxWalkSpeed: 3
   deceleration: 0.1
   moveOnButtonPress: 6
