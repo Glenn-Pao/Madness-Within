@@ -1,6 +1,6 @@
 ﻿//This is a surface shader that attempts to make the texture darker
 
-Shader "BasicShaders/AdjustableTransparency"
+Shader "LightingEffects/AdjustableTransparency"
 {
 	Properties
 	{
@@ -38,6 +38,7 @@ Shader "BasicShaders/AdjustableTransparency"
 		
 		void surf(Input IN, inout SurfaceOutput o)
 		{
+			//Render texture based on the slider value of alpha
 			o.Alpha = tex2D(_MainTex, IN.uv_MainTex).a * _Tween;
 		}
 		ENDCG
