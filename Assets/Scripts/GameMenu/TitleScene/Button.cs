@@ -65,7 +65,7 @@ public class Button : VRTK.VRTK_InteractableObject{
 
                 // Use fade.
                 //FadeManager.instance.LoadLevel(nextScene.ToString() + "Scene");
-                FadeManager.instance.LoadLevel(nextScene.ToString() + "Scene", FadeManager.instance.texs[0]);
+                FadeManager.instance.LoadLevel(nextScene.ToString() + "Scene");
                 break;
             case ButtonType.USE_SLIDER:
                 TransformToSlider();
