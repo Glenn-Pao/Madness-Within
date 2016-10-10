@@ -15,7 +15,6 @@ public class SceneBase : MonoBehaviour
         if (!GameObject.Find("AudioManager"))
         {
             _audioManager = (GameObject)AssetDatabase.LoadMainAssetAtPath("Assets/Prefabs/Managers/AudioManager.prefab");
-            Debug.Log(_audioManager);
             Instantiate(_audioManager);
         }
         if (!GameObject.Find("FadeManager"))

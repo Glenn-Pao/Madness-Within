@@ -11,8 +11,8 @@ public class FadeManager : SingletonMonoBehavior<FadeManager>
     private float _fadeAlpha = 0;
     private bool _isFading = false;
 
-    public bool isUsingTexture =false;
-    public Color fadeColor = Color.black;
+    public bool isUsingTexture = false;
+    public Color fadeColor;
     public const float defInterval = 0.5f;
 
     public void Awake()
@@ -32,14 +32,18 @@ public class FadeManager : SingletonMonoBehavior<FadeManager>
     {
         if (this._isFading)
         {
-            this.fadeColor.a = this._fadeAlpha;
-            GUI.color = this.fadeColor;
+
             if (this.isUsingTexture)
-                GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Texture2D.whiteTexture);
+            {
+                GUI.color = this.fadeColor;
+                this.fadeColor.a = this._fadeAlpha;
+                GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), texs[0]);
+            }
             else
             {
-                //GUI.color = Color.white;
-                GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), texs[0]);
+                GUI.color = this.fadeColor;
+                this.fadeColor.a = this._fadeAlpha;
+                GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Texture2D.whiteTexture);
             }
         }
     }

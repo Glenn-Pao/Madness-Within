@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class Button : MonoBehaviour {
+public class Button : VRTK.VRTK_InteractableObject{
 
     public enum ButtonType
     {
@@ -22,6 +22,11 @@ public class Button : MonoBehaviour {
     private bool _isLooking =false;
     #endregion
 
+    public override void StartUsing(GameObject currentUsingObject)
+    {
+        base.StartUsing(currentUsingObject);
+        Push();
+    }
 
     // Use this for initialization
     void Start()
