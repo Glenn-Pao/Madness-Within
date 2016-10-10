@@ -258,8 +258,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 699400890}
+  - 114: {fileID: 699400891}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,6 +279,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &699400891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 699400889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b00a0e2a8bb28441a565d2d78760c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentlyScene: 3
 --- !u!1 &763661232
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,9 +398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae81b01560ed2242bff9a03d585fbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  type: 0
   maxLife: 3
-  speed: 10
+  speed: 5
   rotationSmooth: 1
   turretRotationSmooth: 0.8
   attackInterval: 2
@@ -522,13 +535,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae81b01560ed2242bff9a03d585fbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 4
+  type: 0
   maxLife: 3
-  speed: 10
+  speed: 5
   rotationSmooth: 1
   turretRotationSmooth: 0.8
   attackInterval: 2
-  happenEventSqrDistance: 200
+  happenEventSqrDistance: 1000
   attackSqrDistance: 900
   margin: 50
   hitPoints: 0
@@ -736,6 +749,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5400000, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 2}
+    - {fileID: 8100000, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1042093194
@@ -769,8 +783,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originSize: {x: 0, y: 0, z: 0}
   magnificationRate: 0
-  type: 1
-  nextScene: 2
+  type: 0
+  nextScene: 0
 --- !u!102 &1042093196
 TextMesh:
   serializedVersion: 3
@@ -941,7 +955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65aaeb8801d3b844bb562a4ab90e3d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemType: 2
+  _itemType: 0
 --- !u!4 &1228296521 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 2}
@@ -1066,9 +1080,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae81b01560ed2242bff9a03d585fbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 0
   maxLife: 3
-  speed: 10
+  speed: 5
   rotationSmooth: 1
   turretRotationSmooth: 0.8
   attackInterval: 2
@@ -1530,9 +1544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae81b01560ed2242bff9a03d585fbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 0
   maxLife: 3
-  speed: 10
+  speed: 5
   rotationSmooth: 1
   turretRotationSmooth: 0.8
   attackInterval: 2
@@ -1634,7 +1648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65aaeb8801d3b844bb562a4ab90e3d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemType: 1
+  _itemType: 0
 --- !u!4 &1935660432
 Transform:
   m_ObjectHideFlags: 0

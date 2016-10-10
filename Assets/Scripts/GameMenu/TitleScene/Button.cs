@@ -10,15 +10,6 @@ public class Button : MonoBehaviour {
         CHANGE_SCENE,
         USE_SLIDER,
     }
-    public enum Scenes
-    {
-        UNKNOWN,
-        Logo,
-        Title,
-        Play,
-        Options,
-        Exit,
-    }
 
     #region [ PUBLIC_VARIABLE ]
     public Vector3 originSize;
@@ -28,7 +19,7 @@ public class Button : MonoBehaviour {
     #endregion
 
     #region [ PRIVATE_VARIABLE ]
-    private bool _isLooking;
+    private bool _isLooking =false;
     #endregion
 
 
@@ -42,20 +33,21 @@ public class Button : MonoBehaviour {
             this.gameObject.AddComponent<BoxCollider>();
 
         originSize = this.transform.localScale;
-        magnificationRate = 1.5f;
+        magnificationRate = 1.1f;
         nextScene = GetComponent<Button>().nextScene;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (_isLooking)
             this.transform.localScale = originSize * magnificationRate;
         else
             this.transform.localScale = originSize;
+
+        _isLooking = false;
     }
-    public void pushedButton()
+    public void Push()
     {
         Debug.Log("Pushed");
         switch (type)
@@ -67,7 +59,8 @@ public class Button : MonoBehaviour {
                 //SceneManager.LoadScene(nextScene.ToString() + "Scene");
 
                 // Use fade.
-                FadeManager.instance.LoadLevel(nextScene.ToString() + "Scene");
+                //FadeManager.instance.LoadLevel(nextScene.ToString() + "Scene");
+                FadeManager.instance.LoadLevel(nextScene.ToString() + "Scene", FadeManager.instance.texs[0]);
                 break;
             case ButtonType.USE_SLIDER:
                 TransformToSlider();
@@ -78,5 +71,9 @@ public class Button : MonoBehaviour {
     void TransformToSlider()
     {
 
+    }
+    public void Appeal()
+    {
+        _isLooking = true;
     }
 }

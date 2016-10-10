@@ -3,9 +3,11 @@ using System.Collections;
 
 public class SceneBase : MonoBehaviour
 {
-    private GameObject _audioManager;
-    private GameObject _fadeManager;
-    private GameObject _timeManager;
+    protected GameObject _audioManager;
+    protected GameObject _fadeManager;
+    protected GameObject _timeManager;
+
+    public AudioClip bgm;
 
     public void Awake()
     {

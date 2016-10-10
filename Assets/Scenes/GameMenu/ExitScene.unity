@@ -559,12 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6469fe975e07bfd4089b805e54d6981b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectingItem: 
-  txtTitle: {fileID: 1676968472}
-  txtPlay: {fileID: 0}
-  txtOptions: {fileID: 0}
-  txtExit: {fileID: 0}
-  txtScale: {x: 0, y: 0, z: 0}
+  bgm: {fileID: 0}
 --- !u!4 &769585302
 Transform:
   m_ObjectHideFlags: 0
@@ -855,9 +850,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originSize: {x: 0.04, y: 0.04, z: 0.04}
-  lookingSize: {x: 0.05, y: 0.05, z: 0.05}
+  magnificationRate: 0
   type: 0
-  nextScene: TitleScene
+  nextScene: 0
 --- !u!65 &1676968474
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1026,7 +1021,6 @@ GameObject:
   - 20: {fileID: 2122489023}
   - 92: {fileID: 2122489022}
   - 124: {fileID: 2122489021}
-  - 81: {fileID: 2122489020}
   - 114: {fileID: 2122489019}
   m_Layer: 0
   m_Name: Main Camera
@@ -1061,16 +1055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc7be8d251d4744f8292609b1b82e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ts: {fileID: 0}
-  os: {fileID: 0}
---- !u!81 &2122489020
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8174098, guid: 4453a671c145a9f41876e5709299fe52,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2122489017}
-  m_Enabled: 1
+  lookingObject: {fileID: 0}
 --- !u!124 &2122489021
 Behaviour:
   m_ObjectHideFlags: 0
