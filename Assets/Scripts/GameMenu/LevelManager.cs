@@ -2,20 +2,57 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour {
+public enum Scenes
+{
+    UNKNOWN,
+    Logo,
+    Title,
+    Play,
+    Options,
+    Exit,
+}
 
-	// Use this for initialization
-	void Start () {
-        Debug.Log("Start");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+public class LevelManager : MonoBehaviour
+{
+    // Please attach scene.
+    public Scenes currentlyScene;
 
-    void ChangeScene(string name)
+    void Awake()
     {
-        SceneManager.LoadScene(name);
+        switch(currentlyScene)
+        {
+            case Scenes.UNKNOWN:
+                Debug.LogError("There is unknown scene. So you have to fix it.");
+                break;
+            case Scenes.Logo:
+                gameObject.AddComponent<LogoScene>();
+                break;
+            case Scenes.Title:
+                gameObject.AddComponent<TitleScene>();
+                break;
+            case Scenes.Play:
+                gameObject.AddComponent<PlayScene>();
+                break;
+            case Scenes.Options:
+                gameObject.AddComponent<OptionsScene>();
+                break;
+            case Scenes.Exit:
+                gameObject.AddComponent<ExitScene>();
+                break;
+            default:
+                break;
+        }
     }
+
+    void Start()
+    {
+        //Debug.Log(currentlyScene);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
 }

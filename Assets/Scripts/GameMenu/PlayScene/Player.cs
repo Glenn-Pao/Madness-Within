@@ -133,7 +133,9 @@ public class Player : MonoBehaviour
                 temp++;
                 enemyLast = temp;
             }
-            enemyNumberLast.text = "Enemy : " + enemyLast;
+
+            if (enemyNumberLast)
+                enemyNumberLast.text = "Enemy : " + enemyLast;
         }
     }
 

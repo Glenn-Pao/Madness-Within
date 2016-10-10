@@ -17,26 +17,26 @@ public class Raycast : MonoBehaviour
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         if (Physics.Raycast(ray, out hit, 1000))
         {
-            if (hit.collider != null)
+            if (lookingObject = hit.collider.gameObject)
             {
-                if (lookingObject = hit.collider.gameObject)
+                // You look any object.
+                if (lookingObject.tag == "Button")
                 {
+                    // You look any button.
+                    Button button = lookingObject.GetComponent<Button>();
+                    button.Appeal();
                     if (Input.GetMouseButtonDown(0))
                     {
                         Debug.Log("Push");
-                        if (lookingObject.tag == "Button")
-                            lookingObject.GetComponent<Button>().pushedButton();
+                        button.Push();
                     }
                 }
-
             }
         }
 
-        //Vector3 fwd = transform.TransformDirection(Vector3.forward);
-
-        //if (Physics.Raycast(transform.position, fwd, 10)) ;
-
-
-
+        if (Input.GetMouseButtonDown(1))
+        {
+            FadeManager.instance.Wink(0.2f);
+        }
     }
 }

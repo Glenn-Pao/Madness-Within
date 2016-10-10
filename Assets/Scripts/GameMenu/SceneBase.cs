@@ -1,27 +1,30 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 public class SceneBase : MonoBehaviour
 {
-    private GameObject _audioManager;
-    private GameObject _fadeManager;
-    private GameObject _timeManager;
+    protected GameObject _audioManager;
+    protected GameObject _fadeManager;
+    protected GameObject _timeManager;
+
+    public AudioClip bgm;
 
     public void Awake()
     {
         if (!GameObject.Find("AudioManager"))
         {
-            _audioManager = (GameObject)Resources.Load("Prefabs/AudioManager");   
+            _audioManager = (GameObject)AssetDatabase.LoadMainAssetAtPath("Assets/Prefabs/Managers/AudioManager.prefab");
             Instantiate(_audioManager);
         }
         if (!GameObject.Find("FadeManager"))
         {
-            _fadeManager = (GameObject)Resources.Load("Prefabs/FadeManager");
+            _fadeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath("Assets/Prefabs/Managers/FadeManager.prefab");
             Instantiate(_fadeManager);
         }
         if (!GameObject.Find("TimeManager"))
         {
-            _timeManager = (GameObject)Resources.Load("Prefabs/TimeManager");
+            _timeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath("Assets/Prefabs/Managers/TimeManager.prefab");
             Instantiate(_timeManager);
         }
     }
