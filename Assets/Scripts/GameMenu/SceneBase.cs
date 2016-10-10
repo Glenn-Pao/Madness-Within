@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 public class SceneBase : MonoBehaviour
@@ -13,17 +14,18 @@ public class SceneBase : MonoBehaviour
     {
         if (!GameObject.Find("AudioManager"))
         {
-            _audioManager = (GameObject)Resources.Load("Prefabs/AudioManager");   
+            _audioManager = (GameObject)AssetDatabase.LoadMainAssetAtPath("Assets/Prefabs/Managers/AudioManager.prefab");
+            Debug.Log(_audioManager);
             Instantiate(_audioManager);
         }
         if (!GameObject.Find("FadeManager"))
         {
-            _fadeManager = (GameObject)Resources.Load("Prefabs/FadeManager");
+            _fadeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath("Assets/Prefabs/Managers/FadeManager.prefab");
             Instantiate(_fadeManager);
         }
         if (!GameObject.Find("TimeManager"))
         {
-            _timeManager = (GameObject)Resources.Load("Prefabs/TimeManager");
+            _timeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath("Assets/Prefabs/Managers/TimeManager.prefab");
             Instantiate(_timeManager);
         }
     }
