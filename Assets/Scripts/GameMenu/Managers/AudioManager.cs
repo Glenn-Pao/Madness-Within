@@ -37,6 +37,7 @@ public class AudioManager : SingletonMonoBehavior<AudioManager>
     public const float BGM_FADE_SPEED_RATE_LOW = 0.3f;
     private float _bgmFadeSpeedRate = BGM_FADE_SPEED_RATE_HIGH;
 
+    public float volume;
     //public AudioSource attachBGMSource;
     //public AudioSource attachSESource;
     #endregion

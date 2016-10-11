@@ -31,7 +31,7 @@ public class Raycast : MonoBehaviour
                         button.Push();
                     }
 
-                    Debug.Log(GetComponent<VRTK.VRTK_ControllerEvents>().IsButtonPressed(VRTK.VRTK_ControllerEvents.ButtonAlias.Touchpad_Touch));
+                    //Debug.Log(GetComponent<VRTK.VRTK_ControllerEvents>().IsButtonPressed(VRTK.VRTK_ControllerEvents.ButtonAlias.Touchpad_Touch));
 
                     if (GetComponent<VRTK.VRTK_ControllerEvents>().IsButtonPressed(VRTK.VRTK_ControllerEvents.ButtonAlias.Trigger_Hairline))
                     {

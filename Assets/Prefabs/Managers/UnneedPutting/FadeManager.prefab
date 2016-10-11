@@ -51,5 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00123f9437647414b86d2fd5df0ea15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  texs: []
+  isUsingTexture: 0
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
-  defInterval: 0.5

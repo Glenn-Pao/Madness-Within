@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public enum Scenes
 {
-    UNKNOWN,
+    Unknown,
     Logo,
     Title,
     Play,
@@ -21,8 +21,9 @@ public class LevelManager : MonoBehaviour
     {
         switch(currentlyScene)
         {
-            case Scenes.UNKNOWN:
+            case Scenes.Unknown:
                 Debug.LogError("There is unknown scene. So you have to fix it.");
+                Debug.Break();
                 break;
             case Scenes.Logo:
                 gameObject.AddComponent<LogoScene>();

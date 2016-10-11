@@ -15,7 +15,7 @@ public class Button : VRTK.VRTK_InteractableObject{
     public Vector3 originSize;
     public float magnificationRate;
     public ButtonType type = ButtonType.NONE;
-    public Scenes nextScene = Scenes.UNKNOWN;
+    public Scenes nextScene = Scenes.Unknown;
     #endregion
 
     #region [ PRIVATE_VARIABLE ]
