@@ -751,6 +751,40 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: a81122daa13ef7641859a9ad04996ff5, type: 3}
+--- !u!114 &120871718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 120871715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2473c1519b730d346b724d18267dc7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultEvents:
+    OnValueChanged:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: VRTK.VRTK_Control+ValueChangedEvent, Assembly-CSharp-firstpass,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  direction: 0
+  min: 1
+  max: 8
+  stepSize: 1
+  curValue: 0
+--- !u!114 &120871719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 120871715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c01140e822562049a0d7b10a6d496da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 417715606}
 --- !u!1 &123952962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,7 +2231,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000010256809188, guid: 1d7bd28a5d9cac94aa775d088a12784c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.12
+      value: -2.317
       objectReference: {fileID: 0}
     - target: {fileID: 4000010256809188, guid: 1d7bd28a5d9cac94aa775d088a12784c, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2205,7 +2239,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010256809188, guid: 1d7bd28a5d9cac94aa775d088a12784c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.236
+      value: 0.769
       objectReference: {fileID: 0}
     - target: {fileID: 4000010256809188, guid: 1d7bd28a5d9cac94aa775d088a12784c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6989,9 +7023,7 @@ GameObject:
   - 33: {fileID: 1373718785}
   - 23: {fileID: 1373718784}
   - 114: {fileID: 1373718786}
-  - 114: {fileID: 1373718788}
   - 65: {fileID: 1373718787}
-  - 114: {fileID: 1373718783}
   m_Layer: 0
   m_Name: Lock Hole
   m_TagString: Untagged
@@ -7013,18 +7045,6 @@ Transform:
   - {fileID: 120871716}
   m_Father: {fileID: 555326956}
   m_RootOrder: 1
---- !u!114 &1373718783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1373718781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c01140e822562049a0d7b10a6d496da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go: {fileID: 417715606}
 --- !u!23 &1373718784
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7076,8 +7096,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyUsed: 0
   keyInserted: {fileID: 120871715}
-  knobObj: {fileID: 1373718781}
-  knob: {fileID: 1373718788}
   knobTurned: 0
 --- !u!65 &1373718787
 BoxCollider:
@@ -7091,28 +7109,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0010300254, y: 0.0027553367, z: 0.0031816196}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1373718788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1373718781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2473c1519b730d346b724d18267dc7fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultEvents:
-    OnValueChanged:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: VRTK.VRTK_Control+ValueChangedEvent, Assembly-CSharp-firstpass,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  direction: 0
-  min: 1
-  max: 7
-  stepSize: 1
-  curValue: 0
 --- !u!1 &1403508212
 GameObject:
   m_ObjectHideFlags: 0
