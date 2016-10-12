@@ -28,6 +28,8 @@ namespace VRTK
         [Tooltip("The increments in which knob values can change.")]
         public float stepSize = 1f;
 
+		public float curValue = 0f;
+
         private static float MAX_AUTODETECT_KNOB_WIDTH = 3; // multiple of the knob width
         private KnobDirection finalDirection;
         private Quaternion initialRotation;
@@ -195,8 +197,10 @@ namespace VRTK
             {
                 value = (max + min) - value;
             }
-
+			curValue = value;
             return value;
         }
+
+
     }
 }
