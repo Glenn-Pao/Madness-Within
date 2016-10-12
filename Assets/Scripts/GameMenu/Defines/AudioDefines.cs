@@ -5,3 +5,7 @@ public class BGM{
 
     public const string RuefulMelody = "RuefulMelody";
 }
+public class SE
+{
+    public const string Kick = "Kick";
+}

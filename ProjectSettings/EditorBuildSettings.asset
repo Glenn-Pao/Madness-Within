@@ -27,3 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/GameMenu/LogoScene.unity
   - enabled: 1
     path: Assets/Scenes/GameMenu/ExitScene.unity
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/SampleGameplayScene.unity
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/SandboxTest.unity
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/TestScene.unity
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/TestScene_Mental_Hospital.unity
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/TestScene_NightMode.unity
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/TestScene_UltraDark.unity

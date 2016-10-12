@@ -1612,7 +1612,7 @@ MonoBehaviour:
   originSize: {x: 0, y: 0, z: 0}
   magnificationRate: 0
   type: 1
-  nextScene: 3
+  nextScene: 6
 --- !u!23 &1450079576
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -1,20 +1,24 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement;
+﻿namespace MasujimaRyohei
+{
+    using UnityEngine;
+    using System.Collections;
+    using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(SceneBase))]
-public class LogoScene : MonoBehaviour {
-
-    private void Start()
+    [RequireComponent(typeof(SceneBase))]
+    public class LogoScene : MonoBehaviour
     {
-        Debug.Log("StartLogoScene");
-        Invoke("SceneLoad", 5);
-    }
 
-	void SceneLoad()
-    {
-        Debug.Log("LoadNextScene");
+        private void Start()
+        {
+            Debug.Log("StartLogoScene");
+            Invoke("SceneLoad", 5);
+        }
 
-        SceneManager.LoadScene("TitleScene");
+        void SceneLoad()
+        {
+            Debug.Log("LoadNextScene");
+
+            SceneManager.LoadScene("TitleScene");
+        }
     }
 }
