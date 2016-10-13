@@ -12,6 +12,26 @@ ModelImporter:
     100008: Slider
     100010: Slider_Backframe
     100012: Slider_Handle
+    100014: polySurface432 1
+    100016: polySurface433
+    100018: polySurface434
+    100020: polySurface435
+    100022: polySurface436
+    100024: polySurface437
+    100026: polySurface438
+    100028: polySurface439
+    100030: polySurface440
+    100032: polySurface441
+    100034: polySurface442
+    100036: polySurface442 1
+    100038: transform226
+    100040: transform227
+    100042: transform228
+    100044: transform229
+    100046: transform230
+    100048: transform231
+    100050: transform232
+    100052: transform233
     400000: //RootNode
     400002: Door2
     400004: polySurface425
@@ -19,21 +39,68 @@ ModelImporter:
     400008: Slider
     400010: Slider_Backframe
     400012: Slider_Handle
+    400014: polySurface432 1
+    400016: polySurface433
+    400018: polySurface434
+    400020: polySurface435
+    400022: polySurface436
+    400024: polySurface437
+    400026: polySurface438
+    400028: polySurface439
+    400030: polySurface440
+    400032: polySurface441
+    400034: polySurface442
+    400036: polySurface442 1
+    400038: transform226
+    400040: transform227
+    400042: transform228
+    400044: transform229
+    400046: transform230
+    400048: transform231
+    400050: transform232
+    400052: transform233
     2300000: Door2
     2300002: polySurface432
     2300004: Slider
     2300006: Slider_Backframe
     2300008: Slider_Handle
+    2300010: polySurface433
+    2300012: polySurface434
+    2300014: polySurface435
+    2300016: polySurface436
+    2300018: polySurface438
+    2300020: polySurface439
+    2300022: polySurface440
+    2300024: polySurface441
+    2300026: polySurface442
     3300000: Door2
     3300002: polySurface432
     3300004: Slider
     3300006: Slider_Backframe
     3300008: Slider_Handle
+    3300010: polySurface433
+    3300012: polySurface434
+    3300014: polySurface435
+    3300016: polySurface436
+    3300018: polySurface438
+    3300020: polySurface439
+    3300022: polySurface440
+    3300024: polySurface441
+    3300026: polySurface442
     4300000: polySurface432
     4300002: Slider
     4300004: Slider_Handle
     4300006: Slider_Backframe
     4300008: Door2
+    4300010: polySurface433
+    4300012: polySurface434
+    4300014: polySurface435
+    4300016: polySurface436
+    4300018: polySurface438
+    4300020: polySurface439
+    4300022: polySurface440
+    4300024: polySurface441
+    4300026: polySurface442
     9500000: //RootNode
   materials:
     importMaterials: 1
