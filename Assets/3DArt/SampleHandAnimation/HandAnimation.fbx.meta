@@ -1,0 +1,447 @@
+fileFormatVersion: 2
+guid: a653ab6e1b91b034190899f0ccd6584f
+timeCreated: 1476322595
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: core_arm
+    100002: core_wrist
+    100004: core_wrist_control
+    100006: elbow
+    100008: elbow_control
+    100010: hand22_polySurface1165
+    100012: //RootNode
+    100014: index_1
+    100016: index_1_control
+    100018: index_2
+    100020: index_2_control
+    100022: index_3
+    100024: index_3_control
+    100026: index_4
+    100028: middle_1
+    100030: middle_1_control
+    100032: middle_2
+    100034: middle_2_control
+    100036: middle_3
+    100038: middle_3_control
+    100040: middle_4
+    100042: pCube2
+    100044: pCube3
+    100046: pCylinder1
+    100048: pCylinder2
+    100050: pCylinder3
+    100052: pCylinder4
+    100054: pCylinder5
+    100056: pCylinder6
+    100058: pCylinder7
+    100060: pinky_1
+    100062: pinky_1_control
+    100064: pinky_2
+    100066: pinky_2_control
+    100068: pinky_3
+    100070: pinky_3_control
+    100072: pinky_4
+    100074: pivot
+    100076: polySurface1
+    100078: polySurface1 1
+    100080: polySurface10
+    100082: polySurface10 1
+    100084: polySurface11
+    100086: polySurface11 1
+    100088: polySurface12
+    100090: polySurface13
+    100092: polySurface14
+    100094: polySurface15
+    100096: polySurface16
+    100098: polySurface17
+    100100: polySurface17 1
+    100102: polySurface18
+    100104: polySurface19
+    100106: polySurface2
+    100108: polySurface20
+    100110: polySurface21
+    100112: polySurface22
+    100114: polySurface23
+    100116: polySurface24
+    100118: polySurface3
+    100120: polySurface3 1
+    100122: polySurface4
+    100124: polySurface5
+    100126: polySurface5 1
+    100128: polySurface6
+    100130: pPipe1
+    100132: pPlane1
+    100134: pPlane2
+    100136: pSphere1
+    100138: pSphere2
+    100140: pSphere3
+    100142: pTorus1
+    100144: pTorus2
+    100146: pTorus3
+    100148: ring_1
+    100150: ring_1_control
+    100152: ring_2
+    100154: ring_2_control
+    100156: ring_3
+    100158: ring_3_control
+    100160: ring_4
+    100162: thumb_1
+    100164: thumb_1_control
+    100166: thumb_2
+    100168: thumb_2_control
+    100170: thumb_3
+    100172: thumb_3_control
+    100174: thumb_4
+    100176: transform1
+    100178: transform10
+    100180: transform11
+    100182: transform12
+    100184: transform13
+    100186: transform14
+    100188: transform15
+    100190: transform16
+    100192: transform17
+    100194: transform18
+    100196: transform19
+    100198: transform2
+    100200: transform20
+    100202: transform21
+    100204: transform22
+    100206: transform23
+    100208: transform24
+    100210: transform25
+    100212: transform26
+    100214: transform27
+    100216: transform28
+    100218: transform29
+    100220: transform3
+    100222: transform30
+    100224: transform31
+    100226: transform32
+    100228: transform33
+    100230: transform34
+    100232: transform35
+    100234: transform36
+    100236: transform37
+    100238: transform4
+    100240: transform5
+    100242: transform6
+    100244: transform7
+    100246: transform8
+    100248: transform9
+    100250: wrist
+    100252: wrist_control
+    400000: core_arm
+    400002: core_wrist
+    400004: core_wrist_control
+    400006: elbow
+    400008: elbow_control
+    400010: hand22_polySurface1165
+    400012: //RootNode
+    400014: index_1
+    400016: index_1_control
+    400018: index_2
+    400020: index_2_control
+    400022: index_3
+    400024: index_3_control
+    400026: index_4
+    400028: middle_1
+    400030: middle_1_control
+    400032: middle_2
+    400034: middle_2_control
+    400036: middle_3
+    400038: middle_3_control
+    400040: middle_4
+    400042: pCube2
+    400044: pCube3
+    400046: pCylinder1
+    400048: pCylinder2
+    400050: pCylinder3
+    400052: pCylinder4
+    400054: pCylinder5
+    400056: pCylinder6
+    400058: pCylinder7
+    400060: pinky_1
+    400062: pinky_1_control
+    400064: pinky_2
+    400066: pinky_2_control
+    400068: pinky_3
+    400070: pinky_3_control
+    400072: pinky_4
+    400074: pivot
+    400076: polySurface1
+    400078: polySurface1 1
+    400080: polySurface10
+    400082: polySurface10 1
+    400084: polySurface11
+    400086: polySurface11 1
+    400088: polySurface12
+    400090: polySurface13
+    400092: polySurface14
+    400094: polySurface15
+    400096: polySurface16
+    400098: polySurface17
+    400100: polySurface17 1
+    400102: polySurface18
+    400104: polySurface19
+    400106: polySurface2
+    400108: polySurface20
+    400110: polySurface21
+    400112: polySurface22
+    400114: polySurface23
+    400116: polySurface24
+    400118: polySurface3
+    400120: polySurface3 1
+    400122: polySurface4
+    400124: polySurface5
+    400126: polySurface5 1
+    400128: polySurface6
+    400130: pPipe1
+    400132: pPlane1
+    400134: pPlane2
+    400136: pSphere1
+    400138: pSphere2
+    400140: pSphere3
+    400142: pTorus1
+    400144: pTorus2
+    400146: pTorus3
+    400148: ring_1
+    400150: ring_1_control
+    400152: ring_2
+    400154: ring_2_control
+    400156: ring_3
+    400158: ring_3_control
+    400160: ring_4
+    400162: thumb_1
+    400164: thumb_1_control
+    400166: thumb_2
+    400168: thumb_2_control
+    400170: thumb_3
+    400172: thumb_3_control
+    400174: thumb_4
+    400176: transform1
+    400178: transform10
+    400180: transform11
+    400182: transform12
+    400184: transform13
+    400186: transform14
+    400188: transform15
+    400190: transform16
+    400192: transform17
+    400194: transform18
+    400196: transform19
+    400198: transform2
+    400200: transform20
+    400202: transform21
+    400204: transform22
+    400206: transform23
+    400208: transform24
+    400210: transform25
+    400212: transform26
+    400214: transform27
+    400216: transform28
+    400218: transform29
+    400220: transform3
+    400222: transform30
+    400224: transform31
+    400226: transform32
+    400228: transform33
+    400230: transform34
+    400232: transform35
+    400234: transform36
+    400236: transform37
+    400238: transform4
+    400240: transform5
+    400242: transform6
+    400244: transform7
+    400246: transform8
+    400248: transform9
+    400250: wrist
+    400252: wrist_control
+    2300000: pCube2
+    2300002: pCylinder1
+    2300004: polySurface15
+    2300006: polySurface16
+    2300008: polySurface17
+    2300010: pPlane1
+    2300012: pPlane2
+    2300014: pTorus3
+    3300000: pCube2
+    3300002: pCylinder1
+    3300004: polySurface15
+    3300006: polySurface16
+    3300008: polySurface17
+    3300010: pPlane1
+    3300012: pPlane2
+    3300014: pTorus3
+    4300000: pCube2
+    4300002: pCylinder1
+    4300004: pTorus3
+    4300006: pPlane1
+    4300008: polySurface15
+    4300010: polySurface16
+    4300012: polySurface17
+    4300014: hand22_polySurface1165
+    4300016: pPlane2
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: hand22_polySurface1165
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: elbow_control
+        weight: 1
+      - path: elbow_control/wrist_control
+        weight: 1
+      - path: elbow_control/wrist_control/core_wrist_control
+        weight: 1
+      - path: elbow_control/wrist_control/core_wrist_control/ring_1_control
+        weight: 1
+      - path: elbow_control/wrist_control/core_wrist_control/ring_1_control/ring_2_control
+        weight: 1
+      - path: elbow_control/wrist_control/core_wrist_control/ring_1_control/ring_2_control/ring_3_control
+        weight: 1
+      - path: hand22_polySurface1165
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/elbow
+        weight: 1
+      - path: pivot/elbow/core_arm
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/index_1
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/index_1/index_2
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/index_1/index_2/index_3
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/index_1/index_2/index_3/index_4
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/middle_1
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/middle_1/middle_2
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/middle_1/middle_2/middle_3
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/middle_1/middle_2/middle_3/middle_4
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/pinky_1
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/pinky_1/pinky_2
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/pinky_1/pinky_2/pinky_3
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/pinky_1/pinky_2/pinky_3/pinky_4
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/ring_1
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/ring_1/ring_2
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/ring_1/ring_2/ring_3
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/ring_1/ring_2/ring_3/ring_4
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/thumb_1
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/thumb_1/thumb_2
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/thumb_1/thumb_2/thumb_3
+        weight: 1
+      - path: pivot/elbow/core_arm/wrist/core_wrist/thumb_1/thumb_2/thumb_3/thumb_4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.8000001
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

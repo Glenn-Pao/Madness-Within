@@ -26,6 +26,7 @@ public class UnlockDrawer : MonoBehaviour
 		{
 			keyInserted.SetActive (false);
 		}
+		this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = false;
 	}
 
 	//This function serves to check if the knob is twisted to maximum value
@@ -37,13 +38,14 @@ public class UnlockDrawer : MonoBehaviour
 			if (!keyInserted.activeInHierarchy) 
 			{
 				keyInserted.SetActive (true);
+				this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = true;
 			} 
 			else 
 			{
-				if (keyInserted.GetComponent<VRTK.VRTK_Knob>().curValue == 4) 
+				if (this.GetComponent<VRTK.VRTK_Knob>().curValue == 4) 
 				{
-                    keyInserted.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = false;
-                    keyInserted.GetComponent<VRTK.VRTK_Knob>().enabled = false;
+                    this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = false;
+					this.GetComponent<VRTK.VRTK_Knob>().enabled = false;
 					knobTurned = true;
 				}
 			}				
