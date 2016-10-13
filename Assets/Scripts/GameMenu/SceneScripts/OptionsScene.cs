@@ -2,12 +2,25 @@
 {
     using UnityEngine;
     using System.Collections;
+    using System.Collections.Generic;
 
 
     public class OptionsScene : SceneBase
     {
 
         #region [ VARIABLES ]
+        const string BGM_POS_X = "BGM_SLIDER_POS_X";
+        const string BGM_POS_Y = "BGM_SLIDER_POS_Y";
+        const string BGM_POS_Z = "BGM_SLIDER_POS_Z";
+        const string SE_POS_X = "SE_SLIDER_POS_X";
+        const string SE_POS_Y = "SE_SLIDER_POS_Y";
+        const string SE_POS_Z = "SE_SLIDER_POS_Z";
+        const string MT_POS_X = "MT_SLIDER_POS_X";
+        const string MT_POS_Y = "MT_SLIDER_POS_Y";
+        const string MT_POS_Z = "MT_SLIDER_POS_Z";
+        const string PS_POS_X = "PS_SLIDER_POS_X"; 
+        const string PS_POS_Y = "PS_SLIDER_POS_Y"; 
+        const string PS_POS_Z = "PS_SLIDER_POS_Z";
 
         Transform sounds, player;
         Transform bgm, se;
@@ -28,7 +41,7 @@
 
         #endregion
         // Use this for initialization
-        void Start()
+        public void Start()
         {
             #region [ INITIALIZE ]
 
@@ -51,53 +64,47 @@
             #endregion
 
             SetBGM(BGM.RuefulMelody);
-            StartCoroutine(FourOnTheFloor());
+            StartCoroutine(AudioManager.instance.FourOnTheFloor());
 
-            //bgmSlider.
-            //Debug.Log(PlayerPrefs.GetFloat(BGM_VOLUME, 0));
-            //Debug.Log(PlayerPrefs.GetFloat(SE_VOLUME, 0));
-            //Debug.Log(PlayerPrefs.GetFloat(PLAYER_SPEED, 0));
-            //Debug.Log(PlayerPrefs.GetFloat(MOVEMENT_TYPE, 0));
-
-            
+            Loading();
         }
 
         // Update is called once per frame
         void Update()
         {
-          //  bgmSlider.transform.position = new Vector3(PlayerPrefs.GetFloat(BGM_VOLUME, bgmSlider.transform.position.x), 0, 0);
+            AudioManager.instance.ChangeBGMVolume(AudioManager.instance.GetBGMVolume());
 
             AudioManager.instance.ChangeBothVolume(bgmSlider.GetValue() / 100, seSlider.GetValue() / 100);
             //AudioManager.instance.ChangeBothVolume(bgmSlider.GetValue() / 10, 10);
-            Debug.Log(PlayerPrefs.GetFloat(BGM_VOLUME, 0));
+            //Debug.Log(PlayerPrefs.GetFloat(BGM_VOLUME, 0));
         }
 
         public void Saving()
         {
-            PlayerPrefs.SetFloat(BGM_VOLUME, bgmSlider.transform.position.x);
-            PlayerPrefs.SetFloat(SE_VOLUME, seSlider.transform.position.x);
-            PlayerPrefs.SetFloat(PLAYER_SPEED, mtSlider.transform.position.x);
-            PlayerPrefs.SetFloat(MOVEMENT_TYPE, psSlider.transform.position.x);
-            Debug.Log("Saved");
+            SaveData.SetFloat(BGM_POS_X, bgmSlider.transform.position.x);
+            SaveData.SetFloat(SE_POS_X, seSlider.transform.position.x);
+            SaveData.SetFloat(MT_POS_X, mtSlider.transform.position.x);
+            SaveData.SetFloat(PS_POS_X, psSlider.transform.position.x);
+            SaveData.SetFloat(BGM_POS_Y, bgmSlider.transform.position.y);
+            SaveData.SetFloat(SE_POS_Y, seSlider.transform.position.y);
+            SaveData.SetFloat(MT_POS_Y, mtSlider.transform.position.y);
+            SaveData.SetFloat(PS_POS_Y, psSlider.transform.position.y);
+            SaveData.SetFloat(BGM_POS_Z, bgmSlider.transform.position.z);
+            SaveData.SetFloat(SE_POS_Z, seSlider.transform.position.z);
+            SaveData.SetFloat(MT_POS_Z, mtSlider.transform.position.z);
+            SaveData.SetFloat(PS_POS_Z, psSlider.transform.position.z);
 
+            SaveData.Save();
+            Debug.Log("Just finished saving the data.");
         }
 
-        void Loading()
+        public void Loading()
         {
-            bgmSlider.transform.position = new Vector3(PlayerPrefs.GetFloat(BGM_VOLUME, bgmSlider.transform.position.x), 0, 0);
-            seSlider.transform.position = new Vector3(PlayerPrefs.GetFloat(SE_VOLUME, seSlider.transform.position.x), 0, 0);
-            mtSlider.transform.position = new Vector3(PlayerPrefs.GetFloat(MOVEMENT_TYPE, mtSlider.transform.position.x), 0, 0);
-            psSlider.transform.position = new Vector3(PlayerPrefs.GetFloat(PLAYER_SPEED, psSlider.transform.position.x), 0, 0);
+            bgmSlider.transform.position = new Vector3(SaveData.GetFloat(BGM_POS_X), SaveData.GetFloat(BGM_POS_Y), SaveData.GetFloat(BGM_POS_Z));
+            seSlider.transform.position = new Vector3(SaveData.GetFloat(SE_POS_X), SaveData.GetFloat(SE_POS_Y), SaveData.GetFloat(SE_POS_Z));
+            mtSlider.transform.position = new Vector3(SaveData.GetFloat(MT_POS_X), SaveData.GetFloat(MT_POS_Y), SaveData.GetFloat(MT_POS_Z));
+            psSlider.transform.position = new Vector3(SaveData.GetFloat(PS_POS_X), SaveData.GetFloat(PS_POS_Y), SaveData.GetFloat(PS_POS_Z));
         }
 
-        private IEnumerator FourOnTheFloor(float delay = 0)
-        {
-            yield return new WaitForSeconds(delay);
-            while (true)
-            {
-                AudioManager.instance.PlaySE(SE.Kick);
-                yield return new WaitForSeconds(0.75f);
-            }
-        }
     }
 }

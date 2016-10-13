@@ -69,7 +69,7 @@
         }
         public void Push()
         {
-            Debug.Log("Pushed");
+            Debug.Log(this.name + "Pushed");
             switch (type)
             {
                 case ButtonType.NONE:

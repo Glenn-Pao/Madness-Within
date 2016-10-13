@@ -4,13 +4,13 @@
     using System.Collections;
     using UnityEngine.SceneManagement;
 
-    [RequireComponent(typeof(SceneBase))]
-    public class LogoScene : MonoBehaviour
+    public class LogoScene : SceneBase
     {
 
         private void Start()
         {
             Debug.Log("StartLogoScene");
+            SetBGM(BGM.RuefulMelody);
             Invoke("SceneLoad", 5);
         }
 

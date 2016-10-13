@@ -29,7 +29,6 @@
                         button.Appeal();
                         if (Input.GetMouseButtonDown(0))
                         {
-                            Debug.Log("Push");
                             button.Push();
                         }
 
