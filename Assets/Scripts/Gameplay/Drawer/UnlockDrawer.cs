@@ -7,8 +7,6 @@ public class UnlockDrawer : MonoBehaviour
 {
 	public bool keyUsed = false;			//see if the key is used or not
 	public GameObject keyInserted;			//this key is already inserted
-	public GameObject knobObj;				//the knob object
-	public VRTK.VRTK_Knob knob;				//the target knob
 	public bool knobTurned = false;			//knob turned to max?
 
 	void OnCollisionEnter(Collision other)
@@ -28,6 +26,7 @@ public class UnlockDrawer : MonoBehaviour
 		{
 			keyInserted.SetActive (false);
 		}
+		this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = false;
 	}
 
 	//This function serves to check if the knob is twisted to maximum value
@@ -39,13 +38,14 @@ public class UnlockDrawer : MonoBehaviour
 			if (!keyInserted.activeInHierarchy) 
 			{
 				keyInserted.SetActive (true);
+				this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = true;
 			} 
 			else 
 			{
-				if (knob.curValue == 4) 
+				if (this.GetComponent<VRTK.VRTK_Knob>().curValue == 4) 
 				{
-					knobObj.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = false;
-					knob.enabled = false;
+                    this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = false;
+					this.GetComponent<VRTK.VRTK_Knob>().enabled = false;
 					knobTurned = true;
 				}
 			}				
