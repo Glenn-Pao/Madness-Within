@@ -16,26 +16,49 @@
 
         private void Awake()
         {
+#if UNITY_EDITOR
+
             if (!GameObject.Find("AudioManager"))
             {
-                _audioManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "UnneedPutting/AudioManager.prefab");
+                _audioManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/AudioManager.prefab");
                 Instantiate(_audioManager);
             }
             if (!GameObject.Find("FadeManager"))
             {
-                _fadeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "UnneedPutting/FadeManager.prefab");
+                _fadeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/FadeManager.prefab");
                 Instantiate(_fadeManager);
             }
             if (!GameObject.Find("TimeManager"))
             {
-                _timeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "UnneedPutting/TimeManager.prefab");
+                _timeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/TimeManager.prefab");
                 Instantiate(_timeManager);
             }
+#else
+            if (!GameObject.Find("AudioManager"))
+            {
+                _audioManager = (GameObject)Resources.Load("Prefabs/Managers/AutomaticPutting/AudioManager");
+                Instantiate(_audioManager);
+            }
+            if (!GameObject.Find("FadeManager"))
+            {
+                _audioManager = (GameObject)Resources.Load("Prefabs/Managers/AutomaticPutting/AudioManager");
+                Instantiate(_fadeManager);
+            }
+            if (!GameObject.Find("TimeManager"))
+            {
+                _audioManager = (GameObject)Resources.Load("Prefabs/Managers/AutomaticPutting/AudioManager");
+                Instantiate(_timeManager);
+            }
+#endif
         }
 
         public void SetBGM(string bgmName)
         {
             AudioManager.instance.PlayBGM(bgmName);
+        }
+        public void PlaySE(string seName)
+        {
+            AudioManager.instance.PlaySE(seName);
         }
     }
 }

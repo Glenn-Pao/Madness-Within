@@ -1,11 +1,15 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class BGM{
-
-    public const string RuefulMelody = "RuefulMelody";
-}
-public class SE
+﻿namespace MasujimaRyohei
 {
-    public const string Kick = "Kick";
+    using UnityEngine;
+    using System.Collections;
+
+    public class BGM
+    {
+
+        public const string RuefulMelody = "RuefulMelody";
+    }
+    public class SE
+    {
+        public const string Kick = "Kick";
+    }
 }
