@@ -9,13 +9,9 @@
         #region [ VARIABLES ]
         private GameObject _currentlyScene;
 
-        //The path of audio files
-        private const string BGM_PATH = "Audio/BGM";
-        private const string SE_PATH = "Audio/SE";
+
 
         // The key for save volume level
-        private const string BGM_VOLUME_KEY = "BGM_VOLUME_KEY";
-        private const string SE_VOLUME_KEY = "SE_VOLUME_KEY";
 
         // The default value of above key;
         private const float BGM_VOLUME_DEFAULT = 1.0f;
@@ -59,7 +55,7 @@
 
             #region [ ADD_COMPONENTS ]
             // Making Audiolistener and AudioSource.
-            //gameObject.AddComponent<AudioListener>();
+            gameObject.AddComponent<AudioListener>();
             for (int i = 0; i < SE_SOURCE_NUM + 1; i++)
                 gameObject.AddComponent<AudioSource>();
 
@@ -77,12 +73,12 @@
                 {
                     audioSourceArray[i].loop = true;
                     _bgmSource = audioSourceArray[i];
-                    _bgmSource.volume = PlayerPrefs.GetFloat(BGM_VOLUME_KEY, BGM_VOLUME_DEFAULT);
+                    _bgmSource.volume = SaveData.GetFloat(BGM.VOLUME, BGM_VOLUME_DEFAULT);
                 }
                 else
                 {
                     _seSourceList.Add(audioSourceArray[i]);
-                    audioSourceArray[i].volume = PlayerPrefs.GetFloat(SE_VOLUME_KEY, SE_VOLUME_DEFAULT);
+                    audioSourceArray[i].volume = SaveData.GetFloat(SE.VOLUME, SE_VOLUME_DEFAULT);
                 }
             }
 
@@ -90,8 +86,8 @@
             _bgmDic = new Dictionary<string, AudioClip>();
             _seDic = new Dictionary<string, AudioClip>();
 
-            object[] bgmList = Resources.LoadAll(BGM_PATH);
-            object[] seList = Resources.LoadAll(SE_PATH);
+            object[] bgmList = Resources.LoadAll(BGM.PATH);
+            object[] seList = Resources.LoadAll(SE.PATH);
 
             foreach (AudioClip bgm in bgmList)
                 _bgmDic[bgm.name] = bgm;
@@ -116,7 +112,7 @@
             if (_bgmSource.volume <= 0)
             {
                 _bgmSource.Stop();
-                _bgmSource.volume = PlayerPrefs.GetFloat(BGM_VOLUME_KEY, BGM_VOLUME_DEFAULT);
+                _bgmSource.volume = SaveData.GetFloat(BGM.VOLUME, BGM_VOLUME_DEFAULT);
                 _isFadeOut = false;
 
                 if (!string.IsNullOrEmpty(_nextBGMName))
@@ -201,15 +197,15 @@
                 seSources.volume = SEVolume;
             }
 
-            PlayerPrefs.SetFloat(BGM_VOLUME_KEY, BGMVolume);
-            PlayerPrefs.SetFloat(SE_VOLUME_KEY, SEVolume);
+            SaveData.SetFloat(BGM.VOLUME, BGMVolume);
+            SaveData.SetFloat(SE.VOLUME, SEVolume);
         }
 
         public void ChangeBGMVolume(float BGMVolume)
         {
             _bgmSource.volume = BGMVolume;
 
-            PlayerPrefs.SetFloat(BGM_VOLUME_KEY, BGMVolume);
+            SaveData.SetFloat(BGM.VOLUME, BGMVolume);
         }
 
         public void ChangeSEVolume(float SEVolume)
@@ -219,17 +215,17 @@
                 seSources.volume = SEVolume;
             }
 
-            PlayerPrefs.SetFloat(SE_VOLUME_KEY, SEVolume);
+            SaveData.SetFloat(SE.VOLUME, SEVolume);
         }
 
         public float GetBGMVolume()
         {
-            return PlayerPrefs.GetFloat(BGM_VOLUME_KEY);
+            return SaveData.GetFloat(BGM.VOLUME);
         }
 
         public float GetSEVolume()
         {
-            return PlayerPrefs.GetFloat(SE_VOLUME_KEY);
+            return SaveData.GetFloat(BGM.VOLUME);
         }
 
         #endregion

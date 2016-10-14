@@ -22,7 +22,6 @@
                 {
                     string path = Application.persistentDataPath + "/";
                     string fileName = Application.companyName + "." + Application.productName + ".savedata.json";
-                    Debug.Log(Application.persistentDataPath);
                     _savedatabase = new SaveDataBase(path, fileName);
                 }
                 return _savedatabase;

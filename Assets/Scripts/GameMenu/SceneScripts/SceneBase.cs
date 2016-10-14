@@ -20,17 +20,17 @@
         {
 #if UNITY_EDITOR
 
-            if (!GameObject.Find("AudioManager"))
+            if (!GameObject.Find("AudioManager(Clone)") && !GameObject.Find("AudioManager"))
             {
                 _audioManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/AudioManager.prefab");
                 Instantiate(_audioManager);
             }
-            if (!GameObject.Find("FadeManager"))
+            if (!GameObject.Find("FadeManager(Clone)") && !GameObject.Find("FadeManager"))
             {
                 _fadeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/FadeManager.prefab");
                 Instantiate(_fadeManager);
             }
-            if (!GameObject.Find("TimeManager"))
+            if (!GameObject.Find("TimeManager(Clone)") && !GameObject.Find("FadeManager"))
             {
                 _timeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/TimeManager.prefab");
                 Instantiate(_timeManager);
@@ -61,6 +61,10 @@
         public void PlaySE(string seName)
         {
             AudioManager.instance.PlaySE(seName);
+        }
+        public void ChangeBothVolume(float bgmV,float seV)
+        {
+            AudioManager.instance.ChangeBothVolume(bgmV, seV);
         }
     }
 }

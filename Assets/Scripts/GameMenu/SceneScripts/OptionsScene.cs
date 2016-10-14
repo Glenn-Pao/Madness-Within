@@ -22,6 +22,8 @@
         const string PS_POS_Y = "PS_SLIDER_POS_Y"; 
         const string PS_POS_Z = "PS_SLIDER_POS_Z";
 
+      //  public const string BGM_VOLUME = "BGM_VOLUME";
+
         Transform sounds, player;
         Transform bgm, se;
         Transform movementType, playerSpeed;
@@ -72,11 +74,13 @@
         // Update is called once per frame
         void Update()
         {
+            SetBGM(BGM.RuefulMelody);
+
             AudioManager.instance.ChangeBGMVolume(AudioManager.instance.GetBGMVolume());
 
             AudioManager.instance.ChangeBothVolume(bgmSlider.GetValue() / 100, seSlider.GetValue() / 100);
             //AudioManager.instance.ChangeBothVolume(bgmSlider.GetValue() / 10, 10);
-            //Debug.Log(PlayerPrefs.GetFloat(BGM_VOLUME, 0));
+            //Debug.Log(SaveData.GetFloat(BGM_VOLUME, 0));
         }
 
         public void Saving()
