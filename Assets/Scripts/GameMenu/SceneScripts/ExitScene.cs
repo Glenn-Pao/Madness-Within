@@ -4,15 +4,14 @@
     using UnityEngine;
     using System.Collections;
 
-    [RequireComponent(typeof(SceneBase))]
-    public class ExitScene : MonoBehaviour
+
+    public class ExitScene : SceneBase
     {
 
         public int timerSecs = 5;
         // Use this for initialization
-        void Start()
+        private void Start()
         {
-
             //!!
             //!! I want to put character who wave she's hand.
             //!!
@@ -23,20 +22,22 @@
             InvokeRepeating("CountDown", 1, 1);
         }
 
-        void CountDown()
+        private void CountDown()
         {
             timerSecs--;
             if (timerSecs < 1)
             {
-                CancelInvoke("CountDown");
+                CancelInvoke("CountDown"); 
                 QuitGame();
             }
         }
 
-        void QuitGame()
+        private  void QuitGame()
         {
             Debug.Log("QUIT");
+#if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
+#endif
             Application.Quit();
         }
     }

@@ -1,7 +1,6 @@
 ﻿namespace MasujimaRyohei
 {
     using UnityEngine;
-    using UnityEditor;
     using System.Collections;
 
     public class SceneBase : MonoBehaviour
@@ -20,17 +19,17 @@
 
             if (!GameObject.Find("AudioManager"))
             {
-                _audioManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/AudioManager.prefab");
+                _audioManager = (GameObject)UnityEditor.AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/AudioManager.prefab");
                 Instantiate(_audioManager);
             }
             if (!GameObject.Find("FadeManager"))
             {
-                _fadeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/FadeManager.prefab");
+                _fadeManager = (GameObject)UnityEditor.AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/FadeManager.prefab");
                 Instantiate(_fadeManager);
             }
             if (!GameObject.Find("TimeManager"))
             {
-                _timeManager = (GameObject)AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/TimeManager.prefab");
+                _timeManager = (GameObject)UnityEditor.AssetDatabase.LoadMainAssetAtPath(_managersPath + "AutomaticPutting/TimeManager.prefab");
                 Instantiate(_timeManager);
             }
 #else
