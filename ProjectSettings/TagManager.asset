@@ -13,6 +13,7 @@ TagManager:
   - Hammer Front
   - Hammer Back
   - DoorKey
+  - Door
   layers:
   - Default
   - TransparentFX

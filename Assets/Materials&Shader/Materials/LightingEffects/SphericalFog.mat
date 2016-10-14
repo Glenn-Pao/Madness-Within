@@ -27,7 +27,7 @@ Material:
       second: 1.5
     - first:
         name: _Density
-      second: 0.15
+      second: 0.005
     - first:
         name: _InnerRatio
       second: 0.033
@@ -37,7 +37,7 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _FogBaseColor
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 0.58823526, g: 0.58823526, b: 0.58823526, a: 1}
     - first:
         name: _FogDenseColor
       second: {r: 0.52205884, g: 0.52205884, b: 0.52205884, a: 1}

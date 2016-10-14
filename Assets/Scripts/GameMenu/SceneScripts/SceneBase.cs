@@ -1,8 +1,10 @@
 ﻿namespace MasujimaRyohei
 {
     using UnityEngine;
-    //using UnityEditor;
-    using System.Collections;
+	#if UNITY_EDITOR
+    using UnityEditor;
+	#endif
+	using System.Collections;
 
     public class SceneBase : MonoBehaviour
     {
