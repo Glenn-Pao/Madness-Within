@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
         if (_isEnemyExist)
             foreach (Transform child in _parent.transform)
             {
+                Debug.Log(child);
                 enemyLast++;
             }
     }
@@ -130,6 +131,7 @@ public class Player : MonoBehaviour
             int temp = 0;
             foreach (Transform child in _parent.transform)
             {
+                Debug.Log(child);
                 temp++;
                 enemyLast = temp;
             }

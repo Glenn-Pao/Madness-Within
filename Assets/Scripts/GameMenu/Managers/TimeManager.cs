@@ -5,12 +5,32 @@
 
     public class TimeManager : SingletonMonoBehaviour<TimeManager>
     {
+        #region [ VARIABLES ]
 
         private int _h, _m, _s;
         private int _increaseTime = 0;
         private int _reduceTime = 0;
         private bool _isUsingStopwatch = false;
         private bool _isUsingTimer = false;
+
+        public int hour
+        {
+            get { return _h; }
+            set { _h = value; }
+        }
+        public int minute
+        {
+            get { return _m; }
+            set { _m = value; }
+        }
+        public int second
+        {
+            get { return _s; }
+            set { _s = value; }
+        }
+
+        #endregion
+
         void Awake()
         {
             if (this != instance)
@@ -36,17 +56,31 @@
             _s = (int)float.Parse(time.Split(':')[2]);
         }
 
-        int GetHour12()
+        public int GetHour12()
         {
-            int temp;
-            temp = _h;
-            if (_h < 12)
-                return temp;
+            int ct24;
+            ct24 = _h;
+            if (IsForenoon())
+                return ct24;
             else
-                return temp - 12;
+                return ct24 - 12;
+        }
+        public bool IsForenoon()
+        {
+            if (_h < 12)
+                return true;
+            else
+                return false;
+        }
+        public bool IsAfternoon()
+        {
+            if (_h >= 12)
+                return true;
+            else
+                return false;
         }
 
-        void StartStopwatch()
+        public void StartStopwatch()
         {
             _isUsingStopwatch = true;
             StartCoroutine("CountUpTimer");
@@ -61,13 +95,13 @@
             }
         }
 
-        void StopStopwatch()
+        public void StopStopwatch()
         {
             StopCoroutine("CountUpTimer");
             _isUsingStopwatch = false;
         }
 
-        int GetTimeOfStopwatch()
+        int GetCurrentTimeOfStopwatch()
         {
             return _increaseTime;
         }

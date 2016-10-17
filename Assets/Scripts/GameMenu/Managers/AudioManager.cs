@@ -7,15 +7,6 @@
     public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         #region [ VARIABLES ]
-        private GameObject _currentlyScene;
-
-
-
-        // The key for save volume level
-
-        // The default value of above key;
-        private const float BGM_VOLUME_DEFAULT = 1.0f;
-        private const float SE_VOLUME_DEFAULT = 1.0f;
 
         // Audio name to flow next
         private string _nextBGMName;
@@ -79,12 +70,12 @@
                 {
                     audioSourceArray[i].loop = true;
                     _bgmSource = audioSourceArray[i];
-                    _bgmSource.volume = SaveData.GetFloat(BGM.VOLUME, BGM_VOLUME_DEFAULT);
+                    _bgmSource.volume = SaveData.GetFloat(BGM.VOLUME, BGM.DEFAULT.VOLUME);
                 }
                 else
                 {
                     _seSourceList.Add(audioSourceArray[i]);
-                    audioSourceArray[i].volume = SaveData.GetFloat(SE.VOLUME, SE_VOLUME_DEFAULT);
+                    audioSourceArray[i].volume = SaveData.GetFloat(SE.VOLUME, SE.DEFAULT.VOLUME);
                 }
             }
 
@@ -100,11 +91,6 @@
 
             foreach (AudioClip se in seList)
                 _seDic[se.name] = se;
-
-            if (_currentlyScene = GameObject.Find("LevelManager"))
-            {
-                //currentlyScene.GetComponent<
-            }
         }
 
         private void Update()
@@ -118,7 +104,7 @@
             if (_bgmSource.volume <= 0)
             {
                 _bgmSource.Stop();
-                _bgmSource.volume = SaveData.GetFloat(BGM.VOLUME, BGM_VOLUME_DEFAULT);
+                _bgmSource.volume = SaveData.GetFloat(BGM.VOLUME, BGM.DEFAULT.VOLUME);
                 _isFadeOut = false;
 
                 if (!string.IsNullOrEmpty(_nextBGMName))
@@ -226,12 +212,12 @@
 
         public float GetBGMVolume()
         {
-            return SaveData.GetFloat(BGM.VOLUME);
+            return SaveData.GetFloat(BGM.VOLUME, BGM.DEFAULT.VOLUME);
         }
 
         public float GetSEVolume()
         {
-            return SaveData.GetFloat(BGM.VOLUME);
+            return SaveData.GetFloat(BGM.VOLUME, SE.DEFAULT.VOLUME);
         }
 
         #endregion
@@ -241,7 +227,7 @@
             yield return new WaitForSeconds(delay);
             while (true)
             {
-                AudioManager.instance.PlaySE(SE.Kick);
+                AudioManager.instance.PlaySE(SE.TITLE.Kick);
                 yield return new WaitForSeconds(0.75f);
             }
         }

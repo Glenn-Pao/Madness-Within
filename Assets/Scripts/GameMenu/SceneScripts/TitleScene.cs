@@ -17,8 +17,8 @@
         // Update is called once per frame
         void Update()
         {
-            SetBGM(BGM.RuefulMelody);
-            ChangeBothVolume(SaveData.GetFloat(BGM.VOLUME), SaveData.GetFloat(SE.VOLUME));
+            SetBGM(BGM.TITLE.RuefulMelody);
+            ChangeBothVolume(SaveData.GetFloat(BGM.VOLUME, BGM.DEFAULT.VOLUME), SaveData.GetFloat(SE.VOLUME, SE.DEFAULT.VOLUME));
         }
     }
 }

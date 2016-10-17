@@ -33,18 +33,22 @@
         #region [ PUBLIC_STATIC_METHOD ]
 
         /// 指定したキーとT型のクラスコレクションをセーブデータに追加。
+        /// Adds the specified key, and some kind of a class collection to the save data.
+        /// 
         public static void SetList<T>(string key, List<T> list) where T : class, new()
         {
             savedatabase.SetList<T>(key, list);
         }
 
-        ///  指定したキーとT型のクラスコレクションをセーブデータから取得します。
+        ///  指定したキーとT型のクラスコレクションをセーブデータから取得。
+        ///  Gets the specified key, and some kind of a class collection to the save data.
         public static List<T> GetList<T>(string key, List<T> _default) where T : class, new()
         {
             return savedatabase.GetList<T>(key, _default);
         }
 
         ///  指定したキーとT型のクラスをセーブデータに追加します。
+        ///  Adds the specified key, and some kind of a class to the save data.
         public static T GetClass<T>(string key, T _default) where T : class, new()
         {
             return savedatabase.GetClass(key, _default);
@@ -52,6 +56,7 @@
         }
 
         ///  指定したキーとT型のクラスコレクションをセーブデータから取得します。
+        ///  Gets the specified key, and some kind of a class to the save data.
         public static void SetClass<T>(string key, T obj) where T : class, new()
         {
             savedatabase.SetClass<T>(key, obj);
@@ -97,6 +102,7 @@
         }
 
         /// セーブデータからすべてのキーと値を削除します。
+        /// Delites all key and all value from save data.
         public static void Clear()
         {
             savedatabase.Clear();

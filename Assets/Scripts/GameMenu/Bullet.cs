@@ -9,13 +9,11 @@ public class Bullet : MonoBehaviour
     private float _beingTime = 0;
     public float force = 500f;
     public float bulletSpeed = 10f;
-    private Vector3 _temp;
     public ParticleSystem hitEffect;
     // Use this for initialization
     void Start()
     {
         _direction = Camera.main.transform.forward;
-        _temp = Camera.main.transform.position;
         hitEffect = GameObject.Find("Explosion").GetComponent<ParticleSystem>();
         //hitEffect.SetParticles(ParticleSystem.FI)
         hitEffect.Stop();

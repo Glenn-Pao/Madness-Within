@@ -39,6 +39,7 @@ public class Item : MonoBehaviour
                 if (shootWaitTime >= 90)
                 {
                     isTrigger = false;
+                    Debug.Log(isTrigger);
                 }
 
                 shootWaitTime++;

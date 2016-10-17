@@ -10,7 +10,7 @@
         private void Start()
         {
             Debug.Log("StartLogoScene");
-            SetBGM(BGM.RuefulMelody);
+            SetBGM(BGM.TITLE.RuefulMelody);
             Invoke("SceneLoad", 5);
         }
 

@@ -10,12 +10,6 @@
             HandleChangeWithName,
             ForMovementType
         }
-        private enum PlayerMovementType
-        {
-            TouchPad,
-            Both,
-            Pointer
-        }
 
         public Mode mode;
 

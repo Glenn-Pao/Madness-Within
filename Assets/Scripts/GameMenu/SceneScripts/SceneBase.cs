@@ -14,7 +14,7 @@
         protected GameObject _fadeManager;
         protected GameObject _timeManager;
 
-        public AudioClip currentlyBGM;
+        //public AudioClip currentlyBGM;
 
         private void Awake()
         {

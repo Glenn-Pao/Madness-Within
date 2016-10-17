@@ -34,7 +34,7 @@
         }
 
         // Use this for initialization
-        private void Start()
+        protected override void Start()
         {
             if (this.gameObject.tag != "Button")
                 this.gameObject.tag = "Button";
@@ -52,7 +52,7 @@
         }
 
         // Update is called once per frame
-        private void Update()
+        protected override void Update()
         {
             if (_isLooking)
             {

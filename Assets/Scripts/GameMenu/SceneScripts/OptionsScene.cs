@@ -2,44 +2,44 @@
 {
     using UnityEngine;
     using System.Collections;
-    using System.Collections.Generic;
 
+    using VRTK;
 
     public class OptionsScene : SceneBase
     {
 
         #region [ VARIABLES ]
-        const string BGM_POS_X = "BGM_SLIDER_POS_X";
-        const string BGM_POS_Y = "BGM_SLIDER_POS_Y";
-        const string BGM_POS_Z = "BGM_SLIDER_POS_Z";
-        const string SE_POS_X = "SE_SLIDER_POS_X";
-        const string SE_POS_Y = "SE_SLIDER_POS_Y";
-        const string SE_POS_Z = "SE_SLIDER_POS_Z";
-        const string MT_POS_X = "MT_SLIDER_POS_X";
-        const string MT_POS_Y = "MT_SLIDER_POS_Y";
-        const string MT_POS_Z = "MT_SLIDER_POS_Z";
-        const string PS_POS_X = "PS_SLIDER_POS_X"; 
-        const string PS_POS_Y = "PS_SLIDER_POS_Y"; 
-        const string PS_POS_Z = "PS_SLIDER_POS_Z";
+        const string BGM_POS_X = "BGM_SLIDER_POS_X_KEY";
+        const string BGM_POS_Y = "BGM_SLIDER_POS_Y_KEY";
+        const string BGM_POS_Z = "BGM_SLIDER_POS_Z_KEY";
+        const string SE_POS_X = "SE_SLIDER_POS_X_KEY";
+        const string SE_POS_Y = "SE_SLIDER_POS_Y_KEY";
+        const string SE_POS_Z = "SE_SLIDER_POS_Z_KEY";
+        const string MT_POS_X = "MT_SLIDER_POS_X_KEY";
+        const string MT_POS_Y = "MT_SLIDER_POS_Y_KEY";
+        const string MT_POS_Z = "MT_SLIDER_POS_Z_KEY";
+        const string PS_POS_X = "PS_SLIDER_POS_X_KEY";
+        const string PS_POS_Y = "PS_SLIDER_POS_Y_KEY";
+        const string PS_POS_Z = "PS_SLIDER_POS_Z_KEY";
 
       //  public const string BGM_VOLUME = "BGM_VOLUME";
 
-        Transform sounds, player;
-        Transform bgm, se;
-        Transform movementType, playerSpeed;
+        private Transform s, p;     // sounds player
+        private Transform bgm, se;
+        private Transform mt, ps;   // movementType playerSpeed
 
-        VRTK.VRTK_Control bgmSlider, seSlider;
-        VRTK.VRTK_Control mtSlider, psSlider;
+        // Sliders
+        private VRTK_Control bgms, ses;
+        private VRTK_Control mts, pss;
 
-        float temp;
         #endregion
 
         #region [ KEY_DEFINES ]
 
-        const string BGM_VOLUME = "bgmVolume";
-        const string SE_VOLUME = "seVolume";
-        const string PLAYER_SPEED = "playerSpeed";
-        const string MOVEMENT_TYPE = "movementType";
+        // const string BGM_VOLUME = "bgmVolume";
+        // const string SE_VOLUME = "seVolume";
+        // const string PLAYER_SPEED = "playerSpeed";
+        // const string MOVEMENT_TYPE = "movementType";
 
         #endregion
         // Use this for initialization
@@ -47,67 +47,70 @@
         {
             #region [ INITIALIZE ]
 
-            sounds = GameObject.Find("Sliders").transform.FindChild("Sounds");
-            player = GameObject.Find("Sliders").transform.FindChild("Player");
+            s = GameObject.Find("Sliders").transform.FindChild("Sounds");
+            p = GameObject.Find("Sliders").transform.FindChild("Player");
 
-            bgm = sounds.gameObject.transform.FindChild("BGM");
-            se = sounds.gameObject.transform.FindChild("SE");
-            movementType = player.gameObject.transform.FindChild("MovementType");
-            playerSpeed = player.gameObject.transform.FindChild("PlayerSpeed");
+            bgm = s.gameObject.transform.FindChild("BGM");
+            se = s.gameObject.transform.FindChild("SE");
+            mt = p.gameObject.transform.FindChild("MovementType");
+            ps = p.gameObject.transform.FindChild("PlayerSpeed");
 
-            bgmSlider = bgm.transform.FindChild("Slider").GetComponent<VRTK.VRTK_Control>();
-            seSlider = se.transform.FindChild("Slider").GetComponent<VRTK.VRTK_Control>();
+            bgms = bgm.transform.FindChild("Slider").GetComponent<VRTK_Control>();
+            ses = se.transform.FindChild("Slider").GetComponent<VRTK_Control>();
 
-            mtSlider = movementType.transform.FindChild("Slider").GetComponent<VRTK.VRTK_Control>();
-            psSlider = playerSpeed.transform.FindChild("Slider").GetComponent<VRTK.VRTK_Control>();
+            mts = mt.transform.FindChild("Slider").GetComponent<VRTK_Control>();
+            pss = ps.transform.FindChild("Slider").GetComponent<VRTK_Control>();
 
             Loading();
 
             #endregion
 
-            SetBGM(BGM.RuefulMelody);
+            SetBGM(BGM.TITLE.RuefulMelody);
             StartCoroutine(AudioManager.instance.FourOnTheFloor());
 
             Loading();
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-            SetBGM(BGM.RuefulMelody);
+           SetBGM(BGM.TITLE.RuefulMelody);
 
             AudioManager.instance.ChangeBGMVolume(AudioManager.instance.GetBGMVolume());
 
-            AudioManager.instance.ChangeBothVolume(bgmSlider.GetValue() / 100, seSlider.GetValue() / 100);
-            //AudioManager.instance.ChangeBothVolume(bgmSlider.GetValue() / 10, 10);
-            //Debug.Log(SaveData.GetFloat(BGM_VOLUME, 0));
+            AudioManager.instance.ChangeBothVolume(bgms.GetValue() / 100, ses.GetValue() / 100);
+            ///AudioManager.instance.ChangeBothVolume(bgmSlider.GetValue() / 10, 10);
+           ///Debug.Log(SaveData.GetFloat(BGM_VOLUME, 0));
         }
 
         public void Saving()
         {
-            SaveData.SetFloat(BGM_POS_X, bgmSlider.transform.position.x);
-            SaveData.SetFloat(SE_POS_X, seSlider.transform.position.x);
-            SaveData.SetFloat(MT_POS_X, mtSlider.transform.position.x);
-            SaveData.SetFloat(PS_POS_X, psSlider.transform.position.x);
-            SaveData.SetFloat(BGM_POS_Y, bgmSlider.transform.position.y);
-            SaveData.SetFloat(SE_POS_Y, seSlider.transform.position.y);
-            SaveData.SetFloat(MT_POS_Y, mtSlider.transform.position.y);
-            SaveData.SetFloat(PS_POS_Y, psSlider.transform.position.y);
-            SaveData.SetFloat(BGM_POS_Z, bgmSlider.transform.position.z);
-            SaveData.SetFloat(SE_POS_Z, seSlider.transform.position.z);
-            SaveData.SetFloat(MT_POS_Z, mtSlider.transform.position.z);
-            SaveData.SetFloat(PS_POS_Z, psSlider.transform.position.z);
+            ///!    To save the sliders value, you need using those position.  
+
+            SaveData.SetFloat( BGM_POS_X, bgms.transform.position.x);
+            SaveData.SetFloat( SE_POS_X,  ses.transform.position.x );
+            SaveData.SetFloat( MT_POS_X,  mts.transform.position.x );
+            SaveData.SetFloat( PS_POS_X,  pss.transform.position.x );
+            SaveData.SetFloat( BGM_POS_Y, bgms.transform.position.y);
+            SaveData.SetFloat( SE_POS_Y,  ses.transform.position.y );
+            SaveData.SetFloat( MT_POS_Y,  mts.transform.position.y );
+            SaveData.SetFloat( PS_POS_Y,  pss.transform.position.y );
+            SaveData.SetFloat( BGM_POS_Z, bgms.transform.position.z);
+            SaveData.SetFloat( SE_POS_Z,  ses.transform.position.z );
+            SaveData.SetFloat( MT_POS_Z,  mts.transform.position.z );
+            SaveData.SetFloat( PS_POS_Z,  pss.transform.position.z );
 
             SaveData.Save();
-            Debug.Log("Just finished saving the data.");
+            // Debug.Log("Just finished saving the data.");
         }
 
         public void Loading()
         {
-            bgmSlider.transform.position = new Vector3(SaveData.GetFloat(BGM_POS_X), SaveData.GetFloat(BGM_POS_Y), SaveData.GetFloat(BGM_POS_Z));
-            seSlider.transform.position = new Vector3(SaveData.GetFloat(SE_POS_X), SaveData.GetFloat(SE_POS_Y), SaveData.GetFloat(SE_POS_Z));
-            mtSlider.transform.position = new Vector3(SaveData.GetFloat(MT_POS_X), SaveData.GetFloat(MT_POS_Y), SaveData.GetFloat(MT_POS_Z));
-            psSlider.transform.position = new Vector3(SaveData.GetFloat(PS_POS_X), SaveData.GetFloat(PS_POS_Y), SaveData.GetFloat(PS_POS_Z));
+            // Set the saved data to the sliders position.
+            bgms.transform.position = new Vector3(SaveData.GetFloat(BGM_POS_X, bgms.transform.position.x), SaveData.GetFloat(BGM_POS_Y, bgms.transform.position.y), SaveData.GetFloat(BGM_POS_Z, bgms.transform.position.z));
+            ses.transform.position =  new Vector3(SaveData.GetFloat(SE_POS_X , ses.transform.position.x),  SaveData.GetFloat(SE_POS_Y,  ses.transform.position.y ), SaveData.GetFloat(SE_POS_Z , ses.transform.position.z));
+            mts.transform.position =  new Vector3(SaveData.GetFloat(MT_POS_X , mts.transform.position.x),  SaveData.GetFloat(MT_POS_Y,  mts.transform.position.y),  SaveData.GetFloat(MT_POS_Z , mts.transform.position.z));
+            pss.transform.position =  new Vector3(SaveData.GetFloat(PS_POS_X , pss.transform.position.x),  SaveData.GetFloat(PS_POS_Y,  pss.transform.position.y),  SaveData.GetFloat(PS_POS_Z , pss.transform.position.z));
         }
 
     }
