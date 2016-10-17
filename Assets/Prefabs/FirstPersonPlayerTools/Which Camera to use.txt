@@ -1,0 +1,29 @@
+Check that you have both "Camera" and "CameraTouchpadWalking" in your scene.
+If you don't have either one, just drag one into the scene.
+
+
+How to use
+
+- Use "Camera" when you are NOT using VR
+- Use "CameraTouchpadWalking" when using VR
+
+How to toggle
+- Toggle active or not by clicking the object (Camera/CameraTouchpadWalking) on the scene
+- On the inspector you should see a tickbox beside the name. Click on it to toggle on/off
+- Object is active when the tickbox has a "tick"
+- Object is NOT active when the tickbox does not have a "tick"
+
+
+Q&A
+
+- What happens if I use "CameraTouchpadWalking" when I'm not using the VR?
+	- You cannot move your camera to inspect your work. This camera works only for VR.
+
+- What happens if I use "Camera" when I'm using VR?
+	- Your camera placement will be off and you cannot move. This camera is NOT optimized for VR use.
+
+- What happens if I use BOTH in either VR or PC?
+	- Your camera mechanics will go haywire. Try it for yourself if you want to see what I mean.
+
+- What happens if I have multiple copies of "Camera" present?
+	- There will be double calculations which will affect performance. Do not do this.
