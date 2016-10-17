@@ -55,7 +55,13 @@
 
             #region [ ADD_COMPONENTS ]
             // Making Audiolistener and AudioSource.
-            gameObject.AddComponent<AudioListener>();
+            if (Camera.main.GetComponent<AudioListener>())
+            {
+                // Debug.Log("There is AudioLister already.");
+            }
+            else
+                gameObject.AddComponent<AudioListener>();
+
             for (int i = 0; i < SE_SOURCE_NUM + 1; i++)
                 gameObject.AddComponent<AudioSource>();
 
