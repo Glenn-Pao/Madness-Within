@@ -1,10 +1,10 @@
 ﻿namespace MasujimaRyohei
 {
     using UnityEngine;
-	#if UNITY_EDITOR
+#if UNITY_EDITOR
     using UnityEditor;
-	#endif
-	using System.Collections;
+#endif
+    using System.Collections;
 
     public class SceneBase : MonoBehaviour
     {
@@ -52,6 +52,8 @@
                 Instantiate(_timeManager);
             }
 #endif
+
+            
         }
 
         public void SetBGM(string bgmName)
@@ -62,7 +64,7 @@
         {
             AudioManager.instance.PlaySE(seName);
         }
-        public void ChangeBothVolume(float bgmV,float seV)
+        public void ChangeBothVolume(float bgmV, float seV)
         {
             AudioManager.instance.ChangeBothVolume(bgmV, seV);
         }

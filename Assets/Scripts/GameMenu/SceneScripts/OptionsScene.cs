@@ -75,14 +75,12 @@
         private void Update()
         {
             SetBGM(BGM.TITLE.RuefulMelody);
+            ChangeBothVolume(bgms.GetValue() / 100, ses.GetValue() / 100);
 
-            AudioManager.instance.ChangeBGMVolume(AudioManager.instance.GetBGMVolume());
-
-            AudioManager.instance.ChangeBothVolume(bgms.GetValue() / 100, ses.GetValue() / 100);
-            ///AudioManager.instance.ChangeBothVolume(bgmSlider.GetValue() / 10, 10);
-            ///Debug.Log(SaveData.GetFloat(BGM_VOLUME, 0));
-
+            SaveData.SetFloat(PLAYER.SPEED, pss.GetValue());
             SaveData.SetInt(PLAYER.MOVEMENT_TYPE, (int)mts.GetValue());
+
+            Saving();
         }
 
         public void Saving()
@@ -90,20 +88,20 @@
             ///!    To save the sliders value, you need using those position.  
 
             SaveData.SetFloat(BGM_POS_X, bgms.transform.position.x);
-            SaveData.SetFloat(SE_POS_X, ses.transform.position.x);
-            SaveData.SetFloat(MT_POS_X, mts.transform.position.x);
-            SaveData.SetFloat(PS_POS_X, pss.transform.position.x);
+            SaveData.SetFloat(SE_POS_X,  ses.transform.position.x);
+            SaveData.SetFloat(MT_POS_X,  mts.transform.position.x);
+            SaveData.SetFloat(PS_POS_X,  pss.transform.position.x);
             SaveData.SetFloat(BGM_POS_Y, bgms.transform.position.y);
-            SaveData.SetFloat(SE_POS_Y, ses.transform.position.y);
-            SaveData.SetFloat(MT_POS_Y, mts.transform.position.y);
-            SaveData.SetFloat(PS_POS_Y, pss.transform.position.y);
+            SaveData.SetFloat(SE_POS_Y,  ses.transform.position.y);
+            SaveData.SetFloat(MT_POS_Y,  mts.transform.position.y);
+            SaveData.SetFloat(PS_POS_Y,  pss.transform.position.y);
             SaveData.SetFloat(BGM_POS_Z, bgms.transform.position.z);
-            SaveData.SetFloat(SE_POS_Z, ses.transform.position.z);
-            SaveData.SetFloat(MT_POS_Z, mts.transform.position.z);
-            SaveData.SetFloat(PS_POS_Z, pss.transform.position.z);
+            SaveData.SetFloat(SE_POS_Z,  ses.transform.position.z);
+            SaveData.SetFloat(MT_POS_Z,  mts.transform.position.z);
+            SaveData.SetFloat(PS_POS_Z,  pss.transform.position.z);
 
             SaveData.Save();
-            // Debug.Log("Just finished saving the data.");
+            /// Debug.Log("Just finished saving the data.");
         }
 
         public void Loading()
