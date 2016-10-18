@@ -6,6 +6,7 @@
         public const string VOLUME = "BGM_VOLUME_KEY";
         public class TITLE
         {
+            // Resources/Audio
             public const string RuefulMelody = "RuefulMelody";
         }
         public class DEFAULT

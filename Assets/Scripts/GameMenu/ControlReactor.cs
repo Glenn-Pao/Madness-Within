@@ -1,6 +1,7 @@
 ﻿namespace MasujimaRyohei
 {
     using UnityEngine;
+    using VRTK;
 
     public class ControlReactor : MonoBehaviour
     {
@@ -18,21 +19,22 @@
 
         private void Start()
         {
+            // I want to save kind name.
             temp = go.text;
 
             switch (mode)
             {
-                case Mode.HandleChange:
-                    GetComponent<VRTK.VRTK_Control>().defaultEvents.OnValueChanged.AddListener(HandleChange);
-                    HandleChange(GetComponent<VRTK.VRTK_Control>().GetValue(), GetComponent<VRTK.VRTK_Control>().GetNormalizedValue());
+                case Mode.HandleChange:// Display only the value in text.
+                    GetComponent<VRTK_Control>().defaultEvents.OnValueChanged.AddListener(HandleChange);
+                    HandleChange(GetComponent<VRTK_Control>().GetValue(), GetComponent<VRTK_Control>().GetNormalizedValue());
                     break;
-                case Mode.HandleChangeWithName:
-                    GetComponent<VRTK.VRTK_Control>().defaultEvents.OnValueChanged.AddListener(HandleChangeWithName);
-                    HandleChangeWithName(GetComponent<VRTK.VRTK_Control>().GetValue(), GetComponent<VRTK.VRTK_Control>().GetNormalizedValue());
+                case Mode.HandleChangeWithName:// Display The handle and the value in text.
+                    GetComponent<VRTK_Control>().defaultEvents.OnValueChanged.AddListener(HandleChangeWithName);
+                    HandleChangeWithName(GetComponent<VRTK_Control>().GetValue(), GetComponent<VRTK_Control>().GetNormalizedValue());
                     break;
-                case Mode.ForMovementType:
-                    GetComponent<VRTK.VRTK_Control>().defaultEvents.OnValueChanged.AddListener(HandleChangeForMovement);
-                    HandleChangeForMovement(GetComponent<VRTK.VRTK_Control>().GetValue(), GetComponent<VRTK.VRTK_Control>().GetNormalizedValue());
+                case Mode.ForMovementType:// Display The player movement type in text.
+                    GetComponent<VRTK_Control>().defaultEvents.OnValueChanged.AddListener(HandleChangeForMovement);
+                    HandleChangeForMovement(GetComponent<VRTK_Control>().GetValue(), GetComponent<VRTK_Control>().GetNormalizedValue());
 
                     break;
                 default:

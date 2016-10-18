@@ -158,7 +158,7 @@
             }
 
             // set key and strings of json
-            private Dictionary<string, string> saveDictionary;
+            private Dictionary<string, string> _saveDictionary;
 
             #endregion
 
@@ -168,7 +168,7 @@
             {
                 _path = path;
                 _fileName = fileName;
-                saveDictionary = new Dictionary<string, string>();
+                _saveDictionary = new Dictionary<string, string>();
                 Load();
 
             }
@@ -188,17 +188,17 @@
                 KeyCheck(key);
                 var serializableList = new Serialization<T>(list);
                 string json = JsonUtility.ToJson(serializableList);
-                saveDictionary[key] = json;
+                _saveDictionary[key] = json;
             }
 
             public List<T> GetList<T>(string key, List<T> _default) where T : class, new()
             {
                 KeyCheck(key);
-                if (!saveDictionary.ContainsKey(key))
+                if (!_saveDictionary.ContainsKey(key))
                 {
                     return _default;
                 }
-                string json = saveDictionary[key];
+                string json = _saveDictionary[key];
                 Serialization<T> deserializeList = JsonUtility.FromJson<Serialization<T>>(json);
 
                 return deserializeList.ToList();
@@ -207,10 +207,10 @@
             public T GetClass<T>(string key, T _default) where T : class, new()
             {
                 KeyCheck(key);
-                if (!saveDictionary.ContainsKey(key))
+                if (!_saveDictionary.ContainsKey(key))
                     return _default;
 
-                string json = saveDictionary[key];
+                string json = _saveDictionary[key];
                 T obj = JsonUtility.FromJson<T>(json);
                 return obj;
 
@@ -220,37 +220,37 @@
             {
                 KeyCheck(key);
                 string json = JsonUtility.ToJson(obj);
-                saveDictionary[key] = json;
+                _saveDictionary[key] = json;
             }
 
             public void SetString(string key, string value)
             {
                 KeyCheck(key);
-                saveDictionary[key] = value;
+                _saveDictionary[key] = value;
             }
 
             public string GetString(string key, string _default)
             {
                 KeyCheck(key);
 
-                if (!saveDictionary.ContainsKey(key))
+                if (!_saveDictionary.ContainsKey(key))
                     return _default;
-                return saveDictionary[key];
+                return _saveDictionary[key];
             }
 
             public void SetInt(string key, int value)
             {
                 KeyCheck(key);
-                saveDictionary[key] = value.ToString();
+                _saveDictionary[key] = value.ToString();
             }
 
             public int GetInt(string key, int _default)
             {
                 KeyCheck(key);
-                if (!saveDictionary.ContainsKey(key))
+                if (!_saveDictionary.ContainsKey(key))
                     return _default;
                 int ret;
-                if (!int.TryParse(saveDictionary[key], out ret))
+                if (!int.TryParse(_saveDictionary[key], out ret))
                 {
                     ret = 0;
                 }
@@ -260,17 +260,17 @@
             public void SetFloat(string key, float value)
             {
                 KeyCheck(key);
-                saveDictionary[key] = value.ToString();
+                _saveDictionary[key] = value.ToString();
             }
 
             public float GetFloat(string key, float _default)
             {
                 float ret;
                 KeyCheck(key);
-                if (!saveDictionary.ContainsKey(key))
+                if (!_saveDictionary.ContainsKey(key))
                     ret = _default;
 
-                if (!float.TryParse(saveDictionary[key], out ret))
+                if (!float.TryParse(_saveDictionary[key], out ret))
                 {
                     ret = 0.0f;
                 }
@@ -279,16 +279,16 @@
 
             public void Clear()
             {
-                saveDictionary.Clear();
+                _saveDictionary.Clear();
 
             }
 
             public void Remove(string key)
             {
                 KeyCheck(key);
-                if (saveDictionary.ContainsKey(key))
+                if (_saveDictionary.ContainsKey(key))
                 {
-                    saveDictionary.Remove(key);
+                    _saveDictionary.Remove(key);
                 }
 
             }
@@ -296,19 +296,19 @@
             public bool ContainsKey(string _key)
             {
 
-                return saveDictionary.ContainsKey(_key);
+                return _saveDictionary.ContainsKey(_key);
             }
 
             public List<string> Keys()
             {
-                return saveDictionary.Keys.ToList<string>();
+                return _saveDictionary.Keys.ToList<string>();
             }
 
             public void Save()
             {
                 using (StreamWriter writer = new StreamWriter(_path + _fileName, false, Encoding.GetEncoding("utf-8")))
                 {
-                    var serialDict = new Serialization<string, string>(saveDictionary);
+                    var serialDict = new Serialization<string, string>(_saveDictionary);
                     serialDict.OnBeforeSerialize();
                     string dictJsonString = JsonUtility.ToJson(serialDict);
                     writer.WriteLine(dictJsonString);
@@ -321,23 +321,23 @@
                 {
                     using (StreamReader sr = new StreamReader(_path + _fileName, Encoding.GetEncoding("utf-8")))
                     {
-                        if (saveDictionary != null)
+                        if (_saveDictionary != null)
                         {
                             var sDict = JsonUtility.FromJson<Serialization<string, string>>(sr.ReadToEnd());
                             sDict.OnAfterDeserialize();
-                            saveDictionary = sDict.ToDictionary();
+                            _saveDictionary = sDict.ToDictionary();
                         }
                     }
                 }
-                else { saveDictionary = new Dictionary<string, string>(); }
+                else { _saveDictionary = new Dictionary<string, string>(); }
             }
 
             public string GetJsonString(string key)
             {
                 KeyCheck(key);
-                if (saveDictionary.ContainsKey(key))
+                if (_saveDictionary.ContainsKey(key))
                 {
-                    return saveDictionary[key];
+                    return _saveDictionary[key];
                 }
                 else
                 {
@@ -392,33 +392,31 @@
         {
             public List<TKey> keys;
             public List<TValue> values;
-            private Dictionary<TKey, TValue> target;
+            private Dictionary<TKey, TValue> _target;
 
             public Dictionary<TKey, TValue> ToDictionary()
             {
-                return target;
+                return _target;
             }
 
-            public Serialization()
-            {
-            }
+            public Serialization(){}
 
             public Serialization(Dictionary<TKey, TValue> target)
             {
-                this.target = target;
+                this._target = target;
             }
 
             public void OnBeforeSerialize()
             {
-                keys = new List<TKey>(target.Keys);
-                values = new List<TValue>(target.Values);
+                keys = new List<TKey>(_target.Keys);
+                values = new List<TValue>(_target.Values);
             }
 
             public void OnAfterDeserialize()
             {
                 int count = Math.Min(keys.Count, values.Count);
-                target = new Dictionary<TKey, TValue>(count);
-                Enumerable.Range(0, count).ToList().ForEach(i => target.Add(keys[i], values[i]));
+                _target = new Dictionary<TKey, TValue>(count);
+                Enumerable.Range(0, count).ToList().ForEach(i => _target.Add(keys[i], values[i]));
             }
         }
 

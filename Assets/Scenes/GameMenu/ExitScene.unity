@@ -559,7 +559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6469fe975e07bfd4089b805e54d6981b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgm: {fileID: 0}
 --- !u!4 &769585302
 Transform:
   m_ObjectHideFlags: 0
@@ -616,7 +615,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e2d7cec84b3639a4aa8e708c451de6ac, type: 2}
+  - {fileID: 2100000, guid: 53b4027f9f3f44247a3eb3e4fe2d40ab, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -638,7 +637,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 913114781}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f38d94a582cd5e7409a535fb279df3ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -830,29 +829,13 @@ GameObject:
   - 23: {fileID: 1676968476}
   - 102: {fileID: 1676968475}
   - 65: {fileID: 1676968474}
-  - 114: {fileID: 1676968473}
   m_Layer: 0
-  m_Name: txtTitle
+  m_Name: txtThanks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1676968473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1676968472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd8b133c3deeddf45b62b32a1a0ddb66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originSize: {x: 0.04, y: 0.04, z: 0.04}
-  magnificationRate: 0
-  type: 0
-  nextScene: 0
 --- !u!65 &1676968474
 BoxCollider:
   m_ObjectHideFlags: 0

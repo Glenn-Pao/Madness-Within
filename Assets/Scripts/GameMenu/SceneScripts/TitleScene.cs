@@ -10,7 +10,7 @@
         public void Start()
         {
             StartCoroutine(AudioManager.instance.FourOnTheFloor());
-
+            AudioManager.instance.FadeOutBGM();
         }
 
 
