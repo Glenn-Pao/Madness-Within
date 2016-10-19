@@ -27,7 +27,7 @@ Material:
       second: 1.5
     - first:
         name: _Density
-      second: 0.005
+      second: 0.02
     - first:
         name: _InnerRatio
       second: 0.033
