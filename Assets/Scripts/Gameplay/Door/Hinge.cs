@@ -4,21 +4,25 @@ using System.Collections;
 //this is the hinge component of the chisel & hammer mechanics
 public class Hinge : MonoBehaviour
 {
-    public GameObject DoorHinge;
-
     private bool ChiselInside = false;
 
-    void OnTriggerEnter()
+	void OnTriggerEnter(Collider other)
     {
-        ChiselInside = true;
+		if (other.gameObject.tag == "Chisel Front") 
+		{			
+			ChiselInside = true;
+		}
     }
 
-    void OnTriggerStay()
+	void OnTriggerStay(Collider other)
     {
-        ChiselInside = true;
+		if (other.gameObject.tag == "Chisel Front") 
+		{
+			ChiselInside = true;
+		}
     }
 
-    void OnTriggerExit()
+	void OnTriggerExit()
     {
         ChiselInside = false;
     }
