@@ -14,6 +14,8 @@ TagManager:
   - Hammer Back
   - DoorKey
   - Door
+  - Fire
+  - Hinge
   layers:
   - Default
   - TransparentFX
