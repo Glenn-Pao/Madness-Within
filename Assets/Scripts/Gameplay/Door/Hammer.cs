@@ -5,11 +5,8 @@ using System.Collections;
 public class Hammer : MonoBehaviour
 {
 	private bool HammerHit = false;		//hammer hits the chisel?
-	private int numHits = 0;			//the number of hits already done
 
-	[Tooltip("Adjust the number of hits to destroy the door hinge with hammer")]
-	public int targetNum = 3;			
-
+    //when hammer enters trigger zone
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Chisel Back") 
@@ -18,7 +15,7 @@ public class Hammer : MonoBehaviour
 		}
 
 	}
-
+    //just another check to ensure nothing goes wrong
 	void OnTriggerStay(Collider other)
 	{
 		if (other.gameObject.tag == "Chisel Back") 
@@ -26,22 +23,15 @@ public class Hammer : MonoBehaviour
 			HammerHit = true;
 		}
 	}
-
+    //when hammer exits chisel trigger zone
 	void OnTriggerExit()
 	{
 		HammerHit = false;
 	}
-
+    //the status of hammer hitting the chisel
 	public bool getHammerStatus()
 	{
 		return HammerHit;
 	}
-	public void setHits(int numHits)
-	{
-		this.numHits = numHits;
-	}
-	public int getHits()
-	{
-		return numHits;
-	}
+
 }
