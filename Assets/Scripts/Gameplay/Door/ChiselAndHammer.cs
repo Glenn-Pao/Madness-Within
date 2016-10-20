@@ -40,6 +40,7 @@ public class ChiselAndHammer : MonoBehaviour
                         //the number of times needed to destroy the hinge
                         if (DoorHinge[i].getHits() == DoorHinge[i].targetNum)
                         {
+							//make the thing fall off
                             DoorHinge[i].GetComponent<Rigidbody>().useGravity = true;
                         }
                         //if it doesn't satisfy the requirement, increment the number
