@@ -9,6 +9,7 @@ public class UnlockDrawer : MonoBehaviour
 	public GameObject keyInserted;			//this key is already inserted
 	public bool knobTurned = false;			//knob turned to max?
 
+	public int targetNum = 3;				//the target number
 	void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.tag == "DrawerKey") 
@@ -42,7 +43,7 @@ public class UnlockDrawer : MonoBehaviour
 			} 
 			else 
 			{
-				if (this.GetComponent<VRTK.VRTK_Knob>().curValue == 4) 
+				if (this.GetComponent<VRTK.VRTK_Knob>().curValue == targetNum) 
 				{
                     this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = false;
 					this.GetComponent<VRTK.VRTK_Knob>().enabled = false;
