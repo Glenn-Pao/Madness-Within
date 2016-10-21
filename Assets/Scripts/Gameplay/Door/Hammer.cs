@@ -7,17 +7,23 @@ public class Hammer : MonoBehaviour
 	private bool HammerHit = false;		//hammer hits the chisel?
 
     //when hammer enters trigger zone
-	void OnTriggerEnter()
+	void OnCollisionEnter(Collision other)
 	{
-		HammerHit = true;
+		if (other.gameObject.tag == "Chisel Back") 
+		{
+			HammerHit = true;
+		}
 	}
     //just another check to ensure nothing goes wrong
-	void OnTriggerStay()
+	void OnCollisionStay(Collision other)
 	{
-		HammerHit = true;
+		if (other.gameObject.tag == "Chisel Back") 
+		{
+			HammerHit = true;
+		}
 	}
     //when hammer exits chisel trigger zone
-	void OnTriggerExit()
+	void OnCollisionExit()
 	{
 		HammerHit = false;
 	}
