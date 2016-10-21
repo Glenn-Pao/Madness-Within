@@ -15,7 +15,15 @@ public class ChiselAndHammer : MonoBehaviour
     public DebugText HingeStatus2;
 	[Tooltip("The target door to be taken down")]
 	public Door Door;
+	[Tooltip("The mass you want your door to be")]
+	public float targetMass = 1f;			
+	[Tooltip("The effectiveness factor of the force to be applied lowers with a higher number here")]
+	public float targetDrag = 0f;
+	[Tooltip("The angule flip lowers with a higher number")]
+	public float targetAngularDrag = 0.05f;
 
+	private float distanceLeft;			//distance of left controller to door
+	private float distanceRight;		//distance of right controller to door
 
     private bool isHit = false;
 
@@ -58,6 +66,7 @@ public class ChiselAndHammer : MonoBehaviour
 
 		}
     }
+	//animate the door when pushed
 	void DoorPushed()
 	{
 		//check that the time elapsed is long enough for the door to be pushed down
@@ -67,29 +76,20 @@ public class ChiselAndHammer : MonoBehaviour
 			if (Door.GetComponent<Rigidbody> () == null) 
 			{
 				Door.gameObject.AddComponent<Rigidbody> ();
-				Door.GetComponent<Rigidbody> ().mass = 1;
-				Door.GetComponent<Rigidbody> ().drag = 0.1f;
-				Door.GetComponent<Rigidbody> ().AddForce (Vector3.forward);
+				Door.GetComponent<Rigidbody> ().mass = targetMass;
+				Door.GetComponent<Rigidbody> ().drag = targetDrag;
+				Door.GetComponent<Rigidbody> ().angularDrag = targetAngularDrag;
+				Door.GetComponent<Rigidbody> ().AddRelativeTorque (-1, 0, 0, ForceMode.VelocityChange);
 			} 
 			else 
 			{
-				Door.GetComponent<Rigidbody> ().mass = 2;
-				Door.GetComponent<Rigidbody> ().drag = 1f;
+				Door.GetComponent<Rigidbody> ().mass = targetMass;
+				Door.GetComponent<Rigidbody> ().drag = targetDrag;
+				Door.GetComponent<Rigidbody> ().angularDrag = targetAngularDrag;
+				Door.GetComponent<Rigidbody> ().AddRelativeTorque (-1, 0, 0, ForceMode.VelocityChange);
 				Door.GetComponent<Rigidbody> ().isKinematic = false;
-				Door.GetComponent<Rigidbody> ().AddForce (Vector3.forward);
 			}
 		} 
-		else 
-		{
-			HingeStatus2.setText ("Door closed");
-			if (Door.getTriggered ()) {
-				HingeStatus1.setText ("Player interacted");
-			} 
-			else 
-			{
-				HingeStatus1.setText ("No interaction yet");
-			}
-		}
 	}
 
 

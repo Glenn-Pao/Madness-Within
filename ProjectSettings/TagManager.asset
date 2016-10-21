@@ -16,6 +16,8 @@ TagManager:
   - Door
   - Fire
   - Hinge
+  - LeftController
+  - RightController
   layers:
   - Default
   - TransparentFX
