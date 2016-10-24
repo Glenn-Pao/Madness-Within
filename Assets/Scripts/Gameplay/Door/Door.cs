@@ -9,18 +9,23 @@ public class Door : MonoBehaviour
 	public float targetTime = 3;		//target time length
 
 	private bool leftControllerActive = false;	//if true, left controller is active
-	private bool rightControllerActive = false;	//if true, right controller is active
+	private bool rightControllerActive = false; //if true, right controller is active
 
-	void OnTriggerEnter(Collider other)
+    public GameObject leftController;   //left controller
+    public GameObject rightController;  //right controller
+
+    void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "LeftController") 
 		{
 			leftControllerActive = true;
+            SteamVR_Controller.Input(leftController.GetComponent<SteamVR_Controller>().GetHashCode()).TriggerHapticPulse((ushort)targetTime);  //trigger haptic feedback
 		}
 		if (other.gameObject.tag == "RightController") 
 		{
 			rightControllerActive = true;
-		}
+            SteamVR_Controller.Input(rightController.GetComponent<SteamVR_Controller>().GetHashCode()).TriggerHapticPulse((ushort)targetTime); //trigger haptic feedback
+        }
 	}
 	void OnTriggerStay(Collider other)
 	{
