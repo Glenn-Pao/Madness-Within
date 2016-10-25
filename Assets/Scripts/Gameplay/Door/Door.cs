@@ -19,12 +19,12 @@ public class Door : MonoBehaviour
 		if (other.gameObject.tag == "LeftController") 
 		{
 			leftControllerActive = true;
-            SteamVR_Controller.Input(leftController.GetComponent<SteamVR_Controller>().GetHashCode()).TriggerHapticPulse((ushort)targetTime);  //trigger haptic feedback
+            //SteamVR_Controller.Input(leftController.GetComponent<SteamVR_Controller>().GetHashCode()).TriggerHapticPulse((ushort)4000);  //trigger haptic feedback
 		}
 		if (other.gameObject.tag == "RightController") 
 		{
 			rightControllerActive = true;
-            SteamVR_Controller.Input(rightController.GetComponent<SteamVR_Controller>().GetHashCode()).TriggerHapticPulse((ushort)targetTime); //trigger haptic feedback
+			//SteamVR_Controller.Input(rightController.GetComponent<SteamVR_Controller>().GetHashCode()).TriggerHapticPulse((ushort)4000); //trigger haptic feedback
         }
 	}
 	void OnTriggerStay(Collider other)

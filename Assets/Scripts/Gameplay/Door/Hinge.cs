@@ -12,7 +12,7 @@ public class Hinge : MonoBehaviour
     public int targetNum = 3;
 
     //when chisel enters trigger zone
-	void OnCollisionEnter(Collision other)
+	void OnTriggerEnter(Collider other)
     {
 		if (other.gameObject.tag == "Chisel Front") 
 		{			
@@ -20,7 +20,7 @@ public class Hinge : MonoBehaviour
 		}
     }
     //just another check to ensure nothing goes wrong
-	void OnCollisionStay(Collision other)
+	void OnTriggerStay(Collider other)
     {
 		if (other.gameObject.tag == "Chisel Front") 
 		{
@@ -28,7 +28,7 @@ public class Hinge : MonoBehaviour
 		}
     }
     //when chisel exits hinge trigger zone
-	void OnCollisionExit()
+	void OnTriggerExit()
     {
         ChiselInside = false;
     }

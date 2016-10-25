@@ -9,6 +9,8 @@ public class ChiselAndHammer : MonoBehaviour
     public Hammer HammerHead;
     [Tooltip("This is to find the door hinges top for the interaction with chisel front.")]
     public Hinge[] DoorHinges;
+	[Tooltip("The door frame of the door.")]
+	public GameObject DoorFrame;
     [Tooltip("You need this for debugging the feature")]
     public DebugText HingeStatus1;
     [Tooltip("You need this for debugging the feature")]
@@ -21,9 +23,9 @@ public class ChiselAndHammer : MonoBehaviour
     public float targetDrag = 0f;
     [Tooltip("The angule flip lowers with a higher number")]
     public float targetAngularDrag = 0.05f;
+	[Tooltip("The multiplier factor for the force to be applied")]
+	public float multiplierFactor = 5;
 
-    private float distanceLeft;             //distance of left controller to door
-    private float distanceRight;		    //distance of right controller to door
 
     private bool isHit = false;             //check whether the door hinge was struck already
     private bool hingesAllBroken = false;   //check whether all of the door hinges were destroyed already
@@ -35,6 +37,7 @@ public class ChiselAndHammer : MonoBehaviour
     {        
         targetNumDestroyed = DoorHinges.Length;
         Debug.Log("Total number of hinges: " + targetNumDestroyed);
+		Debug.Log ("Number destroyed: " + numDestroyed);
     }
 
     void BreakHinges()
@@ -46,38 +49,36 @@ public class ChiselAndHammer : MonoBehaviour
             for (int i = 0; i < DoorHinges.Length; i++)
             {
                 //check that the chisel is on the door hinge first
-                if (DoorHinges[i].getChiselStatus() && HammerHead.getHammerStatus())
+                if (DoorHinges[i].getChiselStatus() )
                 {
-                    HingeStatus1.setText(string.Format("Num hits: {0:D}", DoorHinges[i].getHits()));
-
-                    //check that it is not hit yet
-                    if (!isHit)
-                    {
-                        //ensure that the object is not destroyed yet
-                        if (DoorHinges[i].getHits() == DoorHinges[i].targetNum)
-                        {
-                            if (!DoorHinges[i].getIsDestroyed())
-                            {
-                                //make the thing fall off
-                                DoorHinges[i].GetComponent<Rigidbody>().useGravity = true;
-                                DoorHinges[i].GetComponent<BoxCollider>().isTrigger = false;
-                                numDestroyed += 1;  //increment the number of destroyed hinges
-                                DoorHinges[i].setIsDestroyed(true);
-                            }
-                        }
-                        //if it doesn't satisfy the requirement, increment the number
-                        else
-                        {
-                            DoorHinges[i].setHits(DoorHinges[i].getHits() + 1);
-                            isHit = true;
-                        }
-                    }
-                    //when hammer is released from chisel, reset the hit boolean to allow for hitting
-                    else
-                    {
-                        HingeStatus2.setText("Shift hammer out");
-                        isHit = false;
-                    }
+					HingeStatus1.setText (string.Format ("Num hits: {0:D}", DoorHinges [i].getHits ()));
+					if (HammerHead.getHammerStatus ()) 
+					{
+						//check that it is not hit yet
+						if (!isHit) {
+							//ensure that the object is not destroyed yet
+							if (DoorHinges [i].getHits () == DoorHinges [i].targetNum) {
+								if (!DoorHinges [i].getIsDestroyed ()) {
+									//make the thing fall off
+									DoorHinges [i].GetComponent<Rigidbody> ().useGravity = true;
+									DoorHinges [i].GetComponent<BoxCollider> ().isTrigger = false;
+									numDestroyed += 1;  //increment the number of destroyed hinges
+									DoorHinges [i].setIsDestroyed (true);
+								}
+							}
+	                        //if it doesn't satisfy the requirement, increment the number
+	                        else {
+								DoorHinges [i].setHits (DoorHinges [i].getHits () + 1);
+								isHit = true;
+							}
+						}
+					}
+					//when hammer is released from chisel, reset the hit boolean to allow for hitting
+					else 
+					{
+						HingeStatus2.setText ("Shift hammer out");
+						isHit = false;
+					}
                 }
             }
         }
@@ -97,22 +98,16 @@ public class ChiselAndHammer : MonoBehaviour
             if (Door.GetComponent<Rigidbody>() == null)
             {
                 Door.gameObject.AddComponent<Rigidbody>();
-                Door.GetComponent<Rigidbody>().mass = targetMass;
-                Door.GetComponent<Rigidbody>().drag = targetDrag;
-                Door.GetComponent<Rigidbody>().angularDrag = targetAngularDrag;
-                Door.GetComponent<Rigidbody>().AddRelativeTorque(-1, 0, 0, ForceMode.VelocityChange);
-                Door.GetComponent<Rigidbody>().useGravity = true;
-                Door.GetComponent<Rigidbody>().isKinematic = false;
+               
             }
-            else
-            {
-                Door.GetComponent<Rigidbody>().mass = targetMass;
-                Door.GetComponent<Rigidbody>().drag = targetDrag;
-                Door.GetComponent<Rigidbody>().angularDrag = targetAngularDrag;
-                Door.GetComponent<Rigidbody>().AddRelativeTorque(-1, 0, 0, ForceMode.VelocityChange);
-                Door.GetComponent<Rigidbody>().useGravity = true;
-                Door.GetComponent<Rigidbody>().isKinematic = false;
-            }
+			Door.GetComponent<BoxCollider> ().isTrigger = true;
+			Door.GetComponent<Rigidbody>().mass = targetMass;
+			Door.GetComponent<Rigidbody>().drag = targetDrag;
+			Door.GetComponent<Rigidbody>().angularDrag = targetAngularDrag;
+			Door.GetComponent<Rigidbody> ().AddRelativeForce (Vector3.forward * multiplierFactor, ForceMode.Force);
+			//Door.GetComponent<Rigidbody>().AddRelativeTorque(-1, 0, 0, ForceMode.Acceleration);
+			//Door.GetComponent<Rigidbody>().useGravity = true;
+			Door.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
@@ -123,11 +118,22 @@ public class ChiselAndHammer : MonoBehaviour
         //update the different mechanics as and when it is needed to avoid unnecessary calculations
         if (!hingesAllBroken)
         {
+			Debug.Log ("Break Hinges active");
             BreakHinges();
         }
         else
         {
+			Debug.Log ("Door pushed active");
             DoorPushed();
+
+			if (Door.getPushDoor ()) 
+			{
+				if (!DoorFrame.GetComponent<BoxCollider> ().isTrigger) 
+				{
+					DoorFrame.GetComponent<BoxCollider> ().isTrigger = true;
+					this.enabled = false;	//disable this behaviour to free space
+				}
+			}
         }
     }
 }
