@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ChiselAndHammer : MonoBehaviour
 {
     [Tooltip("This is to find the hammer head for the interaction with chisel back.")]
-    public Hammer HammerHead;
+    public GameObject HammerHead;
     [Tooltip("This is to find the door hinges top for the interaction with chisel front.")]
     public Hinge[] DoorHinges;
 	[Tooltip("The door frame of the door.")]
@@ -32,12 +32,13 @@ public class ChiselAndHammer : MonoBehaviour
     private int numDestroyed = 0;           //the number of hinges destroyed
     private int targetNumDestroyed = 0;     //the length of the door hinges array
 
-    //Initialize the door hinges length
-    void Start()
-    {        
-        targetNumDestroyed = DoorHinges.Length;
-        Debug.Log("Total number of hinges: " + targetNumDestroyed);
-		Debug.Log ("Number destroyed: " + numDestroyed);
+    void Awake()
+    {
+        if (HammerHead == null)
+        {
+            HammerHead = GameObject.FindWithTag("Hammer Head");// FindGameObjectWithTag("Hammer Head");
+        }
+        targetNumDestroyed = DoorHinges.Length;     //the number of targets to destroy
     }
 
     void BreakHinges()
@@ -52,7 +53,7 @@ public class ChiselAndHammer : MonoBehaviour
                 if (DoorHinges[i].getChiselStatus() )
                 {
 					HingeStatus1.setText (string.Format ("Num hits: {0:D}", DoorHinges [i].getHits ()));
-					if (HammerHead.getHammerStatus ()) 
+					if (HammerHead.GetComponent<Hammer>().getHammerStatus ()) 
 					{
 						//check that it is not hit yet
 						if (!isHit) {
