@@ -2,7 +2,6 @@
 using System.Collections;
 
 //This script takes care of the GUI text that will appear on screen..
-//IDK if this is needed though
 //Will get in touch with the artists
 public class Level1 : MonoBehaviour
 {
