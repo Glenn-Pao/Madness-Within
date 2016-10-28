@@ -6,8 +6,6 @@ Shader "LightingEffects/GUITransparency"
 	{
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
-		_Glossiness ("Smoothness", Range(0,1)) = 0.5
-		_Metallic ("Metallic", Range(0,1)) = 0.0
 		_Tween("Alpha Scale", Range(0, 2)) = 1
 	}
 	SubShader {
@@ -32,8 +30,6 @@ Shader "LightingEffects/GUITransparency"
 			float2 uv_MainTex;
 		};
 
-		half _Glossiness;
-		half _Metallic;
 		float _Tween;
 		float3 _Color;
 
@@ -43,9 +39,6 @@ Shader "LightingEffects/GUITransparency"
 			float3 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 			o.Albedo = c.rgb;
 			o.Alpha = tex2D(_MainTex, IN.uv_MainTex).a * _Tween;
-			// Metallic and smoothness come from slider variables
-			o.Metallic = _Metallic;
-			o.Smoothness = _Glossiness;
 		}
 		ENDCG
 	}
