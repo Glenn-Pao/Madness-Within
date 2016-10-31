@@ -75,13 +75,13 @@ Material:
       second: 1
     - first:
         name: _ColorFalloff
-      second: 5.4
+      second: 6
     - first:
         name: _Cutoff
       second: 0.5
     - first:
         name: _Density
-      second: 2.38
+      second: 0.25
     - first:
         name: _DetailNormalMapScale
       second: 1
@@ -99,7 +99,7 @@ Material:
       second: 1
     - first:
         name: _InnerRatio
-      second: 0.177
+      second: 0.363
     - first:
         name: _Metallic
       second: 0
@@ -139,4 +139,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _FogDenseColor
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 0.24264705, g: 0.24264705, b: 0.24264705, a: 1}

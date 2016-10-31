@@ -5,6 +5,7 @@
 public class Fog : MonoBehaviour
 {
     protected MeshRenderer sphericalFogObject;
+    //public Camera theCamera;
     public Material sphericalFogMaterial;
     public float scaleFactor = 1;
 
@@ -15,8 +16,8 @@ public class Fog : MonoBehaviour
             Debug.LogError("Volume Fog Object must have a MeshRenderer Component!");
 
         //Generate depth texture when camera is in forward lighting path
-        if (Camera.main.depthTextureMode == DepthTextureMode.None)
-            Camera.main.depthTextureMode = DepthTextureMode.Depth;
+        //if (theCamera.GetComponent<Camera>().main.depthTextureMode == DepthTextureMode.None)
+        //    theCamera.main.depthTextureMode = DepthTextureMode.Depth;
 
         sphericalFogObject.material = sphericalFogMaterial;
 
