@@ -24,18 +24,6 @@ public class Level1 : MonoBehaviour
     [Tooltip("The maximum alpha component of the object")]
     public float maxAlpha = 1.0f;
 
-
-	void Start()
-	{
-		if (chisel == null) 
-		{
-			chisel = GameObject.FindWithTag ("Chisel");		//find the chisel object
-		}
-		if (hammer == null) 
-		{
-			hammer = GameObject.FindWithTag ("Hammer");		//find the hammer object
-		}
-	}
 	//Just in case the Start doesn't work
 	void Update()
 	{
@@ -47,6 +35,8 @@ public class Level1 : MonoBehaviour
 		{
 			hammer = GameObject.FindWithTag ("Hammer");		//find the hammer object
 		}
+		CheckChiselOnHand ();
+		CheckHammerOnHand ();
 	}
     //check that there is a chisel on one of the hands
     void CheckChiselOnHand()
@@ -79,9 +69,6 @@ public class Level1 : MonoBehaviour
     //determine the number to display
     void DetermineGUIDisplay()
     {       
-		CheckChiselOnHand ();
-		CheckHammerOnHand ();
-
 		if(!hammerOnHand && !chiselOnHand && !door.getAttemptedUnlock())
         {
             //display door is locked
@@ -94,7 +81,7 @@ public class Level1 : MonoBehaviour
                 //display failed unlock
                 num = 1;
             }
-            else if (hammerOnHand || chiselOnHand)
+            if (hammerOnHand || chiselOnHand)
             {
                 //display missing something
                 num = 2;
@@ -122,8 +109,7 @@ public class Level1 : MonoBehaviour
         }
     }
     void OnTriggerStay()
-    {
-		
+    {		
 		//The lerp time value based on target duration
         lerp = Mathf.PingPong(Time.time, duration) / duration;
         //if the player is inside the space, fade in the game objects
@@ -138,7 +124,7 @@ public class Level1 : MonoBehaviour
         //if not, fade out the game objects
         else if (!isInsideGUISpace)
         {
-            if (alpha != minAlpha)
+            if (alpha != maxAlpha)
             {
                 FadeOut(lerp);
             }
@@ -147,9 +133,9 @@ public class Level1 : MonoBehaviour
     void OnTriggerExit()
     {
         //snap the alpha to original states before executing fade out
-        if (alpha != maxAlpha)
+		if (alpha != maxAlpha)
         {
-            alpha = maxAlpha;
+			alpha = minAlpha;
 			isInsideGUISpace = false;
         }      
     }

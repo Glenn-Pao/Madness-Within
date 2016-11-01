@@ -34,10 +34,6 @@ public class ChiselAndHammer : MonoBehaviour
 
     void Awake()
     {
-        if (HammerHead == null)
-        {
-            HammerHead = GameObject.FindWithTag("Hammer Head");// FindGameObjectWithTag("Hammer Head");
-        }
         targetNumDestroyed = DoorHinges.Length;     //the number of targets to destroy
     }
 
@@ -116,7 +112,11 @@ public class ChiselAndHammer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //update the different mechanics as and when it is needed to avoid unnecessary calculations
+		if (HammerHead == null)
+		{
+			HammerHead = GameObject.FindWithTag("Hammer Head");// FindGameObjectWithTag("Hammer Head");
+		}
+		//update the different mechanics as and when it is needed to avoid unnecessary calculations
         if (!hingesAllBroken)
         {
 			//Debug.Log ("Break Hinges active");

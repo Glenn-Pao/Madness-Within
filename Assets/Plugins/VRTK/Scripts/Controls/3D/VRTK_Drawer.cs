@@ -72,7 +72,7 @@ namespace VRTK
             }
 
             Gizmos.DrawLine(handleBounds.center, point);
-            Gizmos.DrawSphere(point, length / 8f);
+            Gizmos.DrawSphere(point, length * 0.125f);
         }
 
         protected override void InitRequiredComponents()
@@ -163,7 +163,8 @@ namespace VRTK
             }
             if (cfCreated)
             {
-                cf.force = getThirdDirection(cj.axis, cj.secondaryAxis) * subDirection * -10f;
+                //cf.force = getThirdDirection(cj.axis, cj.secondaryAxis) * subDirection * -10f;
+				cf.force = Vector3.zero;
             }
 
             return true;
