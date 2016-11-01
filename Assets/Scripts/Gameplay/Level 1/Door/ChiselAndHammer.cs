@@ -119,12 +119,12 @@ public class ChiselAndHammer : MonoBehaviour
         //update the different mechanics as and when it is needed to avoid unnecessary calculations
         if (!hingesAllBroken)
         {
-			Debug.Log ("Break Hinges active");
+			//Debug.Log ("Break Hinges active");
             BreakHinges();
         }
         else
         {
-			Debug.Log ("Door pushed active");
+			//Debug.Log ("Door pushed active");
             DoorPushed();
 
 			if (Door.getPushDoor ()) 

@@ -12,7 +12,7 @@ public class RandomSpawning : MonoBehaviour
     private int numChisel = 0;		    //the number that is determined by the randomized function
     private int numHammer = 0;          //the number that is determined by random function
 	// Use this for initialization
-	void Awake () 
+	void Start () 
 	{
 		RandomizeSpawn ();
         ActivateChiselsAndHammers();		

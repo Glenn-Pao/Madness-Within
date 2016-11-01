@@ -4,15 +4,15 @@ using System.Collections;
 //This script will tell the computer what GUI to display at when
 public class Level1 : MonoBehaviour
 {
-    private bool isInsideGUISpace = false;
-    private float alpha = 0f;
-    private float lerp = 0f;
-    private int num = 0;
-    private bool chiselOnHand = false;
-    private bool hammerOnHand = false;
+    private bool isInsideGUISpace = false;		//inside the GUI Space?
+    private float alpha = 0f;					//the alpha value
+    private float lerp = 0f;					//lerp value
+    private int num = 0;						//the number to display GUI help
+    private bool chiselOnHand = false;			//whether chisel is on hand
+    private bool hammerOnHand = false;			//whether hammer is on hand
 
-    public GameObject leftController;
-    public GameObject rightController;
+    public GameObject chisel;					//the chisel
+    public GameObject hammer;					//the hammer
     public FailUnlockDoor door;
 
     [Tooltip("The array of GUI Help Texts to be expected in this particular game object")]
@@ -24,34 +24,65 @@ public class Level1 : MonoBehaviour
     [Tooltip("The maximum alpha component of the object")]
     public float maxAlpha = 1.0f;
 
+
+	void Start()
+	{
+		if (chisel == null) 
+		{
+			chisel = GameObject.FindWithTag ("Chisel");		//find the chisel object
+		}
+		if (hammer == null) 
+		{
+			hammer = GameObject.FindWithTag ("Hammer");		//find the hammer object
+		}
+	}
+	//Just in case the Start doesn't work
+	void Update()
+	{
+		if (chisel == null) 
+		{
+			chisel = GameObject.FindWithTag ("Chisel");		//find the chisel object
+		}
+		if (hammer == null) 
+		{
+			hammer = GameObject.FindWithTag ("Hammer");		//find the hammer object
+		}
+	}
     //check that there is a chisel on one of the hands
     void CheckChiselOnHand()
     {
-        if (leftController.transform.FindChild("Chisel") || rightController.transform.FindChild("Chisel"))
+		if (chisel.GetComponent<VRTK.VRTK_InteractableObject>().IsGrabbed())
         {
-            chiselOnHand = true;
+			Debug.Log ("Chisel on hand");
+			chiselOnHand = true;
         }
         else
         {
+			Debug.Log ("Chisel not on hand");
             chiselOnHand = false;
         }
     }
     //check that there is a hammer on one of the hands
     void CheckHammerOnHand()
     {
-        if (leftController.transform.FindChild("Hammer") || rightController.transform.FindChild("Hammer"))
+		if (hammer.GetComponent<VRTK.VRTK_InteractableObject>().IsGrabbed())
         {
+			Debug.Log ("Hammer on hand");
             hammerOnHand = true;
         }
         else
         {
+			Debug.Log ("Hammer not on hand");
             hammerOnHand = false;
         }
     }
     //determine the number to display
     void DetermineGUIDisplay()
     {       
-        if(!hammerOnHand && !chiselOnHand && !door.getAttemptedUnlock())
+		CheckChiselOnHand ();
+		CheckHammerOnHand ();
+
+		if(!hammerOnHand && !chiselOnHand && !door.getAttemptedUnlock())
         {
             //display door is locked
             num = 0;
@@ -86,13 +117,14 @@ public class Level1 : MonoBehaviour
         //make sure it is the player that is inside the space
         if (other.gameObject.tag == "Player")
         {
-            DetermineGUIDisplay();
+			DetermineGUIDisplay();
             isInsideGUISpace = true;
         }
     }
     void OnTriggerStay()
     {
-        //The lerp time value based on target duration
+		
+		//The lerp time value based on target duration
         lerp = Mathf.PingPong(Time.time, duration) / duration;
         //if the player is inside the space, fade in the game objects
         if (isInsideGUISpace)
@@ -118,8 +150,8 @@ public class Level1 : MonoBehaviour
         if (alpha != maxAlpha)
         {
             alpha = maxAlpha;
-        }
-        isInsideGUISpace = false;
+			isInsideGUISpace = false;
+        }      
     }
     void FadeIn(float lerp)
     {

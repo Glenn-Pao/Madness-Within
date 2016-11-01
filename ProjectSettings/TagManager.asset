@@ -18,6 +18,8 @@ TagManager:
   - Hinge
   - LeftController
   - RightController
+  - Chisel
+  - Hammer
   layers:
   - Default
   - TransparentFX
