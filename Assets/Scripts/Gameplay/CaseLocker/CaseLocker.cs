@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 public class CaseLocker : MonoBehaviour
@@ -21,6 +20,11 @@ public class CaseLocker : MonoBehaviour
     void Update()
     {
 		//Debug.Log (new string (c_PasscodeCur));
+		if (GetComponent<VRTK.VRTK_Chest>().b_CheckLocker)
+		{
+			GetComponent<VRTK.VRTK_Chest>().io.isGrabbable = isUnlocked();
+		}
+
     }
 
     public void toggleDial(int position)
@@ -35,13 +39,13 @@ public class CaseLocker : MonoBehaviour
         }
     }
 
-	bool isUnlocked()
+	public bool isUnlocked()
 	{
 		for (int i = 0; i < 4; i++)
 		{
 			if (c_Passcode [i] != c_PasscodeCur [i])
 				return false;
-		}
+		}//
 		return true;
 	}
 }

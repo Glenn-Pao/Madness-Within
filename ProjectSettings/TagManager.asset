@@ -14,12 +14,13 @@ TagManager:
   - Hammer Back
   - DoorKey
   - Door
-  - Fire
+  - GUI
   - Hinge
   - LeftController
   - RightController
   - Chisel
   - Hammer
+  - Dial
   layers:
   - Default
   - TransparentFX

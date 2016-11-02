@@ -29,11 +29,13 @@ namespace VRTK
         [Tooltip("The maximum opening angle of the chest.")]
         public float maxAngle = 160f;
 
+		public bool b_CheckLocker = false;
+
         private float minAngle = 0f;
         private float stepSize = 1f;
         private Rigidbody handleRb;
         private FixedJoint handleFj;
-        private VRTK_InteractableObject io;
+        public VRTK_InteractableObject io;
         private Rigidbody lidRb;
         private HingeJoint lidHj;
         private Rigidbody bodyRb;
@@ -193,7 +195,7 @@ namespace VRTK
 
         protected override void HandleUpdate()
         {
-            value = CalculateValue();
+			value = CalculateValue();
         }
 
         private Direction DetectDirection()
