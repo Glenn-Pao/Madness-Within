@@ -34,7 +34,7 @@ namespace VRTK
         private GameObject pointerHolder;
         private GameObject pointer;
         private GameObject pointerTip;
-        private Vector3 pointerTipScale = new Vector3(0.05f, 0.05f, 0.05f);
+        private Vector3 pointerTipScale = new Vector3(0.02f, 0.02f, 0.02f);
         private Vector3 pointerCursorOriginalScale = Vector3.one;
 
         protected override void OnEnable()
