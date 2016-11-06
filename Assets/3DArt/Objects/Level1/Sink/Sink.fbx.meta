@@ -7,11 +7,96 @@ ModelImporter:
   fileIDToRecycleName:
     100000: polySurface192
     100002: //RootNode
+    100004: Hospital_Room:dustbin
+    100006: pCylinder13
+    100008: polySurface118
+    100010: polySurface194
+    100012: polySurface195
+    100014: polySurface195 1
+    100016: polySurface277
+    100018: polySurface278
+    100020: polySurface279
+    100022: polySurface322
+    100024: polySurface323
+    100026: polySurface324
+    100028: polySurface324 1
+    100030: polySurface325
+    100032: sink
+    100034: sink_tap_base
+    100036: sink_tap_base 1
+    100038: sink_tap_base1
+    100040: sink_tap_base2
+    100042: sofa:polySurface143
+    100044: sofa:polySurface144
+    100046: sofa:transform263
+    100048: sofa:transform264
+    100050: sofa:transform265
+    100052: sofa:transform266
+    100054: transform322
+    100056: transform327
+    100058: transform328
+    100060: transform329
+    100062: transform330
+    100064: transform342
+    100066: transform343
+    100068: transform350
+    100070: transform351
+    100072: transform352
+    100074: transform353
+    100076: transform354
+    100078: transform355
+    100080: transform356
+    100082: transform357
     400000: polySurface192
     400002: //RootNode
+    400004: Hospital_Room:dustbin
+    400006: pCylinder13
+    400008: polySurface118
+    400010: polySurface194
+    400012: polySurface195
+    400014: polySurface195 1
+    400016: polySurface277
+    400018: polySurface278
+    400020: polySurface279
+    400022: polySurface322
+    400024: polySurface323
+    400026: polySurface324
+    400028: polySurface324 1
+    400030: polySurface325
+    400032: sink
+    400034: sink_tap_base
+    400036: sink_tap_base 1
+    400038: sink_tap_base1
+    400040: sink_tap_base2
+    400042: sofa:polySurface143
+    400044: sofa:polySurface144
+    400046: sofa:transform263
+    400048: sofa:transform264
+    400050: sofa:transform265
+    400052: sofa:transform266
+    400054: transform322
+    400056: transform327
+    400058: transform328
+    400060: transform329
+    400062: transform330
+    400064: transform342
+    400066: transform343
+    400068: transform350
+    400070: transform351
+    400072: transform352
+    400074: transform353
+    400076: transform354
+    400078: transform355
+    400080: transform356
+    400082: transform357
     2300000: polySurface192
+    2300002: polySurface324
+    2300004: //RootNode
     3300000: polySurface192
+    3300002: polySurface324
+    3300004: //RootNode
     4300000: polySurface192
+    4300002: polySurface324
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 6e3c67a184993344084b4eab9643cbba
+timeCreated: 1478408575
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Hospital_Room:chair
+    100002: Hospital_Room:table
+    100004: Hospital_Room:table1
+    100006: Hospital_Room:transform402
+    100008: Hospital_Room:transform403
+    100010: Hospital_Room:transform404
+    100012: Hospital_Room:transform405
+    100014: Hospital_Room:transform406
+    100016: Hospital_Room:transform407
+    100018: Hospital_Room:transform408
+    100020: Hospital_Room:transform409
+    100022: Hospital_Room:transform410
+    100024: Hospital_Room:transform411
+    100026: Hospital_Room:transform412
+    100028: Hospital_Room:transform413
+    100030: Hospital_Room:transform414
+    100032: //RootNode
+    100034: polySurface200
+    100036: polySurface201
+    100038: polySurface202
+    100040: polySurface203
+    100042: polySurface204
+    100044: polySurface308
+    100046: polySurface309
+    100048: polySurface310
+    100050: polySurface311
+    100052: polySurface312
+    100054: polySurface329
+    100056: pPlane35
+    100058: pPlane36
+    100060: pPlane37
+    100062: pPlane38
+    100064: pPlane39
+    100066: pPlane40
+    100068: transform333
+    100070: polySurface313
+    400000: Hospital_Room:chair
+    400002: Hospital_Room:table
+    400004: Hospital_Room:table1
+    400006: Hospital_Room:transform402
+    400008: Hospital_Room:transform403
+    400010: Hospital_Room:transform404
+    400012: Hospital_Room:transform405
+    400014: Hospital_Room:transform406
+    400016: Hospital_Room:transform407
+    400018: Hospital_Room:transform408
+    400020: Hospital_Room:transform409
+    400022: Hospital_Room:transform410
+    400024: Hospital_Room:transform411
+    400026: Hospital_Room:transform412
+    400028: Hospital_Room:transform413
+    400030: Hospital_Room:transform414
+    400032: //RootNode
+    400034: polySurface200
+    400036: polySurface201
+    400038: polySurface202
+    400040: polySurface203
+    400042: polySurface204
+    400044: polySurface308
+    400046: polySurface309
+    400048: polySurface310
+    400050: polySurface311
+    400052: polySurface312
+    400054: polySurface329
+    400056: pPlane35
+    400058: pPlane36
+    400060: pPlane37
+    400062: pPlane38
+    400064: pPlane39
+    400066: pPlane40
+    400068: transform333
+    400070: polySurface313
+    2300000: polySurface308
+    2300002: polySurface309
+    2300004: polySurface310
+    2300006: polySurface311
+    2300008: polySurface312
+    2300010: polySurface329
+    2300012: polySurface313
+    3300000: polySurface308
+    3300002: polySurface309
+    3300004: polySurface310
+    3300006: polySurface311
+    3300008: polySurface312
+    3300010: polySurface329
+    3300012: polySurface313
+    4300000: polySurface308
+    4300002: polySurface309
+    4300004: polySurface310
+    4300006: polySurface311
+    4300008: polySurface312
+    4300010: polySurface329
+    4300012: polySurface313
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
