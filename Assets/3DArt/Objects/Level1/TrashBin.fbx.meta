@@ -6,10 +6,79 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Hospital_Room:dustbin
+    100004: pCylinder13
+    100006: polySurface118
+    100008: polySurface192
+    100010: polySurface194
+    100012: polySurface195
+    100014: polySurface195 1
+    100016: polySurface277
+    100018: polySurface278
+    100020: polySurface279
+    100022: polySurface327
+    100024: sink
+    100026: sink_tap_base
+    100028: sink_tap_base 1
+    100030: sink_tap_base1
+    100032: sink_tap_base2
+    100034: sofa:polySurface143
+    100036: sofa:polySurface144
+    100038: sofa:transform263
+    100040: sofa:transform264
+    100042: sofa:transform265
+    100044: sofa:transform266
+    100046: transform322
+    100048: transform327
+    100050: transform328
+    100052: transform329
+    100054: transform330
+    100056: transform342
+    100058: transform343
+    100060: transform350
+    100062: transform351
+    100064: transform352
+    100066: transform353
     400000: //RootNode
+    400002: Hospital_Room:dustbin
+    400004: pCylinder13
+    400006: polySurface118
+    400008: polySurface192
+    400010: polySurface194
+    400012: polySurface195
+    400014: polySurface195 1
+    400016: polySurface277
+    400018: polySurface278
+    400020: polySurface279
+    400022: polySurface327
+    400024: sink
+    400026: sink_tap_base
+    400028: sink_tap_base 1
+    400030: sink_tap_base1
+    400032: sink_tap_base2
+    400034: sofa:polySurface143
+    400036: sofa:polySurface144
+    400038: sofa:transform263
+    400040: sofa:transform264
+    400042: sofa:transform265
+    400044: sofa:transform266
+    400046: transform322
+    400048: transform327
+    400050: transform328
+    400052: transform329
+    400054: transform330
+    400056: transform342
+    400058: transform343
+    400060: transform350
+    400062: transform351
+    400064: transform352
+    400066: transform353
     2300000: //RootNode
+    2300002: polySurface327
     3300000: //RootNode
+    3300002: polySurface327
     4300000: Hospital_Room:dustbin
+    4300002: polySurface327
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -10,20 +10,107 @@ ModelImporter:
     100004: polySurface161
     100006: polySurface263
     100008: transform296
+    100010: Door_Mechanic_Top
+    100012: group
+    100014: pasted__polySurface32
+    100016: pasted__polySurface34
+    100018: pasted__polySurface39
+    100020: pasted__polySurface39 1
+    100022: pasted__polySurface40
+    100024: pasted__polySurface42
+    100026: polySurface140
+    100028: polySurface148
+    100030: polySurface155
+    100032: polySurface155 1
+    100034: polySurface156
+    100036: polySurface158
+    100038: polySurface158 1
+    100040: polySurface159
+    100042: polySurface160
+    100044: polySurface161 1
+    100046: polySurface266
+    100048: polySurface319
+    100050: polySurface319 1
+    100052: polySurface320
+    100054: room_wall4
+    100056: transform297
+    100058: transform298
+    100060: transform299
+    100062: transform300
+    100064: transform301
+    100066: transform302
+    100068: transform303
+    100070: transform304
+    100072: transform305
+    100074: transform307
+    100076: transform311
+    100078: transform312
+    100080: transform313
+    100082: transform314
+    100084: transform315
+    100086: transform316
+    100088: transform334
+    100090: transform335
+    100092: transform336
     400000: polySurface162
     400002: //RootNode
     400004: polySurface161
     400006: polySurface263
     400008: transform296
+    400010: Door_Mechanic_Top
+    400012: group
+    400014: pasted__polySurface32
+    400016: pasted__polySurface34
+    400018: pasted__polySurface39
+    400020: pasted__polySurface39 1
+    400022: pasted__polySurface40
+    400024: pasted__polySurface42
+    400026: polySurface140
+    400028: polySurface148
+    400030: polySurface155
+    400032: polySurface155 1
+    400034: polySurface156
+    400036: polySurface158
+    400038: polySurface158 1
+    400040: polySurface159
+    400042: polySurface160
+    400044: polySurface161 1
+    400046: polySurface266
+    400048: polySurface319
+    400050: polySurface319 1
+    400052: polySurface320
+    400054: room_wall4
+    400056: transform297
+    400058: transform298
+    400060: transform299
+    400062: transform300
+    400064: transform301
+    400066: transform302
+    400068: transform303
+    400070: transform304
+    400072: transform305
+    400074: transform307
+    400076: transform311
+    400078: transform312
+    400080: transform313
+    400082: transform314
+    400084: transform315
+    400086: transform316
+    400088: transform334
+    400090: transform335
+    400092: transform336
     2300000: polySurface162
     2300002: polySurface161
     2300004: polySurface263
+    2300006: polySurface319
     3300000: polySurface162
     3300002: polySurface161
     3300004: polySurface263
+    3300006: polySurface319
     4300000: polySurface162
     4300002: polySurface161
     4300004: polySurface263
+    4300006: polySurface319
     9500000: //RootNode
   materials:
     importMaterials: 1
