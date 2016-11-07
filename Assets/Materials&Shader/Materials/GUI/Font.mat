@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GUI_Locked_Drawer
-  m_Shader: {fileID: 4800000, guid: 2e51dcd9a52e8f84583a97dba2362643, type: 3}
+  m_Name: Font
+  m_Shader: {fileID: 4800000, guid: 030c482e24759444e987a89a95301d1a, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -48,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 1bc9f2a89a2f31748a57e9ea7f1f2319, type: 3}
+        m_Texture: {fileID: 2800000, guid: e8f3bab4f57ac6f46bc17983cf29d16a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -113,9 +113,6 @@ Material:
         name: _SrcBlend
       second: 1
     - first:
-        name: _Tween
-      second: 0
-    - first:
         name: _UVSec
       second: 0
     - first:
@@ -124,7 +121,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0.7058824, g: 0.5803922, b: 0.0627451, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
