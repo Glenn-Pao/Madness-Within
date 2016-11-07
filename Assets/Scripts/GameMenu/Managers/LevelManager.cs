@@ -16,7 +16,8 @@
         ExitScene,
 
         // Glenn's test scene
-		SampleGameplayLevel
+		//ampleGameplayLevel
+		Level1
     }
 
     public class LevelManager : MonoBehaviour

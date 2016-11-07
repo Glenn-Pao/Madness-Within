@@ -7,7 +7,7 @@ public class UnlockDrawer : MonoBehaviour
 {
 	public bool keyUsed = false;			//see if the key is used or not
 	public GameObject keyInserted;			//this key is already inserted
-	public bool knobTurned = false;			//knob turned to max?
+	private bool knobTurned = false;		//knob turned to max?
 
 	public int targetNum = 3;				//the target number
 	void OnCollisionEnter(Collision other)
@@ -61,5 +61,14 @@ public class UnlockDrawer : MonoBehaviour
 	void Update () 
 	{
 		CheckUnlocked ();
+	}
+
+	public void setKnobTurned(bool knobTurned)
+	{
+		this.knobTurned = knobTurned;
+	}
+	public bool getKnobTurned()
+	{
+		return knobTurned;
 	}
 }

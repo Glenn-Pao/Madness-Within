@@ -16,7 +16,7 @@ public class CheckDrawerStatus: MonoBehaviour
 	void Start()
 	{
 		//check if it is unlocked or not.
-		if (!keyhole.knobTurned) 
+		if (!keyhole.getKnobTurned()) 
 		{
 			this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = false;	//disable this behaviour for now
 			//keyhole.GetComponent<VRTK.VRTK_Knob>().curValue = 0;
@@ -29,7 +29,7 @@ public class CheckDrawerStatus: MonoBehaviour
 
 	void Update()
 	{
-		if (keyhole.knobTurned) {
+		if (keyhole.getKnobTurned()) {
 			//check that the behaviour is already enabled
 			if (this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled) 
 			{
