@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Texture_Wall_Dirt
-  m_Shader: {fileID: 4800000, guid: 7b0946f8b01adc84b8a8df4fd909d0e2, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2e51dcd9a52e8f84583a97dba2362643, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 01a17331c1a3fe244bf9c73a2f379a77, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -48,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 3d0e37f2c274e814ea81740cecc61708, type: 3}
+        m_Texture: {fileID: 2800000, guid: 537405d7078606a498a1f257bea8e7f0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
