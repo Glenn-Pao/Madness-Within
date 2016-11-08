@@ -3,7 +3,8 @@ using System.Collections;
 
 public class HologramTextWorld : MonoBehaviour
 {
-	public GameObject GO_Head;
+	GameObject GO_Head;
+    public float f_Speed = 1f;
 
 	Quaternion Q_UIRotation;
 
@@ -15,6 +16,8 @@ public class HologramTextWorld : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+        GO_Head = GameObject.FindGameObjectWithTag("MainCamera");
+
 		c_TextColor = this.GetComponent<Renderer> ().material.color;
 		c_TextColor.a = 0f;
 
@@ -31,8 +34,8 @@ public class HologramTextWorld : MonoBehaviour
 		{
 			if (c_TextColor.a < 1f)
 			{
-				c_TextColor.a += Time.deltaTime * 2f;
-				c_LineColor.a += Time.deltaTime * 2f;
+                c_TextColor.a += Time.deltaTime * f_Speed;
+                c_LineColor.a += Time.deltaTime * f_Speed;
 			}
 			else
 			{
@@ -53,8 +56,8 @@ public class HologramTextWorld : MonoBehaviour
 		{
 			if (c_TextColor.a > 0f)
 			{
-				c_TextColor.a -= Time.deltaTime * 2f;
-				c_LineColor.a -= Time.deltaTime * 2f;
+                c_TextColor.a -= Time.deltaTime * f_Speed;
+                c_LineColor.a -= Time.deltaTime * f_Speed;
 			}
 			else
 			{

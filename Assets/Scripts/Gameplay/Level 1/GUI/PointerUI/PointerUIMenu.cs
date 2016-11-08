@@ -5,6 +5,10 @@ public class PointerUIMenu : MonoBehaviour
 {
     public MeshScaler MScaler;
     public PointerUIReceiver UI_InteractTrigger;
+    public float f_Range = 1.5f;
+    public bool b_RotateToPlayer = false;
+    GameObject GO_Head;
+    
 
     bool b_isReleased = false;
     bool b_isVisible = false;
@@ -12,6 +16,8 @@ public class PointerUIMenu : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        GO_Head = GameObject.FindGameObjectWithTag("MainCamera");
+
         if (MScaler == null)
         {
             MScaler = this.GetComponent<MeshScaler>();
@@ -38,11 +44,21 @@ public class PointerUIMenu : MonoBehaviour
 
         if (b_isVisible)
         {
-            MScaler.setScaleZero();
+            MScaler.setScaleDefault();
+
+            if (Vector3.Magnitude(GO_Head.transform.position - this.transform.position) > f_Range)
+            {
+                b_isVisible = false;
+            }
         }
         else
         {
-            MScaler.setScaleDefault();
+            MScaler.setScaleZero();
+        }
+
+        if (b_RotateToPlayer)
+        {
+            this.transform.rotation = Quaternion.LookRotation(this.transform.position - GO_Head.transform.position);
         }
     }
 }

@@ -45,11 +45,11 @@ public class MeshScaler : MonoBehaviour
 
     public void setScaleZero()
     {
-        b_ScaleZero = false;
+        b_ScaleZero = true;
     }
 
     public void setScaleDefault()
     {
-        b_ScaleZero = true;
+        b_ScaleZero = false;
     }
 }

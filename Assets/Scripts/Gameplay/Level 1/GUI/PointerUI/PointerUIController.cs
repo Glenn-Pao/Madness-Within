@@ -12,6 +12,8 @@ public class PointerUIController : MonoBehaviour
 
     public float f_Range = 0.3f;
 
+    bool raycasted;
+
     Ray raycast;
     RaycastHit Rayhit;
 
@@ -28,9 +30,15 @@ public class PointerUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (raycasted && Rayhit.transform != null && Rayhit.transform.gameObject != null && Rayhit.transform.gameObject.GetComponent<PointerUIReceiver>() != null)
+        {
+            Rayhit.transform.gameObject.GetComponent<PointerUIReceiver>().setHovering(false);
+            Rayhit.transform.gameObject.GetComponent<PointerUIReceiver>().setInteract(false);
+        }
+
         if (GO_Controller.GetComponent<VRTK.VRTK_ControllerEvents>().triggerPressed)
         {
-            bool raycasted = Physics.Raycast(raycast, out Rayhit, f_Range);
+            raycasted = Physics.Raycast(raycast, out Rayhit, f_Range);
 
             scaleZto(f_Range / 3f * 2f);
 
@@ -43,12 +51,12 @@ public class PointerUIController : MonoBehaviour
             {
                 if (Rayhit.transform.gameObject.GetComponent<PointerUIReceiver>() != null)
                 {
-                    Rayhit.transform.gameObject.GetComponent<PointerUIReceiver>().Hovering();
+                    Rayhit.transform.gameObject.GetComponent<PointerUIReceiver>().setHovering(true);
                     GO_Pointer.GetComponent<MeshFader>().fadetoColour(C_HoverColor);
 
                     if (GO_Controller.GetComponent<VRTK.VRTK_ControllerEvents>().triggerClicked)
                     {
-                        Rayhit.transform.gameObject.GetComponent<PointerUIReceiver>().Interact();
+                        Rayhit.transform.gameObject.GetComponent<PointerUIReceiver>().setInteract(true);
                         GO_Pointer.GetComponent<MeshFader>().fadetoColour(C_ClickColor);
                     }
                 }

@@ -5,13 +5,21 @@ public class MeshFader : MonoBehaviour
 {
     //public bool b_isVisible = false;
     public float f_fadeSpeed = 3f;
+    public bool UseMeshRenderer = false;
     Color c_Color;
     Color c_ColorTarget;
 
     // Use this for initialization
     void Start()
     {
-        c_Color = this.GetComponent<Renderer>().material.color;
+        if (UseMeshRenderer)
+        {
+            c_Color = this.GetComponent<MeshRenderer>().material.color;
+        }
+        else
+        {
+            c_Color = this.GetComponent<Renderer>().material.color;
+        }
         c_Color.a = 0f;
 
         c_ColorTarget = c_Color;
@@ -60,6 +68,15 @@ public class MeshFader : MonoBehaviour
             }
         }
 
+
+        if (UseMeshRenderer)
+        {
+            this.GetComponent<MeshRenderer>().material.color = c_Color;
+        }
+        else
+        {
+            this.GetComponent<Renderer>().material.color = c_Color;
+        }
         this.GetComponent<Renderer>().material.color = c_Color;
     }
 
