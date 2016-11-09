@@ -21,6 +21,9 @@ TagManager:
   - Chisel
   - Hammer
   - Dial
+  - HologramTextWorld
+  - HologramTextController
+  - HUDArrow
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,8 @@ public class HologramText : MonoBehaviour
 {
 	GameObject GO_Head;
 	public GameObject GO_ControllerR;
+    public GameObject GO_Line;
+    public MeshScaler MS_Scaler;
 	public Vector3 v3_PositionOffset;
     public float f_Speed = 1f;
 
@@ -24,7 +26,7 @@ public class HologramText : MonoBehaviour
 		c_TextColor = this.GetComponent<Renderer> ().material.color;
 		c_TextColor.a = 0f;
 
-		c_LineColor = this.transform.FindChild ("Line").gameObject.GetComponent<MeshRenderer> ().material.color;
+        c_LineColor = GO_Line.GetComponent<MeshRenderer>().material.color;
 		c_LineColor.a = 0f;
 	}
 	
@@ -52,6 +54,8 @@ public class HologramText : MonoBehaviour
 			{
 				b_isVisible = false;
 			}
+
+            MS_Scaler.setScaleDefault();
 		}
 		else
 		{
@@ -65,10 +69,12 @@ public class HologramText : MonoBehaviour
 				c_TextColor.a = 0f;
 				c_LineColor.a = 0f;
 			}
+
+            MS_Scaler.setScaleZero();
 		}
 
 		this.GetComponent<Renderer> ().material.color = c_TextColor;
-		this.transform.FindChild ("Line").gameObject.GetComponent<MeshRenderer> ().material.color = c_LineColor;
+        GO_Line.GetComponent<MeshRenderer>().material.color = c_LineColor;
 
 		this.transform.position = v3_PositionOffset + GO_ControllerR.transform.position + (GO_ControllerR.transform.rotation * (new Vector3(0f, -0.025f, 0f)));
 		this.transform.rotation = Quaternion.LookRotation(GO_ControllerR.transform.position - GO_Head.transform.position + v3_PositionOffset);

@@ -94,4 +94,9 @@ public class MeshFader : MonoBehaviour
     {
         c_ColorTarget.a = 1f;
     }
+
+    public bool isInvisible()
+    {
+        return c_Color.a <= 0f;
+    }
 }
