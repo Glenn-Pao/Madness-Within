@@ -115,4 +115,8 @@ public class HologramTextWorld : MonoBehaviour
             }
         }
     }
+    public bool getIsVisible()
+    {
+        return b_isVisible;
+    }
 }

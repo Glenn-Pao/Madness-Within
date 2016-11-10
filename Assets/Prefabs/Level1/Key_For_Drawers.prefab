@@ -23,8 +23,10 @@ GameObject:
   - 23: {fileID: 23000012704127886}
   - 95: {fileID: 95000011628120900}
   - 54: {fileID: 54000010346588854}
-  - 64: {fileID: 64000013837489922}
   - 114: {fileID: 114000013029328650}
+  - 65: {fileID: 65000010172259960}
+  - 114: {fileID: 114000011228510692}
+  - 65: {fileID: 65000011132532952}
   m_Layer: 0
   m_Name: Key_For_Drawers
   m_TagString: DrawerKey
@@ -38,8 +40,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010012278678}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2227, y: -0.00143, z: -0.076542936}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.28595, y: 0.24870001, z: -1.3198999}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -97,8 +99,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64000013837489922
-MeshCollider:
+--- !u!65 &65000010172259960
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -107,8 +109,20 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: a81122daa13ef7641859a9ad04996ff5, type: 3}
+  m_Size: {x: 0.036196545, y: 0.0055834767, z: 0.044454347}
+  m_Center: {x: 0, y: 0.00022619963, z: 0.007133484}
+--- !u!65 &65000011132532952
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010012278678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.015368029, y: 0.0055834767, z: 0.048992824}
+  m_Center: {x: -0.00017017126, y: 0.00022619963, z: -0.039509535}
 --- !u!95 &95000011628120900
 Animator:
   serializedVersion: 3
@@ -126,6 +140,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000011228510692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010012278678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5071f08424a259a4e8ef914c0bab3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: I wonder where the key goes
+  f_Time: 3
+  v3_Offset: {x: 0, y: 0.065, z: 0}
+  UI_InteractTrigger: {fileID: 0}
+  HTW_HologramTextWorld: {fileID: 0}
 --- !u!114 &114000013029328650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnTouch: 1
+  highlightOnTouch: 0
   touchHighlightColor: {r: 0.28206095, g: 0.66146725, b: 0.8161765, a: 1}
   rumbleOnTouch: {x: 0, y: 0}
   allowedTouchControllers: 0
@@ -145,11 +175,11 @@ MonoBehaviour:
   isGrabbable: 1
   isDroppable: 1
   isSwappable: 1
-  holdButtonToGrab: 0
-  grabOverrideButton: 4
+  holdButtonToGrab: 1
+  grabOverrideButton: 8
   rumbleOnGrab: {x: 0, y: 0}
   allowedGrabControllers: 0
-  precisionSnap: 0
+  precisionSnap: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   hideControllerOnGrab: 0
@@ -160,7 +190,7 @@ MonoBehaviour:
   springJointDamper: 50
   throwMultiplier: 1
   onGrabCollisionDelay: 2
-  isUsable: 1
+  isUsable: 0
   useOnlyIfGrabbed: 0
   holdButtonToUse: 1
   useOverrideButton: 2

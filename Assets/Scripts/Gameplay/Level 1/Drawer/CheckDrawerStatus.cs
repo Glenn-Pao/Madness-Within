@@ -1,48 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-//This is an experimental script
-//An attempt to use this script to unlock the drawer
-public class CheckDrawerStatus: MonoBehaviour 
+public class CheckDrawerStatus : MonoBehaviour 
 {
-	public UnlockDrawer keyhole;				//the keyhole
+    public UnlockDrawer drawer;
 
-    void Awake()
+	// Use this for initialization
+	void Start () 
     {
-         
-    }
-
-	void Start()
-	{
-		//check if it is unlocked or not.
-		if (!keyhole.getKnobTurned()) 
-		{
-			this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = false;	//disable this behaviour for now
-			//keyhole.GetComponent<VRTK.VRTK_Knob>().curValue = 0;
-		} 
-		else 
-		{
-			this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = true;	//enable this behaviour
-		}
+        if (!drawer.keyUsed)
+        {
+            this.GetComponent<VRTK.VRTK_InteractableObject>().enabled = false;
+        }
+        else
+        {
+            this.GetComponent<VRTK.VRTK_InteractableObject>().enabled = true;
+        }
 	}
-
-	void Update()
-	{
-		if (keyhole.getKnobTurned()) {
-			//check that the behaviour is already enabled
-			if (this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled) 
-			{
-				return;
-			} 
-			else 
-			{
-				this.GetComponent<VRTK.VRTK_InteractableObject> ().enabled = true;
-			}
-		} 
-		else 
-		{
-			return;
-		}
+	
+	// Update is called once per frame
+	void Update () 
+    {
+        if (!drawer.keyUsed && this.GetComponent<VRTK.VRTK_InteractableObject>().enabled)
+        {
+            this.GetComponent<VRTK.VRTK_InteractableObject>().enabled = false;
+        }
+        else if (drawer.keyUsed && !this.GetComponent<VRTK.VRTK_InteractableObject>().enabled)
+        {
+            this.GetComponent<VRTK.VRTK_InteractableObject>().enabled = true;
+        }
 	}
 }

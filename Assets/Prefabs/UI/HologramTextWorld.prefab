@@ -41,7 +41,7 @@ GameObject:
   - 114: {fileID: 114000010109256172}
   m_Layer: 0
   m_Name: HologramTextWorld
-  m_TagString: GUI
+  m_TagString: HologramTextWorld
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,4 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ead73abf71c83641aa136b9f164c1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GO_Head: {fileID: 0}
+  MS_Scaler: {fileID: 0}
+  f_Speed: 1
+  GO_Line: {fileID: 0}
