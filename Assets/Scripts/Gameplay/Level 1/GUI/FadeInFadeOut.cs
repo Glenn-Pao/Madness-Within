@@ -43,4 +43,9 @@ public class FadeInFadeOut : MonoBehaviour
 	{
 		Target = colorEnd;		//set the target color to colorEnd
 	}
+
+    public Color getOutput()
+    {
+        return Output;
+    }
 }

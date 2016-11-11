@@ -81,7 +81,7 @@ Material:
       second: 0.5
     - first:
         name: _Density
-      second: 0.25
+      second: 0.125
     - first:
         name: _DetailNormalMapScale
       second: 1
@@ -139,4 +139,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _FogDenseColor
-      second: {r: 0.24264705, g: 0.24264705, b: 0.24264705, a: 1}
+      second: {r: 0.17647058, g: 0.17647058, b: 0.17647058, a: 1}

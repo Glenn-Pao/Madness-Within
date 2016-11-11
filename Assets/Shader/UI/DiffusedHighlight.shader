@@ -6,9 +6,9 @@ Shader "UI/DiffusedHighlight"
 	{
 		_Color ("Main Color", Color) = (.5,.5,.5,1)
 		_OutlineColor ("Outline Color", Color) = (0,0,0,1)
-		_Outline ("Outline width", Range (.002, 0.03)) = .005
+		_Outline ("Outline width", Range (0.0, 0.03)) = .005
 		_MainTex ("Base (RGB)", 2D) = "white" { }
-		_BumpMap("Normal Map", 2D) = "bump" { }
+		_BumpMap ("Bumpmap", 2D) = "bump" {}
 	}
  
 	CGINCLUDE
@@ -46,79 +46,75 @@ Shader "UI/DiffusedHighlight"
  
 	SubShader 
 	{
-		//Tags {"Queue" = "Geometry+100" }
-		CGPROGRAM
-		#pragma surface surf Lambert
- 
-		sampler2D _MainTex;
-		sampler2D _BumpMap;
-		fixed4 _Color;
- 
-		struct Input 
-		{
-			float2 uv_MainTex;
-			float2 uv_BumpMap;
-		};
- 
-		void surf (Input IN, inout SurfaceOutput o) 
-		{
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-			o.Albedo = c.rgb;
-			o.Alpha = c.a;
-			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
-		}
-		ENDCG
+		Tags { "Queue" = "Transparent" }
  
 		// note that a vertex shader is specified here but its using the one above
 		Pass 
 		{
 			Name "OUTLINE"
 			Tags { "LightMode" = "Always" }
-			Cull Front
-			ZWrite On
-			ColorMask RGB
-			Blend SrcAlpha OneMinusSrcAlpha
-	
+			Cull Off
+			ZWrite Off
+			//ZTest Always
+ 
+			// you can choose what kind of blending mode you want for the outline
+			Blend SrcAlpha OneMinusSrcAlpha // Normal
+			//Blend One One // Additive
+			//Blend One OneMinusDstColor // Soft Additive
+			//Blend DstColor Zero // Multiplicative
+			//Blend DstColor SrcColor // 2x Multiplicative
+ 
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-			half4 frag(v2f i) :COLOR { return i.color; }
+ 
+			half4 frag(v2f i) : COLOR 
+			{
+				return i.color;
+			}
 			ENDCG
 		}
-	}
  
-	SubShader 
-	{
+ 
 		CGPROGRAM
 		#pragma surface surf Lambert
- 
-		sampler2D _MainTex;
-		sampler2D _BumpMap;
-		fixed4 _Color;
- 
 		struct Input 
 		{
 			float2 uv_MainTex;
 			float2 uv_BumpMap;
 		};
- 
-		void surf (Input IN, inout SurfaceOutput o) 
+		sampler2D _MainTex;
+		sampler2D _BumpMap;
+		uniform float3 _Color;
+		
+		void surf(Input IN, inout SurfaceOutput o) 
 		{
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-			o.Albedo = c.rgb;
-			o.Alpha = c.a;
+			o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb * _Color;
 			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
 		}
 		ENDCG
+ 
+	}
+ 
+	SubShader 
+	{
+		Tags { "Queue" = "Transparent" }
  
 		Pass 
 		{
 			Name "OUTLINE"
 			Tags { "LightMode" = "Always" }
 			Cull Front
-			ZWrite On
-			ColorMask RGB
-			Blend SrcAlpha OneMinusSrcAlpha
+			ZWrite Off
+			//ZTest Always
+			Offset 15,15
+ 
+			// you can choose what kind of blending mode you want for the outline
+			Blend SrcAlpha OneMinusSrcAlpha // Normal
+			//Blend One One // Additive
+			//Blend One OneMinusDstColor // Soft Additive
+			//Blend DstColor Zero // Multiplicative
+			//Blend DstColor SrcColor // 2x Multiplicative
  
 			CGPROGRAM
 			#pragma vertex vert
@@ -126,6 +122,24 @@ Shader "UI/DiffusedHighlight"
 			ENDCG
 			SetTexture [_MainTex] { combine primary }
 		}
+ 
+		CGPROGRAM
+		#pragma surface surf Lambert
+		struct Input 
+		{
+			float2 uv_MainTex;
+			float2 uv_BumpMap;
+		};
+		sampler2D _MainTex;
+		sampler2D _BumpMap;
+		uniform float3 _Color;
+		void surf(Input IN, inout SurfaceOutput o) 
+		{
+			o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb * _Color;
+			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+		}
+		ENDCG
+ 
 	}
 	Fallback "Diffuse"
 }

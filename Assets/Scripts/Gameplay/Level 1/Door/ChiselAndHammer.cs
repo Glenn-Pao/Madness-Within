@@ -84,29 +84,6 @@ public class ChiselAndHammer : MonoBehaviour
             hingesAllBroken = true;
         }
     }
-    //animate the door when pushed
-    void DoorPushed()
-    {
-        //check that the time elapsed is long enough for the door to be pushed down
-        if (Door.getPushDoor())
-        {
-            HingeStatus2.setText("Door opened");
-
-            if (Door.GetComponent<Rigidbody>() == null)
-            {
-                Door.gameObject.AddComponent<Rigidbody>();
-               
-            }
-			Door.GetComponent<BoxCollider> ().isTrigger = true;
-			Door.GetComponent<Rigidbody>().mass = targetMass;
-			Door.GetComponent<Rigidbody>().drag = targetDrag;
-			Door.GetComponent<Rigidbody>().angularDrag = targetAngularDrag;
-			Door.GetComponent<Rigidbody> ().AddRelativeForce (Vector3.forward * multiplierFactor, ForceMode.Force);
-			//Door.GetComponent<Rigidbody>().AddRelativeTorque(-1, 0, 0, ForceMode.Acceleration);
-			//Door.GetComponent<Rigidbody>().useGravity = true;
-			Door.GetComponent<Rigidbody>().isKinematic = false;
-        }
-    }
 
 
     // Update is called once per frame
@@ -121,20 +98,6 @@ public class ChiselAndHammer : MonoBehaviour
         {
 			//Debug.Log ("Break Hinges active");
             BreakHinges();
-        }
-        else
-        {
-			//Debug.Log ("Door pushed active");
-            DoorPushed();
-
-			if (Door.getPushDoor ()) 
-			{
-				if (!DoorFrame.GetComponent<BoxCollider> ().isTrigger) 
-				{
-					DoorFrame.GetComponent<BoxCollider> ().isTrigger = true;
-					this.enabled = false;	//disable this behaviour to free space
-				}
-			}
         }
     }
 }
