@@ -15,17 +15,16 @@ public class ShowHighlight : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
+        //you need this to be able to show the highlight as and when needed
         if (this.GetComponent<FadeInFadeOut>() == null)
         {
             fade = this.gameObject.AddComponent<FadeInFadeOut>();
-            fade.colorStart = this.GetComponent<Renderer>().material.GetColor("_OutlineColor");
-            fade.colorEnd = fade.colorStart;
-            fade.colorEnd.a = 0;
         }
+        fade.colorStart = this.GetComponent<Renderer>().material.GetColor("_OutlineColor");
+        fade.colorEnd = fade.colorStart;
+        fade.colorEnd.a = 0;
 	}
-
-	// Update is called once per frame
-	void Update () 
+    void FindControllers()
     {
         if (leftController == null)
         {
@@ -35,15 +34,26 @@ public class ShowHighlight : MonoBehaviour
         {
             rightController = GameObject.FindGameObjectWithTag("RightController");
         }
-        v3_AveragePos = (leftController.transform.position + rightController.transform.position) * 0.5f;
-        if (Vector3.SqrMagnitude(v3_AveragePos - this.transform.position) < distance)
+    }
+	// Update is called once per frame
+	void Update () 
+    {
+        FindControllers();  //becomes useless after the 3rd frame in update
+
+        //this is to avoid the null reference exception that is expected since controllers does not spawn at the start of program
+        if(leftController != null && rightController !=  null)
         {
-            fade.FadeIn();
+            v3_AveragePos = (leftController.transform.position + rightController.transform.position) * 0.5f;
+            if (Vector3.SqrMagnitude(v3_AveragePos - this.transform.position) < distance)
+            {
+                fade.FadeIn();
+            }
+            else
+            {
+                fade.FadeOut();
+            }
         }
-        else
-        {
-            fade.FadeOut();
-        }
+        
         this.GetComponent<Renderer>().material.SetColor("_OutlineColor", fade.getOutput());
 	}
 }

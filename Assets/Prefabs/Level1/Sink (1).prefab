@@ -23,6 +23,9 @@ GameObject:
   - 23: {fileID: 23000013825601088}
   - 95: {fileID: 95000011040123494}
   - 65: {fileID: 65000011378530362}
+  - 114: {fileID: 114000012647877508}
+  - 65: {fileID: 65000011562632526}
+  - 114: {fileID: 114000011530616862}
   m_Layer: 0
   m_Name: Sink (1)
   m_TagString: Untagged
@@ -36,10 +39,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011407673620}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1985, y: 0.2207, z: -1.2702}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.0058, y: 0.2207, z: -1.2711}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -92,6 +95,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.014414413, y: 0.04391989, z: 0.022202993}
   m_Center: {x: -0.0009738952, y: -0.0159702, z: -0.0008456707}
+--- !u!65 &65000011562632526
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011407673620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04151609, y: 0.009301644, z: 0.043758713}
+  m_Center: {x: 5.820766e-11, y: 0.012137607, z: 0.00044242252}
 --- !u!95 &95000011040123494
 Animator:
   serializedVersion: 3
@@ -109,3 +124,31 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000011530616862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011407673620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5071f08424a259a4e8ef914c0bab3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: A sink
+  f_Time: 3
+  v3_Offset: {x: 0, y: 0.065, z: 0}
+  UI_InteractTrigger: {fileID: 0}
+  HTW_HologramTextWorld: {fileID: 0}
+--- !u!114 &114000012647877508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011407673620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb1e79c5cf9224f87da7248fdf68ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1.5

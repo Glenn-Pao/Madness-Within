@@ -4,22 +4,16 @@ using System.Collections;
 public class CheckDrawerStatus : MonoBehaviour 
 {
     public UnlockDrawer drawer;
-    public VRTK.VRTK_InteractableObject drawerInteract;
+    public VRTK.VRTK_InteractableObject thisDrawer;
+    public VRTK.VRTK_InteractableObject hammer;
 
 	// Use this for initialization
 	void Start () 
     {
-        if (drawerInteract == null)
-        {
-            drawerInteract = this.GetComponent<VRTK.VRTK_InteractableObject>();
-        }
         if (!drawer.keyUsed)
         {
-            this.GetComponent<VRTK.VRTK_InteractableObject>().enabled = false;
-        }
-        else
-        {
-            this.GetComponent<VRTK.VRTK_InteractableObject>().enabled = true;
+            thisDrawer.GetComponent<VRTK.VRTK_InteractableObject>().enabled = false;
+            hammer.GetComponent<VRTK.VRTK_InteractableObject>().enabled = false;
         }
 	}
 	
@@ -28,11 +22,13 @@ public class CheckDrawerStatus : MonoBehaviour
     {
         if (!drawer.keyUsed)
         {
-            this.GetComponent<VRTK.VRTK_InteractableObject>().enabled = false;
+            thisDrawer.GetComponent<VRTK.VRTK_InteractableObject>().enabled = false;
+            hammer.GetComponent<VRTK.VRTK_InteractableObject>().enabled = false;
         }
         else if (drawer.keyUsed)
         {
-            this.GetComponent<VRTK.VRTK_InteractableObject>().enabled = true;
+            thisDrawer.GetComponent<VRTK.VRTK_InteractableObject>().enabled = true;
+            hammer.GetComponent<VRTK.VRTK_InteractableObject>().enabled = true;
         }
 	}
 }
