@@ -25,6 +25,8 @@ TagManager:
   - HologramTextController
   - HUDArrow
   - FadeManager
+  - TutorialLevel
+  - MainLevel
   layers:
   - Default
   - TransparentFX

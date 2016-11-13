@@ -4494,7 +4494,7 @@ GameObject:
   - 4: {fileID: 188432971}
   m_Layer: 0
   m_Name: Game Environment (Main)
-  m_TagString: Untagged
+  m_TagString: MainLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6133,7 +6133,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 254874383}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.26792, y: 0.19304, z: -1.1697}
+  m_LocalPosition: {x: 0.26792, y: 0.1842, z: -1.1648}
   m_LocalScale: {x: 0.08823549, y: 0.0882353, z: 0.08823549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -6543,7 +6543,6 @@ GameObject:
   - 95: {fileID: 275991544}
   - 54: {fileID: 275991543}
   - 65: {fileID: 275991542}
-  - 114: {fileID: 275991541}
   - 114: {fileID: 275991540}
   m_Layer: 0
   m_Name: computer mouse (1)
@@ -6582,50 +6581,6 @@ MonoBehaviour:
   v3_Offset: {x: 0, y: 0.065, z: 0}
   UI_InteractTrigger: {fileID: 0}
   HTW_HologramTextWorld: {fileID: 0}
---- !u!114 &275991541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000011559870128, guid: 6dc8e651876136b4dbe5e5a82af7800b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 275991538}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightOnTouch: 0
-  touchHighlightColor: {r: 0.9632353, g: 0.65160036, b: 0.65160036, a: 1}
-  rumbleOnTouch: {x: 0, y: 0}
-  allowedTouchControllers: 0
-  hideControllerOnTouch: 0
-  isGrabbable: 1
-  isDroppable: 1
-  isSwappable: 1
-  holdButtonToGrab: 1
-  grabOverrideButton: 8
-  rumbleOnGrab: {x: 0, y: 0}
-  allowedGrabControllers: 0
-  precisionSnap: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  hideControllerOnGrab: 0
-  stayGrabbedOnTeleport: 1
-  grabAttachMechanic: 0
-  detachThreshold: 500
-  springJointStrength: 500
-  springJointDamper: 50
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
-  isUsable: 0
-  useOnlyIfGrabbed: 0
-  holdButtonToUse: 1
-  useOverrideButton: 8
-  pointerActivatesUseAction: 0
-  rumbleOnUse: {x: 0, y: 0}
-  allowedUseControllers: 0
-  hideControllerOnUse: 0
-  usingState: 0
 --- !u!65 &275991542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10498,7 +10453,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 489146898}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2131, y: 0.244, z: -1.1753}
+  m_LocalPosition: {x: 0.2967, y: 0.1819, z: -1.0349}
   m_LocalScale: {x: 0.088235475, y: 0.0882353, z: 0.088235475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -10963,7 +10918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5071f08424a259a4e8ef914c0bab3efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Is there something on my face?!
+  message: Release me at once!
   f_Time: 3
   v3_Offset: {x: 0, y: 0.065, z: 0}
   UI_InteractTrigger: {fileID: 0}
@@ -20769,8 +20724,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1090629568}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.7, y: 0, z: -22.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -20780,8 +20735,8 @@ Transform:
   - {fileID: 1201065400}
   - {fileID: 970848090}
   - {fileID: 1007780373}
-  m_Father: {fileID: 2045428610}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &1092995581
 GameObject:
   m_ObjectHideFlags: 0
@@ -20945,7 +20900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5071f08424a259a4e8ef914c0bab3efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: You will need me later on.
+  message: Look at me closely!
   f_Time: 3
   v3_Offset: {x: 0, y: 0.065, z: 0}
   UI_InteractTrigger: {fileID: 0}
@@ -22480,6 +22435,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 2
+--- !u!114 &1173149610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1173149606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5071f08424a259a4e8ef914c0bab3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: A rather big chair
+  f_Time: 3
+  v3_Offset: {x: 0, y: 0.065, z: 0}
+  UI_InteractTrigger: {fileID: 0}
+  HTW_HologramTextWorld: {fileID: 0}
 --- !u!1 &1175853344
 GameObject:
   m_ObjectHideFlags: 0
@@ -23003,6 +22974,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 1.5
+--- !u!114 &1201064911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201064909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5071f08424a259a4e8ef914c0bab3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: There might be something useful here
+  f_Time: 3
+  v3_Offset: {x: 0, y: 0.065, z: 0}
+  UI_InteractTrigger: {fileID: 0}
+  HTW_HologramTextWorld: {fileID: 0}
 --- !u!1 &1201065398
 GameObject:
   m_ObjectHideFlags: 0
@@ -28363,7 +28350,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1479585594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22731295, y: 0.1864, z: -1.2106}
+  m_LocalPosition: {x: 0.22731295, y: 0.1864, z: -1.2324}
   m_LocalScale: {x: 0.08823552, y: 0.0882353, z: 0.08823552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -34282,6 +34269,7 @@ GameObject:
   - 23: {fileID: 1836704210}
   - 114: {fileID: 1836704209}
   - 114: {fileID: 1836704208}
+  - 114: {fileID: 1836704213}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -34386,6 +34374,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1836704206}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1836704213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1836704206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb1e79c5cf9224f87da7248fdf68ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1
 --- !u!4 &1844559002 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000010845540120, guid: 00293bf789b9cf242badaafc97774db9,
@@ -35591,7 +35591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1613107003}
-  changeSpeed: 5
+  changeSpeed: 2.5
 --- !u!1 &1895586061
 GameObject:
   m_ObjectHideFlags: 0
@@ -39181,7 +39181,7 @@ GameObject:
   - 4: {fileID: 2045428610}
   m_Layer: 0
   m_Name: Game Environment (Tutorial)
-  m_TagString: Untagged
+  m_TagString: TutorialLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39203,7 +39203,6 @@ Transform:
   - {fileID: 252520767}
   - {fileID: 518941227}
   - {fileID: 1961283497}
-  - {fileID: 1090629569}
   m_Father: {fileID: 0}
   m_RootOrder: 6
 --- !u!1 &2049207816

@@ -9,6 +9,8 @@ public class TransitionLevel : MonoBehaviour
 
     private PointerUITextMenu thisMenu;
     private GameObject player;          //the player
+    private GameObject tutorialLevel;   //the tutorial level
+    private GameObject mainLevel;       //the main level
 
     void Start()
     {
@@ -24,20 +26,39 @@ public class TransitionLevel : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
+        if(tutorialLevel == null)
+        {
+            tutorialLevel = GameObject.FindGameObjectWithTag("TutorialLevel");
+            //Debug.Log(tutorialLevel);
+        }
+        if (mainLevel == null)
+        {
+            mainLevel = GameObject.FindGameObjectWithTag("MainLevel");
+            mainLevel.SetActive(false);
+            //Debug.Log(mainLevel);
+        }
         thisMenu = this.GetComponent<PointerUITextMenu>();
     }
     void Transition()
     {
         if (text.getIsVisible() && !fade.isFaded() && thisMenu.getInteracted())
         {
-            fade.fadeIn = false;
+            fade.fadeIn = false;    //fade out
         }
         else if (fade.isFaded())
         {
-            player.transform.position = roomOne.transform.position;
+            SwapLevel();
+            fade.fadeIn = true;     //activate the fade in   
         }
     }
-
+    
+    //swap the level
+    void SwapLevel()
+    {
+        mainLevel.SetActive(true);                              //render main level
+        player.transform.position = roomOne.transform.position;
+        tutorialLevel.SetActive(false);                         //derender tutorial level
+    }
 	// Update is called once per frame
 	void Update () 
     {
