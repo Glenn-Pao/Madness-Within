@@ -11,10 +11,6 @@ public class ChiselAndHammer : MonoBehaviour
     public Hinge[] DoorHinges;
 	[Tooltip("The door frame of the door.")]
 	public GameObject DoorFrame;
-    [Tooltip("You need this for debugging the feature")]
-    public DebugText HingeStatus1;
-    [Tooltip("You need this for debugging the feature")]
-    public DebugText HingeStatus2;
     [Tooltip("The target door to be taken down")]
     public Door Door;
     [Tooltip("The mass you want your door to be")]
@@ -26,6 +22,8 @@ public class ChiselAndHammer : MonoBehaviour
 	[Tooltip("The multiplier factor for the force to be applied")]
 	public float multiplierFactor = 5;
 
+    public RealSpace3D.RealSpace3D_AudioSource RS_HammerHitSound;
+    public RealSpace3D.RealSpace3D_AudioSource RS_HingeBreakSound;
 
     private bool isHit = false;             //check whether the door hinge was struck already
     private bool hingesAllBroken = false;   //check whether all of the door hinges were destroyed already
@@ -48,7 +46,6 @@ public class ChiselAndHammer : MonoBehaviour
                 //check that the chisel is on the door hinge first
                 if (DoorHinges[i].getChiselStatus() )
                 {
-					HingeStatus1.setText (string.Format ("Num hits: {0:D}", DoorHinges [i].getHits ()));
 					if (HammerHead.GetComponent<Hammer>().getHammerStatus ()) 
 					{
 						//check that it is not hit yet
@@ -60,11 +57,13 @@ public class ChiselAndHammer : MonoBehaviour
 									DoorHinges [i].GetComponent<Rigidbody> ().useGravity = true;
 									DoorHinges [i].GetComponent<BoxCollider> ().isTrigger = false;
 									numDestroyed += 1;  //increment the number of destroyed hinges
-									DoorHinges [i].setIsDestroyed (true);
+                                    RS_HingeBreakSound.rs3d_PlaySound();
+                                    DoorHinges [i].setIsDestroyed (true);
 								}
 							}
 	                        //if it doesn't satisfy the requirement, increment the number
 	                        else {
+                                RS_HammerHitSound.rs3d_PlaySound();
 								DoorHinges [i].setHits (DoorHinges [i].getHits () + 1);
 								isHit = true;
 							}
@@ -73,7 +72,6 @@ public class ChiselAndHammer : MonoBehaviour
 					//when hammer is released from chisel, reset the hit boolean to allow for hitting
 					else 
 					{
-						HingeStatus2.setText ("Shift hammer out");
 						isHit = false;
 					}
                 }
@@ -96,7 +94,6 @@ public class ChiselAndHammer : MonoBehaviour
 		//update the different mechanics as and when it is needed to avoid unnecessary calculations
         if (!hingesAllBroken)
         {
-			//Debug.Log ("Break Hinges active");
             BreakHinges();
         }
     }

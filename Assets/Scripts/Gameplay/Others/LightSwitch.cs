@@ -9,6 +9,8 @@ public class LightSwitch : MonoBehaviour
 
     public float f_SwitchOnRotation;
     public float f_SwitchOffRotation;
+
+    public RealSpace3D.RealSpace3D_AudioSource RS_Sound;
     float f_CurrentRotation;
 
     Vector3 v3_Rotation;
@@ -58,6 +60,8 @@ public class LightSwitch : MonoBehaviour
             {
                 lightSources[i].enabled = b_lightSwitchOn;
             }
+
+            RS_Sound.rs3d_PlaySound();
         }
 
         if (b_lightSwitchOn)
@@ -88,7 +92,8 @@ public class LightSwitch : MonoBehaviour
                 }
             }
         }
-
+        //GetComponent<RealSpace3D.RealSpace3D_AudioSource>().rs3d_PlaySound("light_switch.ogg");
+        
         v3_Rotation.x = f_CurrentRotation;
         this.transform.localRotation = Quaternion.Euler(v3_Rotation);
     }
