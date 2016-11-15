@@ -150,7 +150,7 @@ namespace VRTK
                 cj.angularYMotion = ConfigurableJointMotion.Locked;
                 cj.angularZMotion = ConfigurableJointMotion.Locked;
 
-                pullDistance *= 1.8f; // don't let it pull out completely
+                pullDistance *= 1.5f; // don't let it pull out completely
 
                 SoftJointLimit limit = cj.linearLimit;
                 limit.limit = pullDistance;

@@ -18,7 +18,7 @@ public class Door : MonoBehaviour
             if (this.GetComponent<PointerUIReceiver>().Interacted())
             {
                 this.GetComponent<Rigidbody>().isKinematic = false;
-                this.GetComponent<Rigidbody>().AddForce(0f, 0f, 100f);
+                this.GetComponent<Rigidbody>().AddForce(0f, 0f, 500f);
             }
         }
     }

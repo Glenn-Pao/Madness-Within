@@ -1,11 +1,17 @@
-﻿Shader "Custom/NonBackFacedCull" {
-	Properties {
+﻿Shader "Custom/NonBackFacedCull" 
+{
+	Properties 
+	{
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
+		_BumpMap("Normal Map", 2D) = "bump" {}
+		_ParallaxMap("Height Map", 2D) = "black" {}
+		_Parallax("Height Scale", Range(0.005000,0.080000)) = 0.020000
 	}
-	SubShader {
+	SubShader 
+	{
 		Tags { "RenderType"="Opaque" }
 		LOD 200
 		

@@ -61,6 +61,7 @@ public class LightSwitch : MonoBehaviour
                 lightSources[i].enabled = b_lightSwitchOn;
             }
 
+            RS_Sound.transform.position = this.transform.position;
             RS_Sound.rs3d_PlaySound();
         }
 

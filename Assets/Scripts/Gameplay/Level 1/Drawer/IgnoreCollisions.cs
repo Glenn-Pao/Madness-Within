@@ -20,6 +20,7 @@ public class IgnoreCollisions : MonoBehaviour
         if (other.gameObject.tag == player.gameObject.tag)
         {
             Debug.Log("Trigger enter");
+            player.GetComponent<Collider>().isTrigger = true;
             player.GetComponent<Rigidbody>().isKinematic = true;
         }     
     }
@@ -28,6 +29,7 @@ public class IgnoreCollisions : MonoBehaviour
         if (other.gameObject.tag == player.gameObject.tag)
         {
             Debug.Log("Trigger exit");
+            player.GetComponent<Collider>().isTrigger = false;
             player.GetComponent<Rigidbody>().isKinematic = false;
         }  
     }
