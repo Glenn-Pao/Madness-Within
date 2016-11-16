@@ -36,6 +36,5 @@ public class RandomSpawning : MonoBehaviour
 	void RandomizeSpawn()
 	{
         numChisel = Random.Range (0, arrChisels.Length);
-        Debug.Log("Chisel Number: " + numChisel);
     }
 }

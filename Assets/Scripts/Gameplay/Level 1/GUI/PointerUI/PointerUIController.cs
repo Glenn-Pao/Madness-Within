@@ -58,6 +58,11 @@ public class PointerUIController : MonoBehaviour
                     {
                         Rayhit.transform.gameObject.GetComponent<PointerUIReceiver>().setInteract(true);
                         GO_Pointer.GetComponent<MeshFader>().fadetoColour(C_ClickColor);
+                        GO_Controller.GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(250);
+                    }
+                    else
+                    {
+                        GO_Controller.GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(100);
                     }
                 }
             }

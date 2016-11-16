@@ -7,6 +7,9 @@ public class HologramTextWorld : MonoBehaviour
     public MeshScaler MS_Scaler;
     public float f_Speed = 1f;
 
+    public bool b_EnableHudArrow = true;
+    HUD_Arrow HUD_ARROW;
+
     Quaternion Q_UIRotation;
 
     bool b_isVisible = false;
@@ -23,6 +26,10 @@ public class HologramTextWorld : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if (b_EnableHudArrow)
+        {
+            HUD_ARROW = GameObject.FindGameObjectWithTag("HUDArrow").GetComponent<HUD_Arrow>();
+        }
         GetComponent<TextMesh>().text = s_NextText;
         GO_Head = GameObject.FindGameObjectWithTag("MainCamera");
 
@@ -61,8 +68,13 @@ public class HologramTextWorld : MonoBehaviour
             {
                 b_isVisible = false;
             }
-
+            
             MS_Scaler.setScaleDefault();
+
+            if (b_EnableHudArrow)
+            {
+                HUD_ARROW.setVisible(true);
+            }
         }
         else
         {
@@ -86,6 +98,11 @@ public class HologramTextWorld : MonoBehaviour
             }
 
             MS_Scaler.setScaleZero();
+
+            if (b_EnableHudArrow)
+            {
+                HUD_ARROW.setVisible(false);
+            }
         }
 
         this.GetComponent<Renderer>().material.color = c_TextColor;

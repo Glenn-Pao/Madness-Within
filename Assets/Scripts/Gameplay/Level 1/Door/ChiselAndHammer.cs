@@ -61,6 +61,9 @@ public class ChiselAndHammer : MonoBehaviour
                                     DoorHinges[i].GetComponent<BoxCollider>().isTrigger = false;
                                     numDestroyed += 1;  //increment the number of destroyed hinges
                                     RS_HingeBreakSound.transform.position = DoorHinges[i].transform.position;
+
+                                    GameObject.FindGameObjectWithTag("RightController").GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(3999);
+                                    GameObject.FindGameObjectWithTag("LeftController").GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(3999);
                                     RS_HingeBreakSound.rs3d_PlaySound();
                                     DoorHinges[i].setIsDestroyed(true);
                                 }
@@ -69,6 +72,9 @@ public class ChiselAndHammer : MonoBehaviour
                             else
                             {
                                 RS_HammerHitSound.transform.position = DoorHinges[i].transform.position;
+
+                                GameObject.FindGameObjectWithTag("RightController").GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(1500);
+                                GameObject.FindGameObjectWithTag("LeftController").GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(1500);
                                 RS_HammerHitSound.rs3d_PlaySound();
                                 DoorHinges[i].setHits(DoorHinges[i].getHits() + 1);
                                 isHit = true;

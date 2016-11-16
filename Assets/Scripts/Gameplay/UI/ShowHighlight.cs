@@ -20,6 +20,9 @@ public class ShowHighlight : MonoBehaviour
         {
             fade = this.gameObject.AddComponent<FadeInFadeOut>();
         }
+
+        if (!this.GetComponent<Renderer>().material.HasProperty("_OutlineColor"))
+            Debug.Log(this.name);
         fade.colorStart = this.GetComponent<Renderer>().material.GetColor("_OutlineColor");
         fade.colorEnd = fade.colorStart;
         fade.colorEnd.a = 0;

@@ -36,11 +36,12 @@ public class LightManager : MonoBehaviour {
     {
         while (true)
         {
+            Debug.Log(this.name);
             for (int i = 0; i < lightSources.Length; i++)
             {
                 lightSources[i].enabled = true;
             }
-            yield return new WaitForSeconds(Random.Range(minLightMS, maxLightMS) / 1000f);
+            yield return new WaitForSeconds(Random.Range(minLightMS, maxLightMS) * 0.001f);
 
             //flickering light period
             for (int i = 0; i < Random.Range(minFlickers, maxFlickers); i++)
@@ -50,14 +51,14 @@ public class LightManager : MonoBehaviour {
                     lightSources[j].enabled = false;
                 }
 
-                yield return new WaitForSeconds(Random.Range(minDarkMS, maxDarkMS) / 1000f);
+                yield return new WaitForSeconds(Random.Range(minDarkMS, maxDarkMS) * 0.001f);
 
                 for (int j = 0; j < lightSources.Length; j++)
                 {
                     lightSources[j].enabled = true;
                 }
 
-                yield return new WaitForSeconds(Random.Range(minFlickerMS, maxFlickerMS) / 1000f);
+                yield return new WaitForSeconds(Random.Range(minFlickerMS, maxFlickerMS) * 0.001f);
             }
 
         }
