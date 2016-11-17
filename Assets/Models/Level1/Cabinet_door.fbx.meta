@@ -8,15 +8,35 @@ ModelImporter:
     100000: //RootNode
     100002: polySurface466
     100004: polySurface467
+    100006: Door
+    100008: polySurface433
+    100010: polySurface441
+    100012: polySurface441 1
+    100014: transform385
+    100016: transform386
     400000: //RootNode
     400002: polySurface466
     400004: polySurface467
+    400006: Door
+    400008: polySurface433
+    400010: polySurface441
+    400012: polySurface441 1
+    400014: transform385
+    400016: transform386
     2300000: polySurface466
     2300002: polySurface467
+    2300004: Door
+    2300006: polySurface441
+    2300008: //RootNode
     3300000: polySurface466
     3300002: polySurface467
+    3300004: Door
+    3300006: polySurface441
+    3300008: //RootNode
     4300000: polySurface466
     4300002: polySurface467
+    4300004: Door
+    4300006: polySurface441
     9500000: //RootNode
   materials:
     importMaterials: 1

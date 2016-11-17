@@ -5,7 +5,7 @@ public class PointerUIReceiver : MonoBehaviour
 {
     bool b_Hovered = false;
     bool b_Interacted = false;
-
+    bool b_HeldInteracted = false;
 
     // Use this for initialization
     void Start()
@@ -29,27 +29,23 @@ public class PointerUIReceiver : MonoBehaviour
         b_Interacted = isit;
     }
 
+    public void setHeldInteracted(bool isit)
+    {
+        b_HeldInteracted = isit;
+    }
+
     public bool Hovered()//Can only be used once per frame
     {
         return b_Hovered;
-        /*
-        if (b_Hovered)
-        {
-            b_Hovered = false;
-            return true;
-        }
-        return false;*/
     }
 
     public bool Interacted()//Can only be used once per frame
     {
         return b_Interacted;
-        /*
-        if (b_Interacted)   
-        {
-            b_Interacted = false;
-            return true;
-        }
-        return false;*/
     }//*/
+
+    public bool HeldInteracted()
+    {
+        return b_HeldInteracted;
+    }
 }

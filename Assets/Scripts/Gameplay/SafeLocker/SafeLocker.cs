@@ -6,6 +6,7 @@ public class SafeLocker : MonoBehaviour
     public int PasswordLength = 5;
     public string s_Password = "86195";
     public string s_CurPassword = "";
+    public bool b_CanOpen = false;
 
     // Use this for initialization
     void Start()

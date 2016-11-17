@@ -32,7 +32,8 @@ public class SafeLockerButton : MonoBehaviour
             }
             else if (input == 'Y')
             {
-
+                if (SL_SafeLocker.isUnlocked())
+                    SL_SafeLocker.b_CanOpen = true;
             }
             else
                 SL_SafeLocker.enterKey(input);

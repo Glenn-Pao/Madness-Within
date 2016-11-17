@@ -47,6 +47,19 @@ ModelImporter:
     100078: transform355
     100080: transform356
     100082: transform357
+    100084: polySurface462
+    100086: polySurface653
+    100088: polySurface653 1
+    100090: polySurface654
+    100092: polySurface654 1
+    100094: polySurface655
+    100096: polySurface656
+    100098: transform484
+    100100: transform485
+    100102: transform486
+    100104: transform487
+    100106: transform488
+    100108: transform489
     400000: polySurface192
     400002: //RootNode
     400004: Hospital_Room:dustbin
@@ -89,14 +102,30 @@ ModelImporter:
     400078: transform355
     400080: transform356
     400082: transform357
+    400084: polySurface462
+    400086: polySurface653
+    400088: polySurface653 1
+    400090: polySurface654
+    400092: polySurface654 1
+    400094: polySurface655
+    400096: polySurface656
+    400098: transform484
+    400100: transform485
+    400102: transform486
+    400104: transform487
+    400106: transform488
+    400108: transform489
     2300000: polySurface192
     2300002: polySurface324
     2300004: //RootNode
+    2300006: polySurface654
     3300000: polySurface192
     3300002: polySurface324
     3300004: //RootNode
+    3300006: polySurface654
     4300000: polySurface192
     4300002: polySurface324
+    4300004: polySurface654
     9500000: //RootNode
   materials:
     importMaterials: 1

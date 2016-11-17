@@ -15,6 +15,20 @@ ModelImporter:
     100014: polySurface455
     100016: polySurface456
     100018: polySurface458
+    100020: cabinet
+    100022: cabinet_left_door
+    100024: cabinet_left_door1
+    100026: polySurface431
+    100028: polySurface431 1
+    100030: polySurface432
+    100032: transform381
+    100034: transform382
+    100036: transform383
+    100038: polySurface433
+    100040: polySurface434
+    100042: transform385
+    100044: polySurface435
+    100046: polySurface436
     400000: //RootNode
     400002: polySurface344
     400004: polySurface375
@@ -25,6 +39,20 @@ ModelImporter:
     400014: polySurface455
     400016: polySurface456
     400018: polySurface458
+    400020: cabinet
+    400022: cabinet_left_door
+    400024: cabinet_left_door1
+    400026: polySurface431
+    400028: polySurface431 1
+    400030: polySurface432
+    400032: transform381
+    400034: transform382
+    400036: transform383
+    400038: polySurface433
+    400040: polySurface434
+    400042: transform385
+    400044: polySurface435
+    400046: polySurface436
     2300000: polySurface375
     2300002: polySurface383
     2300004: polySurface453
@@ -32,6 +60,14 @@ ModelImporter:
     2300008: polySurface455
     2300010: polySurface456
     2300012: polySurface458
+    2300014: cabinet
+    2300016: polySurface431
+    2300018: polySurface432
+    2300020: polySurface433
+    2300022: polySurface434
+    2300024: polySurface435
+    2300026: polySurface436
+    2300028: //RootNode
     3300000: polySurface375
     3300002: polySurface383
     3300004: polySurface453
@@ -39,6 +75,14 @@ ModelImporter:
     3300008: polySurface455
     3300010: polySurface456
     3300012: polySurface458
+    3300014: cabinet
+    3300016: polySurface431
+    3300018: polySurface432
+    3300020: polySurface433
+    3300022: polySurface434
+    3300024: polySurface435
+    3300026: polySurface436
+    3300028: //RootNode
     4300000: polySurface375
     4300002: polySurface383
     4300004: polySurface453
@@ -46,6 +90,13 @@ ModelImporter:
     4300008: polySurface455
     4300010: polySurface456
     4300012: polySurface458
+    4300014: cabinet
+    4300016: polySurface431
+    4300018: polySurface432
+    4300020: polySurface433
+    4300022: polySurface434
+    4300024: polySurface435
+    4300026: polySurface436
     9500000: //RootNode
   materials:
     importMaterials: 1

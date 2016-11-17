@@ -13,12 +13,20 @@ public class Door : MonoBehaviour
             if (this.GetComponent<PointerUITextMenu>() != null)
             {
                 GameObject.Destroy(this.GetComponent<PointerUITextMenu>());
+
+                if (this.GetComponent<VRTK.VRTK_InteractableObject>() != null && this.GetComponent<VRTK.VRTK_InteractableObject>().enabled == false)
+                {
+                    this.GetComponent<VRTK.VRTK_InteractableObject>().enabled = true;
+                }
             }
 
             if (this.GetComponent<PointerUIReceiver>().Interacted())
             {
-                this.GetComponent<Rigidbody>().isKinematic = false;
-                this.GetComponent<Rigidbody>().AddForce(0f, 0f, 500f);
+                if (this.GetComponent<Rigidbody>() != null)
+                {
+                    this.GetComponent<Rigidbody>().isKinematic = false;
+                    this.GetComponent<Rigidbody>().AddForce(0f, 0f, 500f);
+                }
             }
         }
     }

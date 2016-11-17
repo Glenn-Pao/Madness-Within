@@ -39,6 +39,7 @@ ModelImporter:
     100062: transform351
     100064: transform352
     100066: transform353
+    100068: polySurface570
     400000: //RootNode
     400002: Hospital_Room:dustbin
     400004: pCylinder13
@@ -73,12 +74,16 @@ ModelImporter:
     400062: transform351
     400064: transform352
     400066: transform353
+    400068: polySurface570
     2300000: //RootNode
     2300002: polySurface327
+    2300004: polySurface570
     3300000: //RootNode
     3300002: polySurface327
+    3300004: polySurface570
     4300000: Hospital_Room:dustbin
     4300002: polySurface327
+    4300004: polySurface570
     9500000: //RootNode
   materials:
     importMaterials: 1
