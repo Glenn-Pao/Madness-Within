@@ -33,7 +33,7 @@ public class PlaySoundOnInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UI_InteractTrigger.Interacted() && !b_isReleased)
+        if (UI_InteractTrigger.TriggerPressed() && !b_isReleased)
         {
             b_isReleased = true;
 
@@ -43,7 +43,7 @@ public class PlaySoundOnInteract : MonoBehaviour
                 RS_Sound.rs3d_PlaySound();
             }
         }
-        else if (!UI_InteractTrigger.Interacted() && b_isReleased)
+        else if (!UI_InteractTrigger.TriggerPressed() && b_isReleased)
         {
             b_isReleased = false;
 

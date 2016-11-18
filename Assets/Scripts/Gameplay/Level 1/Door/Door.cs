@@ -20,7 +20,7 @@ public class Door : MonoBehaviour
                 }
             }
 
-            if (this.GetComponent<PointerUIReceiver>().Interacted())
+            if (this.GetComponent<PointerUIReceiver>().TriggerPressed())
             {
                 if (this.GetComponent<Rigidbody>() != null)
                 {

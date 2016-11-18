@@ -17,7 +17,7 @@ public class SafeLockerButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool temp = this.GetComponent<PointerUIReceiver>().Interacted();
+        bool temp = this.GetComponent<PointerUIReceiver>().TriggerPressed();
         if (temp && !isReleased)
         {
             isReleased = true;
@@ -34,6 +34,11 @@ public class SafeLockerButton : MonoBehaviour
             {
                 if (SL_SafeLocker.isUnlocked())
                     SL_SafeLocker.b_CanOpen = true;
+                else
+                {
+                    SL_SafeLocker.clearKey();
+                    SL_SafeLocker.ShowError();
+                }
             }
             else
                 SL_SafeLocker.enterKey(input);

@@ -7,6 +7,7 @@ public class SafeLocker : MonoBehaviour
     public string s_Password = "86195";
     public string s_CurPassword = "";
     public bool b_CanOpen = false;
+    public bool b_ShowError = false;
 
     // Use this for initialization
     void Start()
@@ -36,5 +37,10 @@ public class SafeLocker : MonoBehaviour
         {
             s_CurPassword += KEY;
         }
+    }
+
+    public void ShowError()
+    {
+        b_ShowError = true;
     }
 }
