@@ -42,13 +42,20 @@ public class AuraViveInteractCollider : MonoBehaviour
         {
             b_isTouching = true;
             GO_TouchedObject = collider.gameObject;
-            TriggerCount += 1;
         }
         else if (collider.gameObject != null && collider.gameObject.GetComponent<PointerUIReceiver>() != null)
         {
+            if (b_isTouching && GO_TouchedObject != null)
+            {
+                if (GO_TouchedObject.GetComponent<PointerUIReceiver>() != null)
+                {
+                    GO_TouchedObject.GetComponent<PointerUIReceiver>().setTrigger(false);
+                    GO_TouchedObject.GetComponent<PointerUIReceiver>().setTouchpad(false);
+                }
+            }
+
             b_isTouching = true;
             GO_TouchedObject = collider.gameObject;
-
         }
     }
     /*

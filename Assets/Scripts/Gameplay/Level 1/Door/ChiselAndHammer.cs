@@ -103,6 +103,7 @@ public class ChiselAndHammer : MonoBehaviour
         {
             HammerHead = GameObject.FindWithTag("Hammer Head");// FindGameObjectWithTag("Hammer Head");
         }
+
         //update the different mechanics as and when it is needed to avoid unnecessary calculations
         BreakHinges();
     }

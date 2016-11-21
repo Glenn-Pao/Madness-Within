@@ -15,6 +15,8 @@ public class PointerUIController : MonoBehaviour
 
     public AuraViveInteractCollider AVIC_Collider;
 
+    public bool b_isLeftController = false;
+
     bool b_TouchReleaseChecked = false;
     bool b_ReleaseChecked = false;
 
@@ -37,7 +39,7 @@ public class PointerUIController : MonoBehaviour
         if (AVIC_Collider.GO_TouchedObject != null && AVIC_Collider.GO_TouchedObject.GetComponent<PointerUIReceiver>() != null && !b_TouchReleaseChecked)
         {
             AVIC_Collider.GO_TouchedObject.GetComponent<PointerUIReceiver>().setTouchpad(false);
-            AVIC_Collider.GO_TouchedObject.GetComponent<PointerUIReceiver>().setTrigger(false);
+            //AVIC_Collider.GO_TouchedObject.GetComponent<PointerUIReceiver>().setTrigger(false);
             b_TouchReleaseChecked = true;
         }
 
@@ -45,7 +47,7 @@ public class PointerUIController : MonoBehaviour
         if (GO_HeldObject != null && GO_HeldObject.GetComponent<PointerUIReceiver>() != null && GO_HeldObject.GetComponent<PointerUIReceiver>().b_EnableInteractTrigger && !b_ReleaseChecked)
         {
             GO_HeldObject.GetComponent<PointerUIReceiver>().setTouchpad(false);
-            GO_HeldObject.GetComponent<PointerUIReceiver>().setTrigger(false);
+            //GO_HeldObject.GetComponent<PointerUIReceiver>().setTrigger(false);
             b_ReleaseChecked = true;
         }
 
@@ -82,7 +84,7 @@ public class PointerUIController : MonoBehaviour
                     GO_Circle2.GetComponent<MeshFader>().fadetoColour(C_DefaultColor);
                 }
 
-                if (GO_Controller.GetComponent<VRTK.VRTK_ControllerEvents>().touchpadPressed)
+                if (GO_Controller.GetComponent<VRTK.VRTK_ControllerEvents>().touchpadPressed && !b_isLeftController)
                 {
                     AVIC_Collider.GO_TouchedObject.GetComponent<PointerUIReceiver>().setTouchpad(true);
                     GO_Controller.GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(250);
@@ -125,7 +127,7 @@ public class PointerUIController : MonoBehaviour
                 }
             }
 
-            if (GO_Controller.GetComponent<VRTK.VRTK_ControllerEvents>().touchpadPressed)
+            if (GO_Controller.GetComponent<VRTK.VRTK_ControllerEvents>().touchpadPressed && !b_isLeftController)
             {
                 GO_HeldObject.GetComponent<PointerUIReceiver>().setTouchpad(true);
                 GO_Controller.GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(250);

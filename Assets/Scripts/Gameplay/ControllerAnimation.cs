@@ -22,10 +22,10 @@ public class ControllerAnimation : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        v3_ControllerPosL.Set(2.07f, 0.654f, -0.0658f);
-        v3_ControllerPosR.Set(-2.07f, 0.654f, -0.0658f);
-        v3_ControllerPosLGrip.Set(1.3f, 0.654f, -0.0658f);
-        v3_ControllerPosRGrip.Set(-1.3f, 0.654f, -0.0658f);
+        v3_ControllerPosL.Set(2.07f, 0.121f, -0.0898f);
+        v3_ControllerPosR.Set(-2.07f, 0.121f, -0.0898f);
+        v3_ControllerPosLGrip.Set(1.3f, 0.121f, -0.0898f);
+        v3_ControllerPosRGrip.Set(-1.3f, 0.121f, -0.0898f);
     }
 
     // Update is called once per frame

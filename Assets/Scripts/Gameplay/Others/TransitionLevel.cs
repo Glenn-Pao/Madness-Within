@@ -9,7 +9,6 @@ public class TransitionLevel : MonoBehaviour
     public GameObject mainRoomSpawningPoint;        //the checkpoint
     public PointerUIReceiver UI_InteractTrigger;
     
-
     private GameObject player;                      //player object
     bool b_isReleased = false;                      //released or not?
 
@@ -59,7 +58,7 @@ public class TransitionLevel : MonoBehaviour
     {
         mainRoom.SetActive(true);                              //render main level
         player.transform.position = mainRoomSpawningPoint.transform.position;
-        tutorialRoom.SetActive(false);                         //derender tutorial level
+        Destroy(tutorialRoom);
     }
 	// Update is called once per frame
 	void Update () 

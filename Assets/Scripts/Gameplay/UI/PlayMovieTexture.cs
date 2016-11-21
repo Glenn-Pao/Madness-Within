@@ -17,6 +17,6 @@ public class PlayMovieTexture : MonoBehaviour
         {
             movie.loop = true;
         }
-        movie.Play();
+        //movie.Play();
     }
 }

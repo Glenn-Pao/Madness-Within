@@ -21,10 +21,6 @@ public class SafeLockerButton : MonoBehaviour
         if (temp && !isReleased)
         {
             isReleased = true;
-        }
-        else if (!temp && isReleased)
-        {
-            isReleased = false;
 
             if (input == 'X' || input == 'x')
             {
@@ -42,6 +38,10 @@ public class SafeLockerButton : MonoBehaviour
             }
             else
                 SL_SafeLocker.enterKey(input);
+        }
+        else if (!temp && isReleased)
+        {
+            isReleased = false; 
         }
     }
 }

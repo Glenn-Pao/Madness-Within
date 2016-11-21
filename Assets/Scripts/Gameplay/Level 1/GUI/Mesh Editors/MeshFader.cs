@@ -6,6 +6,7 @@ public class MeshFader : MonoBehaviour
     //public bool b_isVisible = false;
     public float f_fadeSpeed = 3f;
     public bool UseMeshRenderer = false;
+    public bool UseEmissive = false;
     Color c_Color;
     Color c_ColorTarget;
 
@@ -71,13 +72,16 @@ public class MeshFader : MonoBehaviour
 
         if (UseMeshRenderer)
         {
+            if (UseEmissive)
+                this.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", c_Color);
             this.GetComponent<MeshRenderer>().material.color = c_Color;
         }
         else
         {
+            if (UseEmissive)
+                this.GetComponent<Renderer>().material.SetColor("_EmissionColor", c_Color);
             this.GetComponent<Renderer>().material.color = c_Color;
         }
-        this.GetComponent<Renderer>().material.color = c_Color;
     }
 
     public void fadetoColour(Color color)

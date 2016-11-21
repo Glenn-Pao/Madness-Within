@@ -31,7 +31,7 @@ public class Door : MonoBehaviour
         }
     }
 
-    bool canBreakDoor()
+    public bool canBreakDoor()
     {
         for (int i = 0; i < Hinges.Length; i++)
         {

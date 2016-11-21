@@ -8,6 +8,7 @@ public class PointerUITextMenu : MonoBehaviour
     public Vector3 v3_Offset = new Vector3(0f, 0.065f, 0f);
     public PointerUIReceiver UI_InteractTrigger;
     public HologramText HTW_HologramText;
+    public bool b_UseTriggerInstead = false;
 
     private bool isInteracted = false;
 
@@ -34,7 +35,7 @@ public class PointerUITextMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UI_InteractTrigger.TouchpadPressed())
+        if ((UI_InteractTrigger.TouchpadPressed() && !b_UseTriggerInstead) || (UI_InteractTrigger.TriggerPressed() && b_UseTriggerInstead))
         {
             HTW_HologramText.setMessage(message, f_Time);
             isInteracted = true;
