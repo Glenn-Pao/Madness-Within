@@ -36,7 +36,6 @@ public class LightManager : MonoBehaviour {
     {
         while (true)
         {
-            Debug.Log(this.name);
             for (int i = 0; i < lightSources.Length; i++)
             {
                 lightSources[i].enabled = true;

@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireExtinguisher : MonoBehaviour
+public class Taser : MonoBehaviour
 {
-    public GeneratorFailure GO_GeneratorFailure;
     public PointerUIReceiver UI_InteractTrigger;
     public RealSpace3D.RealSpace3D_AudioSource RS_Sound;
-    public GameObject GO_SoundPos;
     public ParticleSystem PS_System;
+    public Light L_Light;
 
-    public bool b_isSpraying;
-
+    public bool b_isUsing;
     // Use this for initialization
     void Start()
     {
@@ -29,8 +27,9 @@ public class FireExtinguisher : MonoBehaviour
     {
         if (UI_InteractTrigger.TriggerPressed())
         {
+            b_isUsing = true;
             PS_System.enableEmission = true;
-            b_isSpraying = true;
+            L_Light.enabled = true;
 
             if (RS_Sound != null)
             {
@@ -38,29 +37,15 @@ public class FireExtinguisher : MonoBehaviour
                 {
                     RS_Sound.rs3d_PlaySound();
                 }
-                RS_Sound.transform.position = GO_SoundPos.transform.position;
+                RS_Sound.transform.position = this.transform.position;
             }
         }
         else
         {
-            b_isSpraying = false;
+            b_isUsing = false;
             PS_System.enableEmission = false;
+            L_Light.enabled = false;
             RS_Sound.rs3d_StopSound();
-        }
-    }
-
-    void OnTriggerStay(Collider collider)
-    {
-        if (collider.isTrigger && collider.tag == "Fire")
-        {
-            if (b_isSpraying && collider.gameObject.GetComponent<FireTrigger>() != null && GO_GeneratorFailure.b_EventTriggered)
-            {
-                collider.gameObject.GetComponent<FireTrigger>().f_FlameStrength -= Time.deltaTime;
-                if (collider.gameObject.GetComponent<FireTrigger>().f_FlameStrength < 0)
-                {
-                    GO_GeneratorFailure.b_PutFireOut = true;
-                }
-            }
         }
     }
 }

@@ -12,13 +12,8 @@ public class UnlockDrawer : MonoBehaviour
     {
         if (other.gameObject.tag == "DrawerKey")
         {
-            Debug.Log("Collision");
             Destroy(other.gameObject);		//destroy the game object
             keyUsed = true;
-        }
-        else
-        {
-            Debug.Log("No collision");
         }
     }
     // Use this for initialization

@@ -81,7 +81,7 @@ Material:
       second: 0.5
     - first:
         name: _Density
-      second: 0.145
+      second: 0.13
     - first:
         name: _DetailNormalMapScale
       second: 1

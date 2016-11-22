@@ -31,5 +31,9 @@ public class PlaySoundOnTrigger : MonoBehaviour
                 b_soundPlayed = true;
             }
         }
+        else
+        {
+            GameObject.Destroy(this.GetComponent<PlaySoundOnTrigger>());
+        }
     }
 }

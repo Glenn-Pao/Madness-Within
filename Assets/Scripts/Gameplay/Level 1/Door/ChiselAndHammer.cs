@@ -26,7 +26,6 @@ public class ChiselAndHammer : MonoBehaviour
     public RealSpace3D.RealSpace3D_AudioSource RS_HingeBreakSound;
 
     private bool isHit = false;             //check whether the door hinge was struck already
-    private bool hingesAllBroken = false;   //check whether all of the door hinges were destroyed already
     private int numDestroyed = 0;           //the number of hinges destroyed
     private int targetNumDestroyed = 0;     //the length of the door hinges array
 
@@ -88,10 +87,6 @@ public class ChiselAndHammer : MonoBehaviour
                     }
                 }
             }
-        }
-        else
-        {
-            hingesAllBroken = true;
         }
     }
 
