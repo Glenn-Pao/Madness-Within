@@ -83,12 +83,12 @@ public class PointerUIController : MonoBehaviour
                         GO_Controller.GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(250);
                     }
                 }
-            }
 
-            if (GO_Controller.GetComponent<VRTK.VRTK_ControllerEvents>().touchpadPressed && !b_isLeftController)
-            {
-                GO_HeldObject.GetComponent<PointerUIReceiver>().setTouchpad(true);
-                GO_Controller.GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(250);
+                if (GO_Controller.GetComponent<VRTK.VRTK_ControllerEvents>().touchpadPressed && !b_isLeftController)
+                {
+                    GO_HeldObject.GetComponent<PointerUIReceiver>().setTouchpad(true);
+                    GO_Controller.GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(250);
+                }
             }
         }
         

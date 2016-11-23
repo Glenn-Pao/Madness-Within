@@ -7,6 +7,7 @@ public class GeneratorFailure : MonoBehaviour
     public RealSpace3D.RealSpace3D_AudioSource RS_GeneratorSound;
     public RealSpace3D.RealSpace3D_AudioSource RS_FireSound;
     public RealSpace3D.RealSpace3D_AudioSource RS_FirePutout;
+    public RealSpace3D.RealSpace3D_AudioSource RS_GateOpen;
 
     public RealSpace3D.RealSpace3D_AudioSource[] RS_PowerSounds;
 
@@ -14,6 +15,7 @@ public class GeneratorFailure : MonoBehaviour
     public Light[] L_Lights;
     public GameObject GO_Fire;
     public GameObject GO_Generator;
+    public GameObject GO_Door;
 
     public bool b_SetReadyToTrigger = false;
     public bool b_EventTriggered = false;
@@ -61,6 +63,13 @@ public class GeneratorFailure : MonoBehaviour
                 {
                     RS_PowerSounds[i].rs3d_PlaySound();
                 }
+
+                GO_Generator.GetComponent<PointerUITextMenu>().message = "It works!!!";
+
+                RS_GateOpen.transform.position = GO_Door.transform.position;
+                RS_GateOpen.rs3d_PlaySound();
+                //GO_Door.GetComponent<Rigidbody>().isKinematic = false;
+                //GO_Door.GetComponent<Rigidbody>().AddForce(0f, 0f, 10f);
 
                 RS_GeneratorSound.rs3d_PlaySound();
 

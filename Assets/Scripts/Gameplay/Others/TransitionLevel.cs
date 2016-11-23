@@ -4,9 +4,9 @@ using System.Collections;
 public class TransitionLevel : MonoBehaviour 
 {    
     public ScreenFader fade;                        //the fade manager
-    public GameObject tutorialRoom;                 //tutorial room
+    public GameObject tutorialRoom;                 //initial room
     public GameObject mainRoom;                     //room and corridor with puzzles
-    public GameObject mainRoomSpawningPoint;        //the checkpoint
+    public GameObject mainRoomSpawningPoint;        //next room
     public PointerUIReceiver UI_InteractTrigger;
     
     private GameObject player;                      //player object
@@ -49,7 +49,8 @@ public class TransitionLevel : MonoBehaviour
         if (fade.isFaded())
         {
             SwapLevel();
-            fade.fadeIn = true;     //activate the fade in   
+            fade.fadeIn = true;     //activate the fade in
+            GameObject.Destroy(this.GetComponent<TransitionLevel>());
         }
     }
     
@@ -59,6 +60,7 @@ public class TransitionLevel : MonoBehaviour
         mainRoom.SetActive(true);                              //render main level
         player.transform.position = mainRoomSpawningPoint.transform.position;
         Destroy(tutorialRoom);
+        
     }
 	// Update is called once per frame
 	void Update () 
