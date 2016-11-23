@@ -20,60 +20,53 @@ public class AuraViveInteractCollider : MonoBehaviour
 
     void LateUpdate()
     {
-        b_isTouching = false;
+        if (TriggerCount <= 0)
+        {
+            b_isTouching = false;
+        }
     }
 
     void OnTriggerStay(Collider collider)
     {
-        if (collider.gameObject != null && !b_isTouching)
+        /*if (collider.gameObject != null && !b_isTouching)
         {
             b_isTouching = true;
             GO_TouchedObject = collider.gameObject;
-        }
-        else if (collider.gameObject != null && collider.gameObject.GetComponent<PointerUIReceiver>() != null)
+        }//*/
+        if (collider.gameObject != null && collider.gameObject.GetComponent<PointerUIReceiver>() != null)
         {
-            if (b_isTouching && GO_TouchedObject != null)
+            /*if (b_isTouching && GO_TouchedObject != null)
             {
                 if (GO_TouchedObject.GetComponent<PointerUIReceiver>() != null)
                 {
                     GO_TouchedObject.GetComponent<PointerUIReceiver>().setTrigger(false);
                     GO_TouchedObject.GetComponent<PointerUIReceiver>().setTouchpad(false);
                 }
-            }
+            }//*/
 
             b_isTouching = true;
             GO_TouchedObject = collider.gameObject;
         }
     }
-    /*
+
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject != null && !b_isTouching)
+        if (collider.gameObject != null && collider.gameObject.GetComponent<PointerUIReceiver>() != null)
         {
-            b_isTouching = true;
-            GO_TouchedObject = collider.gameObject;
             TriggerCount += 1;
         }
-        else if (collider.gameObject != null && collider.gameObject.GetComponent<PointerUIReceiver>() != null)
-        {
-            b_isTouching = true;
-            GO_TouchedObject = collider.gameObject;
-            
-        }//
-        //b_isTouching = true;
-
-        TriggerCount += 1;
-        
     }//*/
-    /*
+
     private void OnTriggerExit(Collider collider)
     {
-        TriggerCount -= 1;
-
-        if (TriggerCount <= 0)
+        if (collider.gameObject != null && collider.gameObject.GetComponent<PointerUIReceiver>() != null)
         {
-            b_isTouching = false;
-            TriggerCount = 0;
+            TriggerCount -= 1;
+
+            if (TriggerCount <= 0)
+            {
+                TriggerCount = 0;
+            }
         }
     }//*/
 }

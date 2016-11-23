@@ -91,7 +91,8 @@ public class PointerUIController : MonoBehaviour
                 GO_Controller.GetComponent<VRTK.VRTK_ControllerActions>().TriggerHapticPulse(250);
             }
         }
-        else if (AVIC_Collider.b_isTouching && AVIC_Collider.GO_TouchedObject != null)//When you touch a object
+        
+        if (AVIC_Collider.b_isTouching && AVIC_Collider.GO_TouchedObject != null)//When you touch a object
         {
             b_TouchReleaseChecked = false;
 

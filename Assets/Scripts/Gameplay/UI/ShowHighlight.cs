@@ -23,6 +23,7 @@ public class ShowHighlight : MonoBehaviour
 
         if (!this.GetComponent<Renderer>().material.HasProperty("_OutlineColor"))
             Debug.Log(this.name);
+        this.GetComponent<Renderer>().material.SetColor("_MainColor", Color.white);
         fade.colorStart = this.GetComponent<Renderer>().material.GetColor("_OutlineColor");
         fade.colorEnd = fade.colorStart;
         fade.colorEnd.a = 0;

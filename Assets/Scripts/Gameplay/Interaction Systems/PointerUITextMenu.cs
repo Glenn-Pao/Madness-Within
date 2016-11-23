@@ -26,6 +26,12 @@ public class PointerUITextMenu : MonoBehaviour
                 UI_InteractTrigger = this.gameObject.AddComponent<PointerUIReceiver>();
             }
         }
+
+        if (b_UseTriggerInstead)
+        {
+            UI_InteractTrigger.b_EnableInteractTrigger = true;
+        }
+
         if (HTW_HologramText == null)
         {
             HTW_HologramText = GameObject.FindGameObjectWithTag("HologramTextController").GetComponent<HologramText>();

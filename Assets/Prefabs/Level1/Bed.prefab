@@ -23,6 +23,8 @@ GameObject:
   - 23: {fileID: 23000011026835392}
   - 65: {fileID: 65000013097755124}
   - 114: {fileID: 114000010574940780}
+  - 65: {fileID: 65000014290548080}
+  - 65: {fileID: 65000011061973032}
   m_Layer: 0
   m_Name: Bedframe
   m_TagString: Untagged
@@ -251,6 +253,7 @@ GameObject:
   - 33: {fileID: 33000013788760148}
   - 23: {fileID: 23000013107469602}
   - 65: {fileID: 65000010924526214}
+  - 114: {fileID: 114000013220396110}
   m_Layer: 0
   m_Name: Pillow
   m_TagString: Untagged
@@ -532,10 +535,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013564882610}
-  m_LocalRotation: {x: 0.002766112, y: -0.7924445, z: -0.0021290397, w: 0.60993403}
-  m_LocalPosition: {x: 0.2686, y: 0.2337, z: -1.2116}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_LocalEulerAnglesHint: {x: 0, y: -104.83, z: -0.4}
+  m_LocalRotation: {x: 0, y: 0.09940656, z: 0, w: 0.9950469}
+  m_LocalPosition: {x: 0.2431, y: 0.228, z: 0.1988}
+  m_LocalScale: {x: 1.1000004, y: 1.0999998, z: 1.1000006}
+  m_LocalEulerAnglesHint: {x: 0, y: 11.41, z: 0}
   m_Children:
   - {fileID: 4000014002001086}
   - {fileID: 4000010143220498}
@@ -1024,6 +1027,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.012484435, y: 0.07539826, z: 0.0039375857}
   m_Center: {x: 0.0046890397, y: 0.00053693797, z: 0.06271632}
+--- !u!65 &65000011061973032
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010000951818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07635394, y: 0.04691302, z: 0.005180502}
+  m_Center: {x: 0.0000012032688, y: 0.014224766, z: -0.061964463}
 --- !u!65 &65000011194067862
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1180,6 +1195,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06841978, y: 0.006192386, z: 0.004363012}
   m_Center: {x: -0.00087010267, y: -0.0057987273, z: 0.06253265}
+--- !u!65 &65000014290548080
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010000951818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07635394, y: 0.04668825, z: 0.0061033727}
+  m_Center: {x: 0.0000020228326, y: 0.0143372025, z: 0.06149992}
 --- !u!114 &114000010471322304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1226,6 +1253,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: Hello World
+  f_Time: 3
+  UI_InteractTrigger: {fileID: 0}
+  HTW_HologramText: {fileID: 0}
+  b_UseTriggerInstead: 0
+  b_UseBoth: 0
+--- !u!114 &114000013220396110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012236328090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5071f08424a259a4e8ef914c0bab3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: A dusty, worn out pillow
   f_Time: 3
   UI_InteractTrigger: {fileID: 0}
   HTW_HologramText: {fileID: 0}

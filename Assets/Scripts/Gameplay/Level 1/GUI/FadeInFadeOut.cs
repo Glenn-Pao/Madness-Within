@@ -33,7 +33,7 @@ public class FadeInFadeOut : MonoBehaviour
 			}
 		}
 		//set the output color to the material or else it will not update
-		this.GetComponent<Renderer> ().material.color = Output;
+		//this.GetComponent<Renderer> ().material.color = Output;
 	}
 	public void FadeIn()
 	{
