@@ -82,6 +82,7 @@ public class HologramText : MonoBehaviour
 
 	public void setMessage(string Text, float time)
 	{
+        Debug.Log(Text);
 		GetComponent<TextMesh> ().text = Text;
 		f_fadeOutTimer = time;
 		b_isVisible = true;

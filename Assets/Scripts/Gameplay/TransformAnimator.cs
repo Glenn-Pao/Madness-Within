@@ -5,6 +5,7 @@ public class TransformAnimator : MonoBehaviour
 {
     public bool b_TransformPosition = false;
     public bool b_TransformRotation = false;
+    public bool b_UsesPower = false;
 
     public Vector3 v3_RotationalMovement;
 
@@ -17,7 +18,10 @@ public class TransformAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(b_TransformRotation)
-            this.transform.Rotate(v3_RotationalMovement);
+        if (!b_UsesPower || (GameObject.Find("ElectricalPower") != null && GameObject.Find("ElectricalPower").GetComponent<GlobalPowerReserve>().b_isPowerAvailable))
+        {
+            if (b_TransformRotation)
+                this.transform.Rotate(v3_RotationalMovement);
+        }
     }
 }

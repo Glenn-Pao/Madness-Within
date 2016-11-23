@@ -18,19 +18,6 @@ public class AuraViveInteractCollider : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        /*raycasted = Physics.Raycast(raycast, out Rayhit, 0.15f);
-        raycast.origin = this.transform.position;
-        raycast.direction = this.transform.rotation * new Vector3(0, 0, 1);
-
-        if (raycasted)
-        {
-            GO_TouchedObject = Rayhit.transform.gameObject;
-        }//*/
-    }
-
     void LateUpdate()
     {
         b_isTouching = false;

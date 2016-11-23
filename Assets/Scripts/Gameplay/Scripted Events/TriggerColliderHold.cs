@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireTrigger : MonoBehaviour
+public class TriggerColliderHold : MonoBehaviour
 {
-    public float f_FlameStrength = 3f;
-
+    public float f_Strength = 2f;
     // Use this for initialization
     void Start()
     {
@@ -16,6 +15,4 @@ public class FireTrigger : MonoBehaviour
     {
 
     }
-
-
 }

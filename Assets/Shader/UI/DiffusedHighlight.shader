@@ -9,6 +9,7 @@ Shader "UI/DiffusedHighlight"
 		_Outline ("Outline width", Range (0.0, 0.03)) = .005
 		_MainTex ("Base (RGB)", 2D) = "white" { }
 		_BumpMap ("Bumpmap", 2D) = "bump" {}
+		_Tween("Bumpmap Factor", Range(0,1.5)) = 1
 	}
  
 	CGINCLUDE
@@ -86,11 +87,12 @@ Shader "UI/DiffusedHighlight"
 		sampler2D _MainTex;
 		sampler2D _BumpMap;
 		uniform float3 _Color;
+		float _Tween;
 		
 		void surf(Input IN, inout SurfaceOutput o) 
 		{
 			o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb * _Color;
-			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap)* _Tween) ;
 		}
 		ENDCG
  
@@ -133,10 +135,12 @@ Shader "UI/DiffusedHighlight"
 		sampler2D _MainTex;
 		sampler2D _BumpMap;
 		uniform float3 _Color;
+		float _Tween;
+
 		void surf(Input IN, inout SurfaceOutput o) 
 		{
 			o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb * _Color;
-			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap)* _Tween) ;
 		}
 		ENDCG
  

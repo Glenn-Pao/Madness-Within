@@ -53,10 +53,10 @@ public class FireExtinguisher : MonoBehaviour
     {
         if (collider.isTrigger && collider.tag == "Fire")
         {
-            if (b_isSpraying && collider.gameObject.GetComponent<FireTrigger>() != null && GO_GeneratorFailure.b_EventTriggered)
+            if (b_isSpraying && collider.gameObject.GetComponent<TriggerColliderHold>() != null && GO_GeneratorFailure.b_EventTriggered)
             {
-                collider.gameObject.GetComponent<FireTrigger>().f_FlameStrength -= Time.deltaTime;
-                if (collider.gameObject.GetComponent<FireTrigger>().f_FlameStrength < 0)
+                collider.gameObject.GetComponent<TriggerColliderHold>().f_Strength -= Time.deltaTime;
+                if (collider.gameObject.GetComponent<TriggerColliderHold>().f_Strength < 0)
                 {
                     GO_GeneratorFailure.b_PutFireOut = true;
                 }

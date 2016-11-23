@@ -36,30 +36,40 @@ public class LightManager : MonoBehaviour {
     {
         while (true)
         {
-            for (int i = 0; i < lightSources.Length; i++)
+            if (GameObject.Find("ElectricalPower") != null && !GameObject.Find("ElectricalPower").GetComponent<GlobalPowerReserve>().b_isPowerAvailable)
             {
-                lightSources[i].enabled = true;
+                for (int i = 0; i < lightSources.Length; i++)
+                {
+                    lightSources[i].enabled = false;
+                }
+                yield return null;
             }
-            yield return new WaitForSeconds(Random.Range(minLightMS, maxLightMS) * 0.001f);
-
-            //flickering light period
-            for (int i = 0; i < Random.Range(minFlickers, maxFlickers); i++)
+            else
             {
-                for (int j = 0; j < lightSources.Length; j++)
+                for (int i = 0; i < lightSources.Length; i++)
                 {
-                    lightSources[j].enabled = false;
+                    lightSources[i].enabled = true;
                 }
+                yield return new WaitForSeconds(Random.Range(minLightMS, maxLightMS) * 0.001f);
 
-                yield return new WaitForSeconds(Random.Range(minDarkMS, maxDarkMS) * 0.001f);
-
-                for (int j = 0; j < lightSources.Length; j++)
+                //flickering light period
+                for (int i = 0; i < Random.Range(minFlickers, maxFlickers); i++)
                 {
-                    lightSources[j].enabled = true;
-                }
+                    for (int j = 0; j < lightSources.Length; j++)
+                    {
+                        lightSources[j].enabled = false;
+                    }
 
-                yield return new WaitForSeconds(Random.Range(minFlickerMS, maxFlickerMS) * 0.001f);
+                    yield return new WaitForSeconds(Random.Range(minDarkMS, maxDarkMS) * 0.001f);
+
+                    for (int j = 0; j < lightSources.Length; j++)
+                    {
+                        lightSources[j].enabled = true;
+                    }
+
+                    yield return new WaitForSeconds(Random.Range(minFlickerMS, maxFlickerMS) * 0.001f);
+                }
             }
-
         }
     }
 }

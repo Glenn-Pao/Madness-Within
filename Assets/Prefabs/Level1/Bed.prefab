@@ -22,6 +22,7 @@ GameObject:
   - 33: {fileID: 33000012986479398}
   - 23: {fileID: 23000011026835392}
   - 65: {fileID: 65000013097755124}
+  - 114: {fileID: 114000010574940780}
   m_Layer: 0
   m_Name: Bedframe
   m_TagString: Untagged
@@ -88,6 +89,7 @@ GameObject:
   - 33: {fileID: 33000011958674552}
   - 23: {fileID: 23000010722943938}
   - 65: {fileID: 65000012782123850}
+  - 114: {fileID: 114000010471322304}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -359,6 +361,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011515812262}
+  - 114: {fileID: 114000012293921752}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -1177,3 +1180,54 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06841978, y: 0.006192386, z: 0.004363012}
   m_Center: {x: -0.00087010267, y: -0.0057987273, z: 0.06253265}
+--- !u!114 &114000010471322304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010446407076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5071f08424a259a4e8ef914c0bab3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: A rather worn out bed
+  f_Time: 3
+  UI_InteractTrigger: {fileID: 0}
+  HTW_HologramText: {fileID: 0}
+  b_UseTriggerInstead: 0
+  b_UseBoth: 0
+--- !u!114 &114000010574940780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010000951818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5071f08424a259a4e8ef914c0bab3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: The bedframe is rusty.
+  f_Time: 3
+  UI_InteractTrigger: {fileID: 0}
+  HTW_HologramText: {fileID: 0}
+  b_UseTriggerInstead: 0
+  b_UseBoth: 0
+--- !u!114 &114000012293921752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013564882610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5071f08424a259a4e8ef914c0bab3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: Hello World
+  f_Time: 3
+  UI_InteractTrigger: {fileID: 0}
+  HTW_HologramText: {fileID: 0}
+  b_UseTriggerInstead: 0
+  b_UseBoth: 0

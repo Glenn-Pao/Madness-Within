@@ -93,8 +93,23 @@ public class LightSwitch : MonoBehaviour
                 }
             }
         }
+
+        if (GameObject.Find("ElectricalPower") != null && !GameObject.Find("ElectricalPower").GetComponent<GlobalPowerReserve>().b_isPowerAvailable)
+        {
+            for (int i = 0; i < lightSources.Length; i++)
+            {
+                lightSources[i].enabled = false;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < lightSources.Length; i++)
+            {
+                lightSources[i].enabled = b_lightSwitchOn;
+            }
+        }
         //GetComponent<RealSpace3D.RealSpace3D_AudioSource>().rs3d_PlaySound("light_switch.ogg");
-        
+
         v3_Rotation.x = f_CurrentRotation;
         this.transform.localRotation = Quaternion.Euler(v3_Rotation);
     }

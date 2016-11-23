@@ -33,7 +33,7 @@ public class PointerUITextMenu : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (((UI_InteractTrigger.TouchpadPressed() && !b_UseTriggerInstead) || (UI_InteractTrigger.TriggerPressed() && b_UseTriggerInstead)) || b_UseBoth && (UI_InteractTrigger.TouchpadPressed() || UI_InteractTrigger.TriggerPressed()))
         {
